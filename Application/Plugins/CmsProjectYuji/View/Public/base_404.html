@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="">
+    <title>很抱歉，您要访问的页面不存在</title>
+    <meta name="keywords" content="{$page_seo.keywords}">
+    <meta name="description" content="{$page_seo.description}">
+    <!-- core CSS -->
+    <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+    <link rel='stylesheet' href='/static/plugins/nprogress/nprogress.css'/>
+    <link type="text/css" rel="stylesheet" href="/static/module/home/css/style.css">
+    <!-- module CSS -->
+    <link rel='stylesheet' href='/static/css/public/rightbox.css'/>
+    <link rel='stylesheet' href='/static/css/public/pages.css'/>
+    <link rel='stylesheet' href='/static/css/public/cxscroll.css'/>
+    <!--[if lt IE 9]>
+    <script src="/static/module/public/js/html5shiv.js"></script>
+    <script src="/static/module/public/js/respond.min.js"></script>
+    <![endif]-->       
+    <link rel="shortcut icon" href="/favicon.ico">
+    <script type="text/javascript" src="/static/plugins/jquery/1.11.3/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src='/static/plugins/nprogress/nprogress.js'></script>
+    <!-- /map-->
+    <script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script>
+</head><!--/head-->
+<body>
+<div  class="m-homeindex-top">
+    <div class="auto">
+        <div class="u-top-left">
+            <span>免费咨询<i class="fa fa-phone-square"></i>{:C('fdz_site_400')}</span>
+        </div>
+        <div class="u-top-right">
+            <span><a href="javascript:void(0);" onclick="AddFavorite('{:C(\'fdz_site_name\')}',location.href)">收藏本站</a></span>
+        </div>
+    </div>
+</div>
+<div class="head ">
+    <div class="auto">
+        <div class="logo"><img src="/static/module/home/images/logo.png" width="200" alt="{:C('fdz_site_name')}"></div>
+        <div id="nav">
+            <ul>
+                <li><a class="j_navname_index j_nav_class <php>if(strtolower(CONTROLLER_NAME)=='index'){ echo 'hover';}</php>" href="/" name="index.asp" title="首页">首页</a></li>
+                <li><a class="j_navname_about j_nav_class <php>if(strtolower(CONTROLLER_NAME)=='about'){ echo 'hover';}</php>" href="/about" title="关于蓝酷">关于蓝酷</a></li>
+                <li><a class="j_navname_web j_nav_class <php>if(strtolower(CONTROLLER_NAME)=='web'){ echo 'hover';}</php>" href="/web" itle="网站建设">网站建设</a></li>
+                <li><a class="j_navname_seo j_nav_class <php>if(strtolower(CONTROLLER_NAME)=='seo'){ echo 'hover';}</php>" href="/seo" title="网站推广">网站推广</a></li>
+                <li><a class="j_navname_cases j_nav_class <php>if(strtolower(CONTROLLER_NAME)=='cases'){ echo 'hover';}</php>" href="/cases" title="客户案例">客户案例</a></li>
+                <li><a class="j_navname_news j_nav_class <php>if(strtolower(CONTROLLER_NAME)=='news'){ echo 'hover';}</php>" href="/news" title="新闻中心">新闻中心</a></li>
+                <li><a class="j_navname_joinus j_nav_class <php>if(strtolower(CONTROLLER_NAME)=='joinus'){ echo 'hover';}</php>" href="/joinus" title="加入蓝酷">加入蓝酷</a></li>
+                <li><a class="j_navname_contact j_nav_class <php>if(strtolower(CONTROLLER_NAME)=='contact'){ echo 'hover';}</php>" href="/contact" title="联系我们">联系我们</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div id="pjax-container">
+<block name="body_main">
+    {$fetch_html}
+</block>
+</div>
+
+<div class="foot">
+    <div class="auto">
+        <div class="icont">
+            <div class="t">{$index_footercontact_info['title']}</div>
+            <div class="cont">
+                <volist name="index_footercontact_info['listdata_format']" id="vo">
+                    <p>{$vo}</p>
+                </volist>
+            </div>
+            <div class="ht"><img src="/static/module/home/images/index/img6.jpg"></div>
+        </div>
+        <div class="foot_menu">
+            <volist name="index_footerabout" id="vo">
+                <div class="foot_box">
+                    <div class="t">
+                        <span title="{$vo['title']}">{$vo['title']}</span>
+                    </div>
+                    <ul>
+                        <volist name="vo['listdata_format']" id="voo">
+                            <li>{$voo}</li>
+                        </volist>
+                    </ul>
+                </div>
+            </volist>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+
+<div class="footer">
+    <div class="auto">
+        版权所有： <a href="/" target="_blank">{:C('fdz_site_name')}</a>
+        <span style="margin-left: 20px;">备　案：{:C('fdz_site_beian')}</span>
+    </div>
+</div>
+
+<div class="m-public-rightbox">
+   <ul>
+       <li class="right_weixin rficon"><div class="right_weixin-logo rficon"></div></li>
+       <li class="right_xinlang rficon"><div class="right_xinlang-logo rficon"></div></li>
+       <li class="right_qq rficon"><a href="{:C('fdz_site_qq')}" target="_blank"></a></li>
+       <li class="right_tel rficon"><div class="right_tel-logo rficon"></div></li>
+       <li class="right_zxjl rficon"><a  id="J_goTop" href="javascript:;"></a></li>
+   </ul>
+</div>
+
+
+<script type="text/javascript" src="/static/module/home/js/focus.js"></script>
+<script src="/static/plugins/pjax/jquery.pjax.js"></script>
+<script type="text/javascript" charset="utf-8" src='/static/plugins/cxscroll/cxscroll.js'></script>
+<script type="text/javascript" src="/static/module/home/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,246 @@
+<cms:page_seo name="page_seo"></cms:page_seo>
+
+<div id="jt_page_index"></div>
+
+<div class="window-box swiper-container-vertical" style="width: 100%;">
+    <div class="window-cut" data-title-height="5">
+
+        <div class="window-bin swiper-slide-active" data-hash="slide1">
+            <div class="window-back" data-title="广告">
+
+                <div class="banner-box swiper-container-horizontal">
+                    <div class="banner-cut">
+                        <cms:article_list name="vo" enname="index_banner" p="1" page_size="3" key="k">
+                            <a class="banner-bin" title="{$vo['title']}" data-swiper-slide-index="{k}" style="background-image: url({$vo['cover_url']});">
+                                <img class="" alt="{$vo['title']}" src="{$vo['cover_url']}">
+                            </a>
+                        </cms:article_list>
+                    </div>
+                    <div class="clear-box"></div>
+                    <div class="banner-pager swiper-pagination-clickable swiper-pagination-bullets"><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet swiper-pagination-bullet-active"></span></div>
+                    <div class="banner-ctrl">
+                        <div class="ctrl-box ctrl-left"><i class="fa fa-angle-left"></i></div>
+                        <div class="ctrl-box ctrl-right"><i class="fa fa-angle-right"></i></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="window-bin swiper-slide-next" data-hash="slide2">
+            <div class="window-back swiper-lazy" data-title="新品" data-background="/static/module/cms/images/index/new/11.jpg" data-original="">
+
+                <div class="title-box" style="top: 5%;">
+                    <div class="title-name">
+                        <strong>新品</strong>
+                        <span>NEW</span>
+                    </div>
+                    <div class="title-nav price-class">
+                    </div>
+                    <div class="clear-box"></div>
+                </div>
+                <div class="price-box swiper-container-horizontal" style="top: 18%; cursor: -webkit-grab;  height: 100%;width: auto;">
+                    <div class="price-cut">
+
+                        
+                        <volist name="recommend_index_new_products" id="vo">
+                            <div class="price-bin swiper-slide-active">
+                                <a href="{:U('product/detail',array('id'=>$vo['id']))}" title="{$vo['title']}">
+                                    <font>
+                                        <img class="swiper-lazy" title="{$vo['title']}" src="{$vo['cover_id_format']|common_trans_sub_image}">
+                                    </font>
+                                    <span>
+                                        <em><i class="fa fa-angle-right"></i></em>
+                                        <b>{$vo['title']}</b>
+                                    </span>
+                                    <div style="display: block;position: relative;padding: 0px 20px;line-height: 22px;overflow: hidden;">
+                                    <volist name="vo['list_p_data_format']" id="voo">
+                                        <p style="color: #8d8d8d;font-size: 14px;">{$voo}</p>
+                                    </volist>
+                                    </div>
+                                </a>
+                            </div>
+                        </volist>
+                        
+
+                    </div>
+                    <div class="clear-box"></div>
+                    <div class="price-ctrl">
+                        <div class="ctrl-box ctrl-left"><i class="fa fa-angle-left"></i></div>
+                        <div class="ctrl-box ctrl-center"></div>
+                        <div class="ctrl-box ctrl-right"><i class="fa fa-angle-right"></i></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="window-bin" data-hash="slide3" >
+            <div class="window-back swiper-lazy" data-title="产品种类" data-background="/static/module/cms/images/index/new/22.jpg">
+                <div class="title-box" style="top: 5%;">
+                    <div class="title-name">
+                        <strong>产品种类</strong>
+                        <span>PRODUCTS</span>
+                    </div>
+                    <div class="clear-box"></div>
+                </div>
+
+                <div class="service-box swiper-container-horizontal" style="cursor: -webkit-grab;">
+                    <div class="service-cut">
+
+
+                        <div class="service-bin swiper-slide-active" >
+                            <a href="{:U('product/umbrella')}" title="雨伞">
+                                <img class="swiper-lazy" data-original="/static/module/cms/images/index/yusan001.jpg" data-src="/static/module/cms/images/index/yusan001.jpg">
+                                <i>01</i>
+                                <b>雨伞</b>
+                                <h3>心怀语记，便是晴天。</h3>
+                            </a>
+                        </div>
+
+
+                        <div class="service-bin swiper-slide-active" >
+                            <a href="{:U('product/bumbersoll')}" title="太阳伞">
+                                <img class="swiper-lazy" data-original="/static/module/cms/images/index/yusan.jpg" data-src="/static/module/cms/images/index/yusan.jpg">
+                                <i>02</i>
+                                <b>太阳伞</b>
+                                <h3>炽热一片天，语记一身清。</h3>
+                            </a>
+                        </div>
+
+
+                        <div class="service-bin swiper-slide-active" >
+                            <a href="{:U('product/allweather')}" title="晴雨伞">
+                                <img class="swiper-lazy" data-original="/static/module/cms/images/index/qingyusan001.jpg" data-src="/static/module/cms/images/index/qingyusan001.jpg">
+                                <i>03</i>
+                                <b>晴雨伞</b>
+                                <h3>雨滴随我写诗，阳光伴你回忆。</h3>
+                            </a>
+                        </div>
+                        
+
+                    </div>
+                    <div class="clear-box"></div>
+                </div>
+            </div>
+        </div> 
+
+        <div class="window-bin" data-hash="slide4" >
+            <div class="window-back swiper-lazy" data-title="关于" data-background="">
+                <div class="anenst-left">
+                    <div class="anenst-box swiper-container-horizontal" style="cursor: -webkit-grab;">
+                        <div class="anenst-cut">
+
+                            <cms:article_list name="vo" enname="index_about_banner" p="1" page_size="1" key="k">
+                                <a class="anenst-bin swiper-lazy swiper-slide-duplicate swiper-lazy-loaded swiper-slide-prev" data-swiper-slide-index="0" style="background-image: url({$vo['cover_url']});">
+                                    <img class="swiper-lazy swiper-lazy-loaded" src="{$vo['cover_url']}">
+                                </a>
+                            </cms:article_list>
+
+                        </div>
+                    </div>
+                    <div class="anenst-ctrl">
+                        <div class="ctrl-box ctrl-left"><i class="fa fa-angle-left"></i></div>
+                        <div class="ctrl-box ctrl-right"><i class="fa fa-angle-right"></i></div>
+                    </div>
+                </div>
+                <div class="anenst-right">
+                    <div class="title-box" style="top: 5%;">
+                        <div class="title-name">
+                            <strong>关于</strong>
+                            <span>ABOUT</span>
+                        </div>
+                        <div class="clear-box"></div>
+                    </div>
+                    <div class="anenst-content shift-move" style="top: 18%;">
+
+                            <cms:article_onepage_info name="index_about_info" enname="index_about" >
+                            </cms:article_onepage_info>
+
+                            {$index_about_info['content']}
+
+
+                            <div class="more">
+                                <a href="#" title="关于">
+                                    <span>MORE <i class="fa fa-angle-right"></i></span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>        
+                    <div class="clear-box"></div>
+                </div>
+            </div>
+
+            <div class="window-bin" data-hash="slide5">
+                <div class="window-back swiper-lazy black-box" data-title="新闻" data-background="/static/module/cms/images/index/bg004.jpg">
+                    <div class="title-box" style="top: 5%;">
+                        <div class="title-name">
+                            <strong>新闻</strong>
+                            <span>NEWS</span>
+                        </div>
+                        <div class="clear-box"></div>
+                    </div>
+                    <div class="info-ctrl">
+                        <div class="ctrl-box ctrl-left"><i class="fa fa-angle-left"></i></div>
+                        <div class="ctrl-box ctrl-right"><i class="fa fa-angle-right"></i></div>
+                    </div>
+                    <div class="info-box swiper-container-horizontal" style="cursor: -webkit-grab;">
+                        <div class="info-cut">
+
+                            <cms:article_list name="vo" enname="news_index" p="1" page_size="1" key="k">
+                            <div class="info-bin swiper-slide-active" style22222="width: 649.5px;">
+                                <div class="info-only  ">
+                                    <div class="info-center">
+                                        <a target="_blank" href="{:U($vo['href_url'],array('id'=>$vo['id']))}" title="{$vo['title']}">
+                                            <img class="swiper-lazy" data-src="{$vo['cover_id_format']|common_trans_sub_image}" data-original="{$vo['cover_id_format']|common_trans_sub_image}" src="{$vo['cover_id_format']|common_trans_sub_image}">
+                                            <b><i><strong>{$vo['create_time']|date="m-d",###}</strong><font>{$vo['create_time']|date="Y",###}</font></i><big>{$vo['title']}</big></b>
+                                            <p>{$vo['description']}</p>
+                                            <span>MORE<em class="fa fa-angle-right"></em></span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            </cms:article_list>
+
+                            
+                            <div class="info-bin swiper-slide-next">
+                                <div class="info-list">
+                                    <div class="info-center">
+                                        <cms:article_list name="vo" enname="news_index" p="offset_1" page_size="4" key="ko">
+                                        <a target="_blank" href="{:U($vo['href_url'],array('id'=>$vo['id']))}">
+                                            <b><i><strong>{$vo['create_time']|date="m-d",###}</strong><font>{$vo['create_time']|date="Y",###}</font></i><span>{$vo['title']}</span></b>
+                                            <p>{$vo['description']}</p>
+                                        </a>
+                                        </cms:article_list>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="clear-box"></div>
+                    </div>
+                </div>
+            </div> 
+
+            <div class="window-bin" data-hash="slide6">
+                <div class="window-back swiper-lazy " data-title="联系" data-background="/static/module/cms/images/index/new/contact01.jpg">
+                    <div class="title-box" style="top: 5%;">
+                        <div class="title-name touch">
+                            <strong>联系</strong>
+                            <span>CONTACTS</span>
+                        </div>
+                        <div class="clear-box"></div>
+                    </div>
+
+                    <include file="./Application/Plugins/CmsProjectYuji/View/Index/index_footer.html" />
+
+                </div>
+            </div> 
+
+        </div>
+</div>
+
+
+
+
+

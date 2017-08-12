@@ -1,0 +1,34 @@
+/*
+SOURCE: http://iconexpo.com/2008/12/free-8color-star-icons/
+
+*/
+
+
+div.bigstars div.rateit-range
+{
+    background: url(xing.png) repeat-x;
+    height: 24px;
+}
+
+div.bigstars div.rateit-hover
+{
+    background: url(xing.png) 0 -25px repeat-x;
+}
+
+div.bigstars div.rateit-selected
+{
+    background: url(xing.png) 0 -25px repeat-x;
+}
+
+div.bigstars div.rateit-reset
+{
+    background: url(star-black32.png);
+    width: 24px;
+    height: 24px;
+
+}
+
+div.bigstars div.rateit-reset:hover
+{
+    background: url(star-white32.png);
+}

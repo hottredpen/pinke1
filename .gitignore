@@ -1,0 +1,8 @@
+Runtime
+Uploads
+build
+/data
+Application/Html/
+node_modules
+phpmyadmin
+.DS_Store

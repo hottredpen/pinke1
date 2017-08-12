@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<!--[if IE 9]>         <html class="ie9 no-focus"> <![endif]-->
+<!--[if gt IE 9]><!--> <html class="no-focus"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+
+        <title>后台管理</title>
+
+        <meta name="description" content="OneUI - Admin Dashboard Template & UI Framework created by pixelcave and published on Themeforest">
+        <meta name="author" content="pixelcave">
+        <meta name="robots" content="noindex, nofollow">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1.0">
+
+        <!-- Icons -->
+        <!-- The following icons can be replaced with your own, they are used by desktop and mobile browsers -->
+        <link rel="shortcut icon" href="/static/plugins/oneui/img/favicons/favicon.png">
+
+        <link rel="icon" type="image/png" href="/static/plugins/oneui/img/favicons/favicon-16x16.png" sizes="16x16">
+        <link rel="icon" type="image/png" href="/static/plugins/oneui/img/favicons/favicon-32x32.png" sizes="32x32">
+        <link rel="icon" type="image/png" href="/static/plugins/oneui/img/favicons/favicon-96x96.png" sizes="96x96">
+        <link rel="icon" type="image/png" href="/static/plugins/oneui/img/favicons/favicon-160x160.png" sizes="160x160">
+        <link rel="icon" type="image/png" href="/static/plugins/oneui/img/favicons/favicon-192x192.png" sizes="192x192">
+
+        <link rel="apple-touch-icon" sizes="57x57" href="/static/plugins/oneui/img/favicons/apple-touch-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="/static/plugins/oneui/img/favicons/apple-touch-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="/static/plugins/oneui/img/favicons/apple-touch-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="/static/plugins/oneui/img/favicons/apple-touch-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="/static/plugins/oneui/img/favicons/apple-touch-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="/static/plugins/oneui/img/favicons/apple-touch-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="/static/plugins/oneui/img/favicons/apple-touch-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="/static/plugins/oneui/img/favicons/apple-touch-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="/static/plugins/oneui/img/favicons/apple-touch-icon-180x180.png">
+        <!-- END Icons -->
+
+        <!-- Stylesheets -->
+        <!-- Web fonts -->
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400italic,600,700%7COpen+Sans:300,400,400italic,600,700">
+
+        <!-- Page JS Plugins CSS -->
+        <link rel="stylesheet" href="/static/plugins/slick/slick.min.css">
+        <link rel="stylesheet" href="/static/plugins/slick/slick-theme.min.css">
+
+        <!-- OneUI CSS framework -->
+        <link rel="stylesheet" id="css-main" href="/static/plugins/oneui/css/oneui.css">
+
+        <!-- You can include a specific file from css/themes/ folder to alter the default color theme of the template. eg: -->
+        <!-- <link rel="stylesheet" id="css-theme" href="assets/css/themes/flat.min.css"> -->
+        <!-- END Stylesheets -->
+        <link href="/static/plugins/artdialog/css/ui-dialog.css" rel="stylesheet"/>
+        <link href="/static/plugins/layer/3.0.3/skin/default/layer.css" rel="stylesheet"/>
+
+
+        <link rel="stylesheet" type="text/css" href="/static/module/weixin/css/weixin_materialnews_list.css" />
+        <link rel="stylesheet" type="text/css" href="/static/module/weixin/css/weixin_materialimage_list.css" />
+
+        <php>if(APP_DEBUG==false){</php>
+        <link href="/cpkbuild/admin/module/css/common-8542a099be.css" rel="stylesheet" media="screen" />
+        <link href="/cpkbuild/admin/module/css/adminPage-d41d8cd98f.css" rel="stylesheet" media="screen" />
+        <php>}else{</php>
+        <link href="/script/admin/module/css/common<php>echo '.css';</php>" rel="stylesheet" media="screen" />
+        <link href="/script/admin/module/css/<php>echo 'admin'; </php>Page.css" rel="stylesheet" media="screen" />
+        <php>}</php>
+
+        <style>
+            .jt_form_builder_component{
+                display: none;
+            }
+        </style>
+
+        <script>
+            var pinkephp = {
+                "web_static_url" : "<php>if(APP_DEBUG==false){ echo C('COMMON_WEBSITE_URL');}else{echo 'http://base-think.com/';}</php>",
+                "debug" : "<php>if(APP_DEBUG==false){ echo 'false';}else{echo 'true';}</php>",
+                "_filter" : "",
+                "_filter_content" : "",
+                "_field_display"  : "",
+                "get_filter_list" : "{:U('admin/index/getfilterlist')}",
+            }
+        </script>
+
+
+    </head>
+    <body>
+
+            <div id="pjax-container" style="">
+            <block name="body_main">
+                {$fetch_html}
+            </block>
+            </div>
+
+    <php>if(APP_DEBUG==false){</php>
+    <script data-main="<php>echo remove_js_for_cpkbuild('/cpkbuild/admin/module/adminPage-3f642cfdf8.js');</php>" src="/cpkbuild/admin/module/require-d4e9bb9def.js"></script>
+    <php>}else{</php>
+    <script data-main="/script/admin/module/adminPage" src="/script/admin/module/<php>echo 'require';</php>.js"></script>
+    <php>}</php>
+
+
+    </body>
+</html>

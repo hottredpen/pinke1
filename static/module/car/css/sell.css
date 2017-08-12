@@ -1,0 +1,469 @@
+.m-sell-header {
+    z-index: 99;
+    position: relative;
+    width: 100%;
+    height: 44px;
+    background-color: #f6f6f6;
+    overflow: hidden;
+}
+
+.m-sell-header h1 {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 44px;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin: 0 56px;
+    overflow: hidden;
+    color: #333;
+}
+.m-sell-header .u-header-back:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 10px;
+    height: 10px;
+    border-top: 1px solid #888;
+    border-right: 1px solid #888;
+    margin: -6px 0 0 16px;
+    -webkit-transform: rotate(-135deg);
+    transform: rotate(-135deg);
+}
+.m-sell-header .u-header-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-indent: -100px;
+    overflow: hidden;
+    height: 44px;
+    width: 44px;
+}
+.m-sell-header .u-header-operate:before {
+    content: "";
+    position: absolute;
+    top: 12px;
+    left: 4px;
+    width: 16px;
+    height: 19px;
+    background-position: 0 0;
+}
+.m-sell-header .u-header-operate:before, .usericon:before {
+    background-image: url(../images/sellheader.png);
+    background-repeat: no-repeat;
+    background-size: 28px auto;
+}
+.m-sell-header .u-header-operate {
+    position: absolute;
+    top: 0;
+    right: 36px;
+    display: block;
+    width: 24px;
+    height: 44px;
+}
+.m-sell-header .u-header-usericon:before {
+    background-image: url(../images/sellheader.png);
+    background-repeat: no-repeat;
+    background-size: 28px auto;
+}
+.m-sell-header .u-header-usericon:before {
+    content: "";
+    position: absolute;
+    top: 11px;
+    right: 15px;
+    width: 16px;
+    height: 18px;
+    background-position: 0 -64px;
+}
+.m-sell-header .u-header-usericon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+    width: 35px;
+    height: 44px;
+}
+
+
+.m-sell-pic img {
+    display: block;
+    width: 100%;
+}
+
+.m-sell-mainbox {
+    padding: 5px 15px 15px;
+}
+.m-sell-mainbox .u-mainbox-sellnum {
+    height: 52px;
+    line-height: 52px;
+    font-size: 18px;
+    color: #666;
+    width: 200px;
+    margin: auto;
+}
+.m-sell-mainbox .u-mainbox-sellnum span {
+    font-size: 30px;
+    color: #0098db;
+    margin-right: 8px;
+    vertical-align: -2px;
+}
+.m-sell-mainbox .u-mainbox-sellinput {
+    position: relative;
+}
+
+.m-sell-mainbox .u-mainbox-sellinput .input-border {
+    box-sizing: border-box;
+    border: 1px solid #e0e0e0;
+    margin-bottom: 15px;
+}
+.m-sell-mainbox .u-mainbox-sellinput .input-border .input-phone {
+    display: block;
+    width: 100%;
+    outline: none;
+    border: none;
+    height: 42px;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    padding: 10px;
+    font-size: 15px;
+    color: #333;
+}
+.m-sell-mainbox .u-mainbox-sellinput .sub-input {
+    height: 44px;
+    background: #0098db;
+    font-size: 16px;
+    color: #fff;
+    display: block;
+    width: 100%;
+    outline: none;
+    border: none;
+}
+.m-sell-mainbox .u-mainbox-linkbtn {
+    height: 44px;
+    margin-top: 15px;
+}
+.m-sell-mainbox .u-mainbox-linkbtn a {
+    display: block;
+    width: 47%;
+    height: 42px;
+    line-height: 42px;
+    text-align: center;
+    border: 1px solid #e6e6e6;
+    background: #f6f6f6;
+    color: #666;
+    font-size: 16px;
+}
+
+
+
+.m-sell-record {
+    padding-left: 15px;
+}
+
+.m-sell-record h2 {
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 48px;
+    color: #495056;
+    border-bottom: 1px solid #dde4ea;
+}
+
+.m-sell-record .u-record-list .car-info {
+    display: block;
+    min-height: 80px;
+    padding: 15px 15px 15px 0;
+    border-bottom: 1px solid #dde4ea;
+}
+
+.m-sell-record .u-record-list .car-info  .car-img {
+    position: relative;
+    float: left;
+    width: 120px;
+    height: 80px;
+    margin-right: 10px;
+}
+.m-sell-record .u-record-list .car-info  .car-img img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.m-sell-record .u-record-list .car-info  .tag-mod {
+    position: absolute;
+    top: -2px;
+    left: -22px;
+    z-index: 4;
+    width: 40px;
+    height: 0;
+    font-size: 9px;
+    color: #fff;
+    border: 16px solid transparent;
+    border-bottom: 16px solid #f56539;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+.m-sell-record .u-record-list .car-info .tag-mod .text-rotate {
+    position: absolute;
+    left: 0;
+    white-space: nowrap;
+    top: 1px;
+    width: 100%;
+    line-height: 16px;
+    text-align: center;
+}
+
+
+.m-sell-record .u-record-list .car-info .tag-city {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 4;
+    height: 15px;
+    font-size: 9px;
+    line-height: 16px;
+    padding: 0 4px;
+    color: #fff;
+    text-align: center;
+    background: rgba(0,0,0,.4);
+}
+
+.m-sell-record .u-record-list .car-info .car-name {
+	height: 40px;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 18px;
+    color: #495056;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.m-sell-record .u-record-list .car-info .car-km {
+    margin-top: -3px;
+    color: #a5abb2;
+    font-size: 12px;
+    overflow: hidden;
+}
+
+.m-sell-record .u-record-list .car-info .car-price {
+    font-size: 12px;
+    color: #a5abb2;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    margin-top: 7px;
+
+}
+.m-sell-record .u-record-list .car-info .car-price strong {
+    margin-right: 8px;
+    font-weight: 400;
+    color: #f56539;
+    vertical-align: -1px;
+    margin-top: 3px;
+    font-size: 17px;
+    line-height: 18px;
+}
+
+.m-sell-record .u-record-seeallbtn {
+    padding: 15px 15px 15px 0;
+}
+
+.m-sell-record .u-record-seeallbtn .sub-input {
+    line-height: 44px;
+    text-align: center;
+    height: 44px;
+    background: #0098db;
+    font-size: 16px;
+    color: #fff;
+    display: block;
+    width: 100%;
+    outline: none;
+    border: none;
+}
+
+
+.m-sell-step .u-step-title {
+    line-height: 48px;
+    font-size: 18px;
+    color: #252825;
+    text-indent: 15px;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.m-sell-step .u-step-img {
+    height: 82px;
+    padding-top: 20px;
+}
+
+.m-sell-step .u-step-img ul {
+    width: 292px;
+    margin: 0 auto;
+    padding-top: 43px;
+    background: url(../images/sell/step.png) no-repeat top;
+    background-size: 286px auto;
+}
+
+.m-sell-step .u-step-img li {
+    float: left;
+    width: 81px;
+    font-size: 12px;
+    color: #666;
+    line-height: 28px;
+}
+.m-sell-step .u-step-img li:last-child {
+    width: 48px;
+}
+
+
+.m-sell-serivce {
+    padding-bottom: 20px;
+}
+.m-sell-serivce .u-service-style{
+    width: 260px;
+    margin: 20px auto 0;
+}
+
+.m-sell-serivce .u-service-style.service-1 {
+    height: 170px;
+    background: url(../images/sell/ser001.png) no-repeat;
+    background-size: 260px;
+}
+.m-sell-serivce .u-service-style.service-2 {
+    height: 230px;
+    background: url(../images/sell/ser002.png) no-repeat;
+    background-size: 260px;
+}
+.m-sell-serivce .u-service-style.service-3 {
+    height: 212px;
+    background: url(../images/sell/ser003.png) no-repeat;
+    background-size: 260px;
+}
+.m-sell-serivce .u-service-style.service-4 {
+    height: 183px;
+    background: url(../images/sell/ser004.png) no-repeat;
+    background-size: 260px;
+}
+.m-sell-guide {
+    margin-bottom: 50px;
+}
+
+.m-sell-guide .u-guide-title {
+    line-height: 48px;
+    font-size: 18px;
+    color: #252825;
+    text-indent: 15px;
+    border-bottom: 1px solid #e6e6e6;
+
+}
+
+.m-sell-guide .u-guide-list {
+    overflow: hidden;
+    padding-top: 3px;
+}
+.m-sell-guide .u-guide-list .list-item {
+    margin-left: 15px;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+
+.m-sell-guide .u-guide-list .question {
+    height: 52px;
+    position: relative;
+    line-height: 52px;
+    font-size: 16px;
+    color: #252825;
+    vertical-align: middle;
+}
+.m-sell-guide .u-guide-list .question span {
+    font-size: 18px;
+    color: #0098db;
+    margin-right: 8px;
+}
+.m-sell-guide .u-guide-list .q-and-a.active .question:after {
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    margin-top: -1px;
+    border-top: 1px solid #999;
+    border-right: 1px solid #999;
+}
+
+.m-sell-guide .u-guide-list .question:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 16px;
+    width: 7px;
+    height: 7px;
+    border-top: 1px solid #c4c4c4;
+    border-right: 1px solid #c4c4c4;
+    -webkit-transform: rotate(135deg);
+    transform: rotate(135deg);
+    margin-top: -4px;
+}
+
+.m-sell-guide .u-guide-list .q-and-a.active .answer {
+    display: block;
+}
+
+.m-sell-guide .u-guide-list .answer {
+    color: #999;
+    display: none;
+    line-height: 22px;
+    font-size: 14px;
+    padding: 0 15px 11px 0;
+    margin-top: -4px;
+}
+
+
+.m-sell-fixbox.active {
+    display: block;
+}
+
+.m-sell-fixbox {
+    background: #fff;
+    padding: 15px;
+    display: none;
+    width: 100%;
+    height: 133px;
+    box-sizing: border-box;
+    position: relative; /*目前不采用fixed*/
+    bottom: 0;
+    left: 0;
+    z-index: 8;
+    border-top: 1px solid #ddd;
+}
+
+.m-sell-fixbox .u-fixbox-sellinput {
+    position: relative;
+}
+
+.m-sell-fixbox .u-fixbox-sellinput .input-border {
+    box-sizing: border-box;
+    border: 1px solid #e0e0e0;
+    margin-bottom: 15px;
+}
+
+.m-sell-fixbox .u-fixbox-sellinput .input-phone{
+    display: block;
+    width: 100%;
+    outline: none;
+    border: none;
+    height: 42px;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    padding: 10px;
+    font-size: 15px;
+    color: #333;
+}
+.m-sell-fixbox .u-fixbox-sellinput  .sub-input {
+    height: 44px;
+    background: #0098db;
+    font-size: 16px;
+    color: #fff;
+    display: block;
+    width: 100%;
+    outline: none;
+    border: none;
+}

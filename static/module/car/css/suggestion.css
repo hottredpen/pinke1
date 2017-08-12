@@ -1,0 +1,77 @@
+.m-carsuggestion-head {
+    z-index: 100;
+    position: relative;
+    width: 100%;
+    height: 45px;
+    background-color: #f6f6f6;
+    overflow: hidden;
+}
+
+.m-carsuggestion-head h1 {
+    color: #333;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 44px;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin: 0 56px;
+    overflow: hidden;
+}
+
+.m-carsuggestion-head .u-head-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-indent: -100px;
+    overflow: hidden;
+    height: 45px;
+    width: 45px;
+}
+
+.m-carsuggestion-head .u-head-back:before{
+    left: 0;
+    -webkit-transform: rotate(-135deg);
+    transform: rotate(-135deg);
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 10px;
+    height: 10px;
+    border-top: 1px solid #888;
+    border-right: 1px solid #888;
+    margin: -6px 0 0 16px;
+}
+
+.m-carsuggestion-mainbox .u-mainbox-submitbutton {
+    position: relative;
+    padding: 0px 5px;
+}
+
+.m-carsuggestion-mainbox .u-mainbox-submitbutton .input-border {
+    box-sizing: border-box;
+    border: 1px solid #e0e0e0;
+    margin-bottom: 15px;
+}
+.m-carsuggestion-mainbox .u-mainbox-submitbutton .input-border .input-phone {
+    display: block;
+    width: 100%;
+    outline: none;
+    border: none;
+    height: 42px;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    padding: 10px;
+    font-size: 15px;
+    color: #333;
+}
+.m-carsuggestion-mainbox .u-mainbox-submitbutton .sub-input {
+    height: 44px;
+    background: #0098db;
+    font-size: 16px;
+    color: #fff;
+    display: block;
+    width: 100%;
+    outline: none;
+    border: none;
+}

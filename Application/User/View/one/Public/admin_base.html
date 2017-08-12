@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<!--[if IE 9]>         <html class="ie9 no-focus"> <![endif]-->
+<!--[if gt IE 9]><!--> <html class="no-focus"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+
+        <title>后台管理</title>
+
+        <meta name="description" content="OneUI - Admin Dashboard Template & UI Framework created by pixelcave and published on Themeforest">
+        <meta name="author" content="pixelcave">
+        <meta name="robots" content="noindex, nofollow">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1.0">
+
+        <!-- Icons -->
+        <!-- The following icons can be replaced with your own, they are used by desktop and mobile browsers -->
+        <link rel="shortcut icon" href="/static/plugins/oneui/img/favicons/favicon.png">
+
+        <link rel="icon" type="image/png" href="/static/plugins/oneui/img/favicons/favicon-16x16.png" sizes="16x16">
+        <link rel="icon" type="image/png" href="/static/plugins/oneui/img/favicons/favicon-32x32.png" sizes="32x32">
+        <link rel="icon" type="image/png" href="/static/plugins/oneui/img/favicons/favicon-96x96.png" sizes="96x96">
+        <link rel="icon" type="image/png" href="/static/plugins/oneui/img/favicons/favicon-160x160.png" sizes="160x160">
+        <link rel="icon" type="image/png" href="/static/plugins/oneui/img/favicons/favicon-192x192.png" sizes="192x192">
+
+        <link rel="apple-touch-icon" sizes="57x57" href="/static/plugins/oneui/img/favicons/apple-touch-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="/static/plugins/oneui/img/favicons/apple-touch-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="/static/plugins/oneui/img/favicons/apple-touch-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="/static/plugins/oneui/img/favicons/apple-touch-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="/static/plugins/oneui/img/favicons/apple-touch-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="/static/plugins/oneui/img/favicons/apple-touch-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="/static/plugins/oneui/img/favicons/apple-touch-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="/static/plugins/oneui/img/favicons/apple-touch-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="/static/plugins/oneui/img/favicons/apple-touch-icon-180x180.png">
+        <!-- END Icons -->
+
+        <!-- Stylesheets -->
+        <!-- Web fonts -->
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400italic,600,700%7COpen+Sans:300,400,400italic,600,700">
+
+        <!-- Page JS Plugins CSS -->
+        <link rel="stylesheet" href="/static/plugins/slick/slick.min.css">
+        <link rel="stylesheet" href="/static/plugins/slick/slick-theme.min.css">
+
+        <!-- OneUI CSS framework -->
+        <link rel="stylesheet" id="css-main" href="/static/plugins/oneui/css/oneui.css">
+
+        <!-- You can include a specific file from css/themes/ folder to alter the default color theme of the template. eg: -->
+        <!-- <link rel="stylesheet" id="css-theme" href="assets/css/themes/flat.min.css"> -->
+        <!-- END Stylesheets -->
+        <link href="/static/plugins/artdialog/css/ui-dialog.css" rel="stylesheet"/>
+        <link href="/static/plugins/layer/3.0.3/skin/default/layer.css" rel="stylesheet"/>
+
+
+        <link rel="stylesheet" type="text/css" href="/static/module/weixin/css/weixin_materialnews_list.css" />
+        <link rel="stylesheet" type="text/css" href="/static/module/weixin/css/weixin_materialimage_list.css" />
+
+        <php>if(APP_DEBUG==false){</php>
+        <link href="/cpkbuild/admin/module/css/common-8542a099be.css" rel="stylesheet" media="screen" />
+        <link href="/cpkbuild/admin/module/css/adminPage-d41d8cd98f.css" rel="stylesheet" media="screen" />
+        <php>}else{</php>
+        <link href="/script/admin/module/css/common<php>echo '.css';</php>" rel="stylesheet" media="screen" />
+        <link href="/script/admin/module/css/<php>echo 'admin'; </php>Page.css" rel="stylesheet" media="screen" />
+        <php>}</php>
+
+        <style>
+            .jt_form_builder_component{
+                display: none;
+            }
+        </style>
+
+        <script>
+            var pinkephp = {
+                "web_static_url" : "<php>if(APP_DEBUG==false){ echo C('COMMON_WEBSITE_URL');}else{echo 'http://base-think.com/';}</php>",
+                "debug" : "<php>if(APP_DEBUG==false){ echo 'false';}else{echo 'true';}</php>",
+                "_filter" : "",
+                "_filter_content" : "",
+                "_field_display"  : "",
+                "get_filter_list" : "{:U('admin/index/getfilterlist')}",
+            }
+        </script>
+
+
+    </head>
+    <body>
+
+<!-- Page Container -->
+<div id="page-container" class="sidebar-l sidebar-o side-scroll header-navbar-fixed">
+    <!-- Side Overlay-->
+    <aside id="side-overlay">
+        <!-- Side Overlay Scroll Container -->
+        <div id="side-overlay-scroll">
+            <!-- Side Header -->
+            <div class="side-header side-content">
+                <!-- Layout API, functionality initialized in App() -> uiLayoutApi() -->
+                <button class="btn btn-default pull-right" type="button" data-toggle="layout" data-action="side_overlay_close">
+                    <i class="fa fa-times"></i>
+                </button>
+                <span>
+                    <img class="img-avatar img-avatar32" src="__ADMIN_IMG__/avatar.jpg" alt="">
+                    <span class="font-w600 push-10-l">{:session('user_auth.username')}</span>
+                </span>
+            </div>
+            <!-- END Side Header -->
+        </div>
+        <!-- END Side Overlay Scroll Container -->
+    </aside>
+
+    <!-- END Side Overlay -->
+
+    <!-- Sidebar -->
+    <nav id="sidebar">
+        <!-- Sidebar Scroll Container -->
+        <div id="sidebar-scroll">
+            <!-- Sidebar Content -->
+            <!-- Adding .sidebar-mini-hide to an element will hide it when the sidebar is in mini mode -->
+            <div class="sidebar-content">
+                <!-- Side Header -->
+                <div class="side-header side-content bg-white-op ">
+                    <!-- Layout API, functionality initialized in App() -> uiLayoutApi() -->
+                    <button class="btn btn-link text-gray pull-right hidden-md hidden-lg" type="button" data-toggle="layout" data-action="sidebar_close">
+                        <i class="fa fa-times"></i>
+                    </button>
+                    <!-- Themes functionality initialized in App() -> uiHandleTheme() -->
+                    <div class="btn-group pull-right">
+                        <button class="btn btn-link text-gray dropdown-toggle" data-toggle="dropdown" type="button">
+                            <i class="si si-drop"></i>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-right font-s13 sidebar-mini-hide">
+
+                        </ul>
+                    </div>
+                    <a class="h5 text-white" href="{:U('admin/index/index')}">
+                        <img src="{$Think.config.public_static_path}admin/img/logo.png" class="logo" alt="">
+
+                        <img src="{$Think.config.public_static_path}admin/img/logo-text.png" class="logo-text sidebar-mini-hide" alt="">
+                    </a>
+                </div>
+                <!-- END Side Header -->
+
+                <!-- Side Content -->
+                <div class="side-content" id="sidebar-menu">
+                   
+
+                    <ul class="nav-main">
+                        <volist name="left_menu" id="val" >
+                            <li class="open">
+                                <a class="nav-submenu" data-toggle="nav-submenu" href="javascript:void(0);"><i class="si si-wrench"></i><span class="sidebar-mini-hide">{$val.name}</span></a>
+                                <ul>
+                                    <volist name="val['sub']" id="sval" >
+                                        <li>
+                                            <a  href="{:U('admin/'.$sval['module_name'].'/'.$sval['action_name'])}{$sval.data}" target="_self"><i class="fa fa-fw fa-wrench"></i>{$sval.name}</a>
+                                        </li>
+                                    </volist>
+                                </ul>
+                            </li>
+                        </volist>
+                    </ul>
+
+                    <ul class="nav-main" id="nav-4">
+                        <li class="open">
+                            <a class="nav-submenu" data-toggle="nav-submenu" href="javascript:void(0);"><i class="si si-wrench"></i><span class="sidebar-mini-hide">系统功能</span></a>
+                            <ul>
+                                <li>
+                                    <a  href="{:U('user/Wechat/see')}" ><i class="fa fa-fw fa-wrench"></i>11see</a>
+                                </li>
+                                <li>
+                                    <a  href="{:U('user/Wechat/index')}" ><i class="fa fa-fw fa-gears"></i>11index</a>
+                                </li>
+
+                            </ul>
+                        </li>
+                        <li >
+                            <a class="nav-submenu" data-toggle="nav-submenu" href="javascript:void(0);"><i class="si si-social-dropbox"></i><span class="sidebar-mini-hide">扩展中心</span></a>
+                            <ul>
+                                <li>
+                                    <a  href="/admin.php/admin/module/index.html" target="_self"><i class="fa fa-fw fa-th-large"></i>模块管理</a>
+                                </li>
+                                <li>
+                                    <a  href="/admin.php/admin/plugin/index.html" target="_self"><i class="fa fa-fw fa-puzzle-piece"></i>插件管理</a>
+                                </li>
+                                <li>
+                                    <a  href="/admin.php/admin/hook/index.html" target="_self"><i class="fa fa-fw fa-anchor"></i>钩子管理</a>
+                                </li>
+                                <li>
+                                    <a  href="/admin.php/admin/packet/index.html" target="_self"><i class="fa fa-fw fa-database"></i>数据包管理</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+
+
+
+
+                   
+                </div>
+                <!-- END Side Content -->
+            </div>
+            <!-- Sidebar Content -->
+        </div>
+        <!-- END Sidebar Scroll Container -->
+    </nav>
+
+    <!-- END Sidebar -->
+
+    <!-- Header -->
+
+    <header id="header-navbar" class="content-mini content-mini-full">
+        <!-- Header Navigation Right -->
+        <ul class="nav-header pull-right">
+            <li>
+                <div class="btn-group">
+                    <button class="btn btn-default btn-image dropdown-toggle" data-toggle="dropdown" type="button">
+                        <img src="{$Think.session.user_auth.avatar}" alt="{:session('user_auth.username')}">
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-right">
+                        <li class="dropdown-header">{:session('user_auth.username')} ({:session('user_auth.role_name')})</li>
+                        <li>
+                            <a tabindex="-1" href="{:U('admin/index/profile')}">
+                                <i class="si si-settings pull-right"></i>个人设置
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a tabindex="-1" href="{:U('user/publics/signout')}">
+                                <i class="si si-logout pull-right"></i>退出帐号
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <a class="btn btn-default ajax-get" href="{:U('admin/index/wipeCache')}" data-toggle="tooltip" data-placement="bottom" data-original-title="清空缓存">
+                    <i class="fa fa-trash"></i>
+                </a>
+            </li>
+            <li>
+                <a class="btn btn-default" href="/index.php" target="_blank" data-toggle="tooltip" data-placement="bottom" data-original-title="打开前台">
+                    <i class="fa fa-external-link-square"></i>
+                </a>
+            </li>
+            <li>
+                <!-- Layout API, functionality initialized in App() -> uiLayoutApi() -->
+                <button class="btn btn-default" data-toggle="layout" data-action="side_overlay_toggle" title="侧边栏" type="button">
+                    <i class="fa fa-tasks"></i>
+                </button>
+            </li>
+        </ul>
+        <!-- END Header Navigation Right -->
+
+        <!-- Header Navigation Left -->
+        <ul class="nav nav-pills pull-left">
+            <li class="hidden-md hidden-lg">
+                <!-- Layout API, functionality initialized in App() -> uiLayoutApi() -->
+                <a href="javascript:void(0)" data-toggle="layout" data-action="sidebar_toggle"><i class="fa fa-navicon"></i></a>
+            </li>
+            <li class="hidden-xs hidden-sm">
+                <!-- Layout API, functionality initialized in App() -> uiLayoutApi() -->
+                <a href="javascript:void(0)" title="打开/关闭左侧导航" data-toggle="layout" data-action="sidebar_mini_toggle"><i class="fa fa-bars"></i></a>
+            </li>
+            <li class="hidden-xs hidden-sm ">
+                    <a href="javascript:void(0);" data-module-id="1" data-module="admin" data-controller="index" target="_self" class="top-menu"><i class="fa fa-fw fa-home"></i> 首页</a>
+                </li>
+            <li class="hidden-xs hidden-sm active">
+                    <a href="javascript:void(0);" data-module-id="4" data-module="admin" data-controller="system" target="_self" class="top-menu"><i class="fa fa-fw fa-gear"></i> 系统</a>
+                </li>
+            <li class="hidden-xs hidden-sm ">
+                    <a href="javascript:void(0);" data-module-id="68" data-module="user" data-controller="index" target="_self" class="top-menu"><i class="fa fa-fw fa-user"></i> 用户</a>
+                </li>
+            <li class="hidden-xs hidden-sm ">
+                    <a href="javascript:void(0);" data-module-id="214" data-module="cms" data-controller="index" target="_self" class="top-menu"><i class="fa fa-fw fa-newspaper-o"></i> 门户</a>
+                </li>
+            <li class="hidden-xs hidden-sm ">
+                    <a href="javascript:void(0);" data-module-id="307" data-module="wechat" data-controller="reply" target="_self" class="top-menu"><i class="fa fa-fw fa-wechat"></i> 微信</a>
+                </li>
+            <li>
+                <!-- Opens the Apps modal found at the bottom of the page, before including JS code -->
+                <a href="#" data-toggle="modal" data-target="#apps-modal"><i class="si si-grid"></i></a>
+            </li>
+        </ul>
+        <!-- END Header Navigation Left -->
+    </header>
+
+    <div class="clearfix" style="margin-bottom: 66px;"></div>
+    <!-- END Header -->
+
+
+    <div id="pjax-container" style="background-color: #fff;">
+    <block name="body_main">
+        {$fetch_html}
+    </block>
+    </div>
+
+
+    <!-- Footer -->
+    {empty name="Think.get._pop"}
+    <footer id="page-footer" class="content-mini content-mini-full font-s12 bg-gray-lighter clearfix">
+        <div class="pull-right">
+            Crafted with <i class="fa fa-heart text-city"></i> by <a class="font-w600" href="{:C('dolphin.company_website')}" target="_blank">{:C('dolphin.company_name')}</a>
+        </div>
+        <div class="pull-left">
+            <a class="font-w600" href="{:C('dolphin.product_website')}" target="_blank">{:C('dolphin.product_name')} {:C('dolphin.product_version')}</a> &copy; <span class="js-year-copy"></span>
+        </div>
+    </footer>
+    {/empty}
+    <!-- END Footer -->
+</div>
+<!-- END Page Container -->
+
+<!-- Apps Modal -->
+<!-- Opens from the button in the header -->
+<div class="modal fade" id="apps-modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-top">
+        <div class="modal-content">
+            <!-- Apps Block -->
+            <div class="block block-themed block-transparent">
+                <div class="block-header bg-primary-dark">
+                    <ul class="block-options">
+                        <li>
+                            <button data-dismiss="modal" type="button"><i class="si si-close"></i></button>
+                        </li>
+                    </ul>
+                    <h3 class="block-title">所有模块</h3>
+                </div>
+                <div class="block-content">
+                    <div class="row text-center">
+                        {notempty name="_top_menus_all"}
+                        {volist name="_top_menus_all" id="menu"}
+                        <div class="col-xs-6 col-sm-3">
+                            {eq name="menu.url_type" value="module"}
+                            <a class="block block-rounded top-menu" href="javascript:void(0);" data-module-id="{$menu['id']}" data-module="{$menu['module']}" data-controller="{$menu['controller']}" target="{$menu['url_target']}">
+                                <div class="block-content text-white {$menu['id'] == $_location[0]['id'] ? 'bg-primary' : 'bg-primary-dark'}">
+                                    <i class="{$menu.icon} fa-2x"></i>
+                                    <div class="font-w600 push-15-t push-15">{$menu.title}</div>
+                                </div>
+                            </a>
+                            {else/}
+                            <a class="block block-rounded" href="{$menu['url_value']}" target="{$menu['url_target']}">
+                                <div class="block-content text-white {$menu['id'] == $_location[0]['id'] ? 'bg-primary' : 'bg-primary-dark'}">
+                                    <i class="{$menu.icon} fa-2x"></i>
+                                    <div class="font-w600 push-15-t push-15">{$menu.title}</div>
+                                </div>
+                            </a>
+                            {/eq}
+                        </div>
+                        {/volist}
+                        {/notempty}
+                    </div>
+                </div>
+            </div>
+            <!-- END Apps Block -->
+        </div>
+    </div>
+</div>
+<!-- END Apps Modal -->
+
+<php>if(APP_DEBUG==false){</php>
+<script data-main="<php>echo remove_js_for_cpkbuild('/cpkbuild/admin/module/adminPage-7c22d87020.js');</php>" src="/cpkbuild/admin/module/require-d4e9bb9def.js"></script>
+<php>}else{</php>
+<script data-main="/script/admin/module/adminPage" src="/script/admin/module/<php>echo 'require';</php>.js"></script>
+<php>}</php>
+</body>
+</html>

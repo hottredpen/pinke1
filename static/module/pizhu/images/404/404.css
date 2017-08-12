@@ -1,0 +1,13 @@
+@charset "utf-8";
+/* CSS Document */
+/**分页通用**/
+body,ul,ol,li,p,h1,h2,h3,h4,h5,h6,form,table,td,img,div,dl,dt,dd{
+	margin:0; padding:0; border:none;
+}
+body{
+	background-color:#F6F6F6; font-size:13px; color:#363636; text-align:left; font-family:'微软雅黑','宋体'; _background-image: url(about:blank); _background-attachment: fixed; 
+}
+ul,ol,li{list-style-type:none; float:left; overflow:hidden;}
+select,input,img,select{vertical-align:middle;}
+
+.clear{clear:both;}

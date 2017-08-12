@@ -1,0 +1,105 @@
+/* CSS Document */
+@import url("common.css");
+.ValidationErrors{ padding-left:5px;}
+.u-btn-red{ height:30px; line-height:30px;}
+html,body{width:100%;height:100%;overflow:hidden;margin:0;}
+.main{ width:616px; height:416px; position:absolute; top:50%; left:50%; margin-left:-308px; margin-top:-208px; font-size:0;}
+.main_t{ height:8px; width:100%; background:url(images/login/main_t.png) 0 0 no-repeat;}
+.main_m{ min-height:400px; _height:400px; overflow:visible; width:100%; background:url(images/login/main_m.png) 0 0 repeat-y; font-size:12px; overflow:hidden;}
+.main_b{ height:8px; width:100%; background:url(images/login/main_b.png) 0 0 no-repeat;}
+.main_bd{ width:600px; position:relative; top:0; left:0; margin:0 auto;}
+.main_bg{ position:absolute; width:100%; height:100%; background:#fff; top:0; left:0; z-index:-1; padding-bottom:1000px;}
+
+.opcity01{ filter:alpha(opacity=100); opacity:1;}
+.opcity02{ filter:alpha(opacity=10); opacity:0.1;}
+
+.run{ position:absolute; top:10px; right:10px;}
+.run .a1,.run .a2{ display:inline-block; width:18px; height:18px; line-height:18px; background:url(images/login/run2.png) no-repeat;}
+.run .a1{ background-position:0 0; margin-right:5px;}
+.run .a2{ background-position:-25px 0;}
+.run .a1:hover{ background-position:0 -18px;}
+.run .a2:hover{ background-position:-25px -18px;}
+.yskj span{margin-left:5px; font-size:12px;color:#F00}
+.yskj_tt{ height:60px; width:100%; border-bottom:1px solid #eee;}
+.yskj_tt b{font-size:20px; line-height:60px; padding-left:22px; font-weight:normal; color:#606060;}
+
+.yskj_dh{ position:absolute; top:50%; left:50%; margin-top:-140px; background:#fff; box-shadow:0 0 3px 3px rgba(0,0,0,0.1); z-index:99;}
+.yskj_dh{ padding:20px; overflow:hidden;}
+.yskj_dh ul{ margin-right:-30px; overflow:hidden;}
+.yskj_dh li{ margin-right:30px; display:inline-block;*display:inline; *zoom:1}
+.yskj_dh li a{ display:block; width:206px; text-decoration:none;}
+.yskj_dh li a img{ padding:2px; display:block; border:1px solid #eee; width:200px; height:138px;}
+.yskj_dh li a h2{ font-weight:normal; text-align:center; margin-top:10px;}
+.yskj_dh li a h2 input{vertical-align:-2px; margin-right:5px; *vertical-align:0px;}
+.yskj_dh li a:hover img,.yskj_dh li a.on img{ border:1px solid #2569a4;}
+.yskj_dh li a:hover h2,.yskj_dh li a.on h2{ color:#2569a4; text-decoration:none;}
+
+.yskj_tm{margin-left:-250px;}
+.yskj_skin{ margin-left:-520px; width:1016px;}
+.yskj_skin li a{width:176px;}
+.yskj_skin li a img{ width:170px; height:120px;}
+
+.step1 .yskj_bd .ul{padding-top:30px; font-size:14px;}
+.step1 .yskj_bd .ul li{height:40px; line-height:40px; margin-bottom:15px;}
+.step1 .yskj_bd .ul li label{ vertical-align:middle; display:inline-block; width:140px; text-align:right;}
+.step1 .yskj_bd .ul li .txt1,.step1 .yskj_bd .ul li .txt2{width:300px; height:40px; border:1px solid #eee; background:#fff; line-height:40px; text-indent:10px; color:#909090; vertical-align:middle;}
+.step1 .yskj_bd .ul li .txt2{ width:140px;}
+.step1 .yskj_bd .p1{ padding-left:125px;}
+.step1 .yskj_bd .p1 .btn1{ vertical-align:-2px; margin-right:5px; *vertical-align:0px;}
+.step1 .yskj_bd .p1 a{ color:#0064b4; font-size:12px;}
+.step1 .yskj_bd .reg{ margin-top:35px; width:100%; text-align:center; margin-bottom:20px;}
+.step1 .yskj_bd .reg .btn2,.step1 .yskj_bd .reg .btn3{ background:url(images/login/step2_jh.jpg) no-repeat;height:40px; line-height:40px; font-size:18px; color:#fff; border:0 none; cursor:pointer; display:inline-block; vertical-align:middle; text-decoration:none; font-family:"\5FAE\8F6F\96C5\9ED1"}
+.step1 .yskj_bd .reg .btn2{width:240px}
+.step1 .yskj_bd .reg .btn3{background:url(images/login/step3_2.jpg) repeat-x; width:98px; color:#606060;margin-left:10px; border-left:1px solid #e0e0e0; border-right:1px solid #e0e0e0}
+.step1 .yskj_bd .reg .btn3:hover{ text-decoration:none}
+
+.step2 .yskj_tt b{ color:#1ea019;}
+.step2 .yskj_bd{ padding-top:68px;}
+.step2 .yskj_bd p{ text-align:center; font-size:18px; color:#000; margin-bottom:40px;}
+.step2 .yskj_bd p em{ color:#dc0000; font-size:24px; margin:0 3px;}
+.step2 .yskj_bd p i{ color:#0064b4; margin-left:3px;}
+.step2 .yskj_bd .login{ margin-top:70px; width:100%; text-align:center;}
+.step2 .yskj_bd .login .btn2{ background:url(images/login/step2_jh.jpg) no-repeat; width:300px; height:40px; line-height:40px; font-size:18px; color:#fff; border:0 none; cursor:pointer; display:inline-block; text-decoration:none;}
+
+.step3 .yskj_bd{padding-left:130px;}
+.step3 .yskj_bd .ul{padding-top:65px;}
+.step3 .yskj_bd .ul li{ height:40px; line-height:40px;margin-bottom:20px; font-size:0;}
+.step3 .yskj_bd .ul li .txt1,.step3 .yskj_bd ul li .txt2{ width:338px; height:38px; line-height:38px; border:1px solid #eee; text-indent:40px; color:#909090; font-size:14px;}
+.step3 .yskj_bd .ul li .txt1{ background:#fff url(images/login/step3_ico1.gif) 10px center no-repeat;}
+.step3 .yskj_bd .ul li .txt2{ background:#fff url(images/login/step3_ico2.gif) 10px center no-repeat;}
+.step3 .yskj_bd .ul li i{ vertical-align:top; width:1px; display:inline-block; margin-left:-1px; height:100%;}
+.step3 .yskj_bd .p1{width:340px;color:#000;}
+.step3 .yskj_bd .p1 .btn1{vertical-align:-2px; margin-right:5px; *vertical-align:0px;}
+.step3 .yskj_bd .p1 a{ float:right; color:#0064b4;}
+.step3 .yskj_bd .login{ margin-top:35px; width:340px; margin-bottom:20px;}
+.step3 .yskj_bd .login .a1,.step3 .yskj_bd .login .a2{ height:40px; line-height:40px; text-align:center; font-size:18px; border:0 none; cursor:pointer; display:inline-block; text-decoration:none; font-family:"\5FAE\8F6F\96C5\9ED1"}
+.step3 .yskj_bd .login .a1{ background:url(images/login/step3_1.jpg) repeat-x; width:220px; color:#fff;}
+.step3 .yskj_bd .login .a2{ background:url(images/login/step3_2.jpg) repeat-x; width:98px; float:right; border-left:1px solid #e0e0e0; border-right:1px solid #e0e0e0;}
+.step3 .yskj_bd .login .a1:hover,.step3 .yskj_bd .login .a2:hover{text-decoration:none}
+.step3 .yskj_bd .p2{width:340px;}
+.step3 .yskj_bd .p2 li{ float:left; width:50%;}
+.step3 .yskj_bd .p2 li b{ color:#808080; margin-right:5px;}
+.step3 .yskj_bd .p2 li a{ color:#909090;}
+
+.yskj_bd .other_login{ color:#808080; margin-bottom:10px;}
+.yskj_bd .other_login img{ vertical-align:-2px; margin-right:5px;}
+
+.step4 .yskj_bd .ul{ padding-left:125px; padding-top:50px; font-size:14px;}
+.step4 .yskj_bd .ul li{ height:40px; line-height:40px; margin-bottom:20px;}
+.step4 .yskj_bd .ul li label{ vertical-align:middle; color:#000;}
+.step4 .yskj_bd .ul li .txt1{ width:300px; height:40px; border:1px solid #eee; background:#fff; line-height:40px; text-indent:10px; color:#909090; vertical-align:middle;}
+.step4 .yskj_bd .p1{ margin-top:40px; width:100%; text-align:center;}
+.step4 .yskj_bd .p1 .btn1{ background:url(images/login/step4.jpg) repeat-x; width:300px; height:40px; line-height:40px; font-size:18px; color:#fff; border:0 none; cursor:pointer; display:inline-block; text-decoration:none;}
+
+.step5 .p1{ width:500px; margin:35px auto 0; line-height:30px; color:#000; font-size:14px; text-indent:2em;}
+.step5 .p2{ width:500px; margin:15px auto; height:40px;}
+.step5 .p2 label{ vertical-align:middle; line-height:40px; color:#000;}
+.step5 .p2 .txt1,.step5 .p2 .txt2{ height:38px; line-height:38px; background:#fff; border:1px solid #eee; vertical-align:middle; text-indent:5px;}
+.step5 .p2 .txt1{ width:120px;}
+.step5 .p2 .txt2{ width:200px;}
+.step5 .p3{ text-align:center; margin-bottom:15px;}
+.step5 .p3 img{ display:inline-block; vertical-align:top; border:1px solid #eee; padding:4px; background:#fff;}
+.step5 .p4{ text-align:center; margin-bottom:30px;}
+.step5 .p4 .a1,.step5 .p4 .a2{ display:inline-block; width:160px; height:40px; line-height:40px; text-align:center; color:#fff; border:0 none; text-decoration:none; font-size:18px; cursor:pointer;}
+.step5 .p4 .a1{ background:url(images/login/step4.jpg) repeat-x; margin-right:10px;}
+.step5 .p4 .a2{ background:url(images/login/step1_zc.jpg) repeat-x;}

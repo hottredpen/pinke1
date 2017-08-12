@@ -1,0 +1,10 @@
+define(
+    ['./common_sys_build/jump_page',
+    './common_sys_build/jquery_extend',
+    './common_sys_build/builder_form_init',
+    './common_sys_build/pjax_init',
+    './common_sys_build/on_click_event',
+    './common_sys_build/on_jt_event',
+    './common_sys_build/test_components',
+    './common_sys_build/dom_ready_init'],
+function(){});

@@ -1,0 +1,116 @@
+<cms:page_seo name="page_seo"></cms:page_seo>
+
+<title>{$page_seo.title}</title>
+
+<div id="jt_page_product"></div>
+
+
+<div class="navfix-other"></div>
+
+<div class="met-banner">
+    <div class="carousel slide" id="met-banner-slide" data-ride="carousel">
+        <div class="carousel-inner " role="listbox">
+            <div class="item active">
+                <picture>
+                    <source srcset="/static/module/cms/images/index/new/product01.jpg">
+                    <img class="cover-image overlay-scale" srcset="/static/module/cms/images/newproduct/pic001.jpg" alt="">
+                </picture>
+                <div class="carousel-caption p-">
+                      <h3 class="animation-slide-top animation-delay-300" style="color:"></h3>
+                      <p class="animation-slide-bottom animation-delay-600" style="color:"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="met-column-nav product-search-body bordernone">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-md-9 sidebar_tile">
+                        <div class="row">
+                            <ul class="met-column-nav-ul">
+    
+                            <li><a href="{:U('product/index')}" class="link <php>if(cms_is_current_category('product_index',CONTROLLER_NAME,ACTION_NAME)){ echo 'active';}</php>" title="全部">全部</a></li>
+                            <cms:category_list name="vo" enname="product">
+                                <li class=""><a href="{:U($vo['cate_url'])}" class="link <php>if(cms_is_current_category($vo['controller_action'],CONTROLLER_NAME,ACTION_NAME)){ echo 'active';}</php>" title="{$vo['title']}">{$vo['title']}</a></li>
+                            </cms:category_list>
+                        </ul>
+                        </div>
+                    </div>
+
+    
+                    <div class="col-md-3 product_search " style="display: none;">
+                        <div class="row">
+                        <form method="get" action="{:U('product/index')}">
+                            <div class="form-group">
+                                <div class="input-search">
+                                    <button type="submit" class="input-search-btn"><i class="icon wb-search" aria-hidden="true"></i></button>
+                                    <input class="form-control" name="keywords" value="" placeholder="Search" type="text">
+                                </div>
+                            </div>
+                        </form>
+                        </div>
+                    </div>
+    
+                </div>
+            </div>
+        </div>
+
+
+<div class="met-product animsition type-3">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="less-page-content">
+
+                <ul class="blocks blocks-100 blocks-xlg-5 blocks-md-4 blocks-sm-3 " id="met-grid" style="position: relative;">
+
+                    <volist name="product_data" id="vo" key="k">
+                    <li class="" style="min-height: 610px;">
+                        <div class="widget widget-article widget-shadow">
+                            <figure class="widget-header cover">
+                                <a href="{:U('product/detail',array('id'=>$vo['id']))}" title="{$vo['title']}">
+                                    <img class="cover-image" src="{$vo['cover_id_format']|common_trans_sub_image}" alt="{$vo['title']}">
+                                </a>
+                            </figure>
+                            <div class="widget-body" style="height: 276px;">
+                                <h3 class="widget-title">{$vo['title']}</h3>
+                                <p class="red-600 font-size-20">{$vo['price']}元</p>
+
+                                <volist name="vo['list_p_data_format']" id="voo">
+                                    <p class="widget-metas" style="height: 72px;"><span>{$voo|cutstr_html=90}</span></p>
+                                </volist>
+
+                                <div class="widget-body-footer">
+                                    <div class="widget-actions pull-right">
+                                        <a href="#" title="{$vo['title']}">
+                                            <i class="icon wb-eye" aria-hidden="true"></i>
+                                            <span>{$vo['view']}</span>
+                                        </a>
+                                    </div>
+                                    <a href="{:U('product/detail',array('id'=>$vo['id']))}" title="{$vo['title']}"  class="btn btn-outline btn-primary">查看详情</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    </volist>
+                </ul>
+                <div class="hidden-xs">
+                    <div class="met_pager">
+                    {$pager}
+                    </div>
+                </div>
+                <div class="met-page-ajax-body visible-xs-block">
+                    <button type="button" class="btn btn-default btn-block btn-squared ladda-button" id="met-page-btn" data-style="slide-left" data-url="#" data-page="1"><i class="icon wb-chevron-down margin-right-5" aria-hidden="true"></i>更多产品</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div style="position: relative;margin-top: 350px;">
+    <include file="./Application/Plugins/CmsProjectYuji/View/Index/index_footer.html" />
+</div>

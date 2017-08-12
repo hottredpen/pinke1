@@ -1,0 +1,383 @@
+.u-component-weixin_material_image_dialog  .inner_container_box {
+    background-color: #fff;
+    border: 1px solid #e7e7eb;
+}
+
+
+
+
+.u-component-weixin_material_image_dialog  .img_pick_panel.side_l.cell_layout .inner_side {
+    width: 18%;
+    *width: 152px;
+    *max-width: 152px;
+}
+.u-component-weixin_material_image_dialog  .inner_container_box.cell_layout .inner_side {
+    *float: left;
+    *width: 240px;
+}
+.u-component-weixin_material_image_dialog  .inner_container_box.cell_layout .inner_side {
+    width: 27%;
+    max-width: 240px;
+}
+.u-component-weixin_material_image_dialog  .inner_container_box.cell_layout .inner_side, .inner_container_box.cell_layout .inner_main {
+    display: table-cell;
+    vertical-align: top;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+.u-component-weixin_material_image_dialog  .side_l.inner_container_box .inner_side {
+    border-right: 1px solid #e7e7eb;
+}
+.u-component-weixin_material_image_dialog  .inner_side {
+    *padding-bottom: 9999em;
+    *margin-bottom: -9999em;
+    min-height: 1px;
+}
+
+.u-component-weixin_material_image_dialog  .img_pick_panel .group_list {
+    height: 500px;
+    overflow-y: auto;
+}
+.u-component-weixin_material_image_dialog  .inner_menu:first-child {
+    border-top-width: 0;
+    margin-bottom: 0;
+}
+.u-component-weixin_material_image_dialog  .inner_menu {
+    border-top: 1px solid #e7e7eb;
+}
+.u-component-weixin_material_image_dialog  .inner_menu_item.selected {
+    background-color: #f4f5f9;
+}
+.u-component-weixin_material_image_dialog  .inner_menu_item {
+    position: relative;
+    line-height: 32px;
+    width: 150px;
+}
+.u-component-weixin_material_image_dialog  .inner_menu_item.selected a {
+    text-decoration: none;
+}
+.u-component-weixin_material_image_dialog  .img_pick_panel .inner_menu_link {
+    padding-left: 1.5em;
+    text-align: left;
+}
+.u-component-weixin_material_image_dialog  .inner_menu_link {
+    display: block;
+    color: #222;
+    padding-left: 1em;
+    text-decoration: none;
+}
+.u-component-weixin_material_image_dialog  .img_pick_panel .inner_menu_link strong {
+    max-width: 86px;
+}
+.u-component-weixin_material_image_dialog  .inner_menu_link strong {
+    display: inline-block;
+    margin-top: -2px;
+    width: auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-wrap: normal;
+    max-width: 80px;
+    font-weight: 400;
+    font-style: normal;
+    vertical-align: middle;
+    cursor: pointer;
+}
+.u-component-weixin_material_image_dialog  .group_list .num {
+    display: inline-block;
+    padding-left: 3px;
+    font-style: normal;
+    color: #8d8d8d;
+}
+.u-component-weixin_material_image_dialog  .inner_menu_item {
+    position: relative;
+    line-height: 32px;
+}
+.u-component-weixin_material_image_dialog  .img_pick_panel .inner_menu_link {
+    padding-left: 1.5em;
+    text-align: left;
+}
+
+.u-component-weixin_material_image_dialog  .inner_menu_link {
+    display: block;
+    color: #222;
+    padding-left: 1em;
+    text-decoration: none;
+}
+.u-component-weixin_material_image_dialog  .inner_container_box.cell_layout .inner_main {
+    display: table-cell;
+    vertical-align: top;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+.u-component-weixin_material_image_dialog  .img_pick_panel .img_pick_area {
+    position: relative;
+    height: 500px;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+.u-component-weixin_material_image_dialog  .sub_title_bar.in_dialog {
+    padding: 10px 20px;
+    background-color: #fff;
+    border-bottom: 1px solid #e7e7eb;
+}
+.u-component-weixin_material_image_dialog  .sub_title_bar {
+    padding: 0 30px;
+    line-height: 55px;
+}
+.u-component-weixin_material_image_dialog  .upload_box {
+    position: relative;
+    z-index: 1;
+}
+.u-component-weixin_material_image_dialog  .upload_box {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    line-height: 1.6;
+    vertical-align: middle;
+}
+.u-component-weixin_material_image_dialog  .upload_area {
+    position: relative;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    vertical-align: middle;
+}
+.u-component-weixin_material_image_dialog  .btn {
+    min-width: 60px;
+}
+.u-component-weixin_material_image_dialog  .btn_primary {
+    background-color: #44b549;
+    background-image: -moz-linear-gradient(top,#44b549 0,#44b549 100%);
+    background-image: -webkit-gradient(linear,0 0,0 100%,from(#44b549),to(#44b549));
+    background-image: -webkit-linear-gradient(top,#44b549 0,#44b549 100%);
+    background-image: -o-linear-gradient(top,#44b549 0,#44b549 100%);
+    background-image: linear-gradient(to bottom,#44b549 0,#44b549 100%);
+    border-color: #44b549;
+    color: #fff;
+}
+.u-component-weixin_material_image_dialog  .btn {
+    display: inline-block;
+    overflow: visible;
+    padding: 0 22px;
+    height: 30px;
+    line-height: 30px;
+    *line-height: 28px;
+    vertical-align: middle;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    font-size: 14px;
+    border-width: 1px;
+    border-style: solid;
+    cursor: pointer;
+}
+.u-component-weixin_material_image_dialog  .r {
+    float: right;
+}
+.u-component-weixin_material_image_dialog  .mini_tips.weak_text {
+    color: #8d8d8d;
+}
+.u-component-weixin_material_image_dialog  .img_water_tips {
+    margin-right: 1em;
+    line-height: 32px;
+}
+.u-component-weixin_material_image_dialog  .mini_tips.weak_text {
+    color: #8d8d8d;
+}
+.u-component-weixin_material_image_dialog  .img_water_tips {
+    line-height: 32px;
+}
+.u-component-weixin_material_image_dialog  .sub_title_bar {
+    line-height: 55px;
+}
+.u-component-weixin_material_image_dialog  .sub_title_bar {
+    line-height: 38px;
+}
+.u-component-weixin_material_image_dialog  .sub_title_bar::after {
+    content: "\200B";
+    display: block;
+    height: 0;
+    clear: both;
+}
+.u-component-weixin_material_image_dialog  .inner_container_box.cell_layout .inner_side, .inner_container_box.cell_layout .inner_main {
+    word-wrap: break-word;
+    word-break: break-all;
+}
+.u-component-weixin_material_image_dialog  .img_pick_panel .img_pick_area_inner {
+    position: relative;
+    height: 450px;
+}
+.u-component-weixin_material_image_dialog  .img_pick_panel .img_pick_area_inner .img_pick {
+    height: 332px;
+}
+.u-component-weixin_material_image_dialog  .img_pick {
+    padding-bottom: 5px;
+    text-align: center;
+}
+.u-component-weixin_material_image_dialog  .img_pick {
+    padding: 20px;
+}
+.u-component-weixin_material_image_dialog  .img_pick .img_list {
+    margin-right: -20px;
+}
+.u-component-weixin_material_image_dialog  .img_pick .img_item {
+    position: relative;
+    margin-right: 11px;
+    margin-bottom: 10px;
+}
+.u-component-weixin_material_image_dialog  .img_pick .img_item {
+    float: left;
+    text-align: center;
+    list-style: none;
+}
+.u-component-weixin_material_image_dialog  .img_pick .img_item_bd {
+    margin: 0;
+    border: 1px solid #e7e7eb;
+    width: 119px;
+}
+.u-component-weixin_material_image_dialog  .frm_radio_label, .frm_checkbox_label {
+    display: inline-block;
+    text-align: left;
+    cursor: pointer;
+    margin-right: 1em;
+}
+.u-component-weixin_material_image_dialog  .img_pick .img_item .pic_box {
+    width: 117px;
+    height: 117px;
+    position: relative;
+    overflow: hidden;
+}
+.u-component-weixin_material_image_dialog  .img_pick .img_item .pic {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+}
+.u-component-weixin_material_image_dialog  .img_pick .img_item .pic {
+    display: block;
+    border-bottom: 1px solid #e7e7eb;
+}
+.u-component-weixin_material_image_dialog  .img_pick .img_item .lbl_content {
+    display: block;
+    padding: 0 9px;
+}
+.u-component-weixin_material_image_dialog  .img_pick .img_item .lbl_content {
+    height: 32px;
+    line-height: 32px;
+    text-align: left;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.u-component-weixin_material_image_dialog  .frm_radio_label, .frm_checkbox_label {
+    text-align: left;
+    cursor: pointer;
+}
+.u-component-weixin_material_image_dialog  .img_pick .img_item_bd.selected .selected_mask {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+.u-component-weixin_material_image_dialog  .img_pick .img_item_bd.selected .selected_mask_inner {
+    width: 118px;
+    height: 118px;
+    -moz-opacity: .6;
+    -khtml-opacity: .6;
+    opacity: .6;
+    background-color: #000;
+    filter: alpha(opacity=60);
+}
+.u-component-weixin_material_image_dialog  .img_pick .img_item_bd.selected .selected_mask_icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: transparent url(/static/module/weixin/images/gougou.png) no-repeat 0 0;
+    width: 117px;
+    height: 117px;
+    vertical-align: middle;
+    display: inline-block;
+    background-position: 50% 50%;
+}
+.u-component-weixin_material_image_dialog  .dialog_ft {
+    padding: 0;
+    line-height: 65px;
+    background-color: #f4f5f9;
+    margin: 0;
+    text-align: center;
+    border-top: 1px solid transparent;
+    box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+}
+.u-component-weixin_material_image_dialog  .dialog_ft .btn {
+    margin-left: .3em;
+    margin-right: .3em;
+}
+.u-component-weixin_material_image_dialog  .btn.btn_input {
+    min-width: 104px;
+}
+.u-component-weixin_material_image_dialog  .btn.btn_input {
+    padding: 0;
+}
+.u-component-weixin_material_image_dialog  .btn.btn_input button {
+    width: 100%;
+}
+.u-component-weixin_material_image_dialog  .btn_primary button {
+    color: #fff;
+}
+.u-component-weixin_material_image_dialog  .btn button {
+    display: block;
+    height: 100%;
+    background-color: transparent;
+    border: 0;
+    outline: 0;
+    overflow: visible;
+    padding: 0 22px;
+}
+.u-component-weixin_material_image_dialog  .btn_default {
+    background-color: #fff;
+    background-image: -moz-linear-gradient(top,#fff 0,#fff 100%);
+    background-image: -webkit-gradient(linear,0 0,0 100%,from(#fff),to(#fff));
+    background-image: -webkit-linear-gradient(top,#fff 0,#fff 100%);
+    background-image: -o-linear-gradient(top,#fff 0,#fff 100%);
+    background-image: linear-gradient(to bottom,#fff 0,#fff 100%);
+    border-color: #e7e7eb;
+    color: #222;
+}
+.u-component-weixin_material_image_dialog  .btn_default button {
+    color: #222;
+}
+.u-component-weixin_material_image_dialog  .dialog_ft_desc {
+    position: absolute;
+    bottom: 23px;
+    left: 20px;
+}
+.u-component-weixin_material_image_dialog  .btn_disabled:hover button {
+    color: #a5a6aa;
+    cursor: default;
+}
+
+.u-component-weixin_material_image_dialog  .content-thumb {
+    display: block;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    width: 117px;
+    height: 117px;
+    border-bottom: 1px solid #e7e7eb;
+}
+
+
+
+.m-public-uploadpic .uploadify-button {background:url(/static/plugins/uploadify/images/uploadimages.jpg);}
+.m-public-uploadpic .uploadify:hover .uploadify-button {background:url(/static/plugins/uploadify/images/uploadimages_hover.jpg);}

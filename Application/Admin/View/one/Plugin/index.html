@@ -1,0 +1,111 @@
+<BeforeTemplate:page_init name="ddd" title="后台管理" loadjs=""></BeforeTemplate:page_init>
+
+<div>
+    {:hook('page_tips')}
+</div>
+
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="block">
+                
+                <ul class="nav nav-tabs">
+                    <volist name="tab_nav['tab_list']" id="tab">
+                    <li <eq name="tab_nav.curr_tab" value="$key">class="active"</eq> >
+                        <a href="{$tab.url}">{$tab.title}</a>
+                    </li>
+                    </volist>
+                    <li class="active" >
+                        <a href="#">本地插件</a>
+                    </li>
+
+                    <li class="pull-right">
+                        <ul class="block-options push-10-t push-10-r">
+                            <li>
+                                <button type="button" data-toggle="block-option" data-action="fullscreen_toggle"></button>
+                            </li>
+                            <li>
+                                <button type="button" data-toggle="block-option" data-action="refresh_toggle" data-action-mode="demo"><i class="si si-refresh"></i></button>
+                            </li>
+                            <li>
+                                <button type="button" data-toggle="block-option" data-action="content_toggle"></button>
+                            </li>
+                            <li>
+                                <button type="button" data-toggle="block-option" data-action="close"><i class="si si-close"></i></button>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+
+
+                <div class="block-content tab-content">
+                    <div class="tab-pane active">
+                        <div class="row push-20">
+                            <div class="col-md-12">
+                                <div class="pull-right search-bar">
+                                    <form class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-search"></i></span>
+                                        <input type="text" class="form-control" value="" name="keyword" placeholder="请输入标识/名称/作者">
+                                    </form>
+                                </div>
+
+                                <div class="toolbar-btn-action">
+                                    <a title="全部" class="btn btn-default" href="{:U('index')}">全部({$total.all|default='0'})</a>
+                                    <a title="已启用" class="btn btn-success" href="{:U('index', array('status' => '1'))}">已启用({$total['1']|default='0'})</a>
+                                    <a title="已禁用" class="btn btn-warning" href="{:U('index', array('status' => '0' ))}">已禁用({$total['0']|default='0'})</a>
+                                    <a title="未安装" class="btn btn-info" href="{:U('index', array('status' => '-1'))}">未安装({$total['-1']|default='0'})</a>
+                                    <a title="已损坏" class="btn btn-danger" href="{:U('index', array('status' => '-2'))}" id="hide_disable">已损坏({$total['-2']|default='0'})</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row module-list push-20">
+                            <empty name="plugins">
+                            <div class="table-empty">
+                                <div class="text-center empty-info">
+                                    <i class="fa fa-database"></i> 暂无数据<br>
+                                </div>
+                            </div>
+                            </empty>
+                            <volist name="plugins" id="plugin">
+                            <div class="col-sm-6 col-md-4 col-lg-3">
+                                <div class="block block-rounded">
+                                    <div class="block-content block-content-full text-center {$plugin.bg_color|default='bg-danger'} ribbon ribbon-bookmark ribbon-crystal">
+                                        <div class="ribbon-box font-w600">{$plugin.version|default='无版本号'}</div>
+                                        <div class="item item-2x item-circle bg-crystal-op push-20-t push-20 " data-toggle="appear" data-offset="50" data-class="animated fadeIn" style="background-color:rgba(255, 255, 255, 0.15);">
+                                            <i class="fa fa-puzzle-piece text-white-op"></i>
+                                        </div>
+                                        <h3 class="h4 text-white">{$plugin.title|default='无插件标题'}</h3>
+                                        <div class="text-white-op">
+                                            <em>{$plugin.name|default=''}</em>
+                                        </div>
+                                    </div>
+                                    <div class="block-content bg-gray-lighter">
+                                        <div class="{$plugin.status_class} pull-right push-10-l">{$plugin.status_info}</div>
+                                        <div class="push-10">
+                                            <a class="h5" href="{$plugin.author_url|default=''}" target="_blank"><i class="fa fa-user"></i> {$plugin.author|default=''}</a>
+                                        </div>
+                                        <div class="push-10 mheight-100">
+                                            <div data-toggle="slimscroll" data-height="110px">
+                                                <p class="text-gray-dark">{$plugin.description|default='暂无简介'}</p>
+                                            </div>
+                                        </div>
+                                        <div class="text-center push">
+                                            {$plugin.actions}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            </volist>
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+            </div>
+        </div>
+    </div>

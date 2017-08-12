@@ -1,0 +1,207 @@
+<title>{$page_seo.title}</title>
+
+<div id="jt_page_product_detail"></div>
+
+<link rel="stylesheet" type="text/css" href="/static/plugins/lightgallery/css/lightgallery.css">
+
+<div class="navfix-other"></div>
+
+<div class="met-position  pattern-show">
+	<div class="container">
+		<div class="row">
+			<ol class="breadcrumb">
+				<li>
+					<a href="{:U('index/index')}" title="首页">
+						<i class="fa fa-home" aria-hidden="true"></i> 首页
+					</a>
+				</li>
+				<li class="dropdown">
+					<a href="{:U('product/index')}" title="产品" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">产品</a>
+				</li>
+
+				<li class="dropdown">
+
+					<a href="{:U($product_info['href_url'])}" title="{$product_info['category_id_format']}">
+						{$product_info['category_id_format']}
+					</a>
+
+				</li>
+				<li class="dropdown">
+
+					<a href="#" title="{$product_info['title']}">
+						{$product_info['title']}
+					</a>
+
+				</li>
+
+			</ol>
+		</div>
+	</div>
+</div>
+
+<div class="page met-showproduct pagetype1 animsition">
+
+<div class="met-showproduct-head">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-7">
+				<div id="gallery" class="ad-gallery" data-x="400" data-y="400"> 
+					<div class="ad-image-wrapper" style="height: 400px;">
+						<div class="j_product_main_show ad-image" style="width: 400px; height: 400px; top: 0px; left: 167px;">
+							<img class="" src="{$product_info['cover_id_format']|common_trans_sub_image}" width="400" height="400">
+							<p class="ad-image-description" style="width: 386px;"><span>{$product_info['title']}</span></p>
+						</div>
+						<img class="ad-loader" src="" style="display: none;">
+						<div class="ad-next" style="height: 400px;">
+							<div class="ad-next-image" style="opacity: 0.7; display: none;"></div>
+						</div>
+						<div class="ad-prev">
+							<div class="ad-prev-image" style="opacity: 0.7;"></div>
+						</div>
+					</div> 
+
+
+					<div class="ad-nav">
+						<div class="ad-back" style="opacity: 0.6;"></div> 
+						<div class="ad-thumbs"> 
+
+							<ul class="list-unstyled row">
+								<volist name="product_info['cover_ids_format']" id="vo" key="k">
+							    <li class="" data-responsive="{$vo['url']}" data-src="{$vo['url']}" data-sub-html="{$product_info['title']}">
+							        <a href="javascript:;" class="J_min_image_list_pic j_min_image_list_pic j_min_image_list_pic_{$k-1} <php>if($k==1){ echo 'ad-active';}</php>"  data-index="{$k-1}">
+							            <img width="64" height="64" class="img-responsive" src="{$vo['url']|common_trans_sub_image}">
+							        </a>
+							    </li>
+							    </volist>
+							</ul>
+
+							<ul id="lightgallery" class="list-unstyled row" style="display: none;">
+								<volist name="product_info['cover_ids_format']" id="vo" key="k">
+							    <li class="" data-index={$k-1} data-responsive="{$vo['url']}" data-src="{$vo['url']}" data-sub-html="{$product_info['title']}">
+							        <a href="" class="j_min_image_list_pic j_min_image_list_pic_{$k-1} <php>if($k==1){ echo 'ad-active';}</php>">
+							            <img width="64" height="64" class="img-responsive" src="{$vo['url']|common_trans_sub_image}">
+							        </a>
+							    </li>
+							    </volist>
+							</ul>
+
+						</div> 
+					<div class="ad-forward" style="opacity: 0.6;"></div></div> 
+				</div>
+			</div>
+			<div class="visible-xs-block visible-sm-block height-20"></div>
+			<div class="col-md-5 product-intro">
+				<h1>{$product_info['title']}</h1>
+
+				<div class="shop-product-intro grey-500">
+					<div class="padding-20 bg-grey-100">
+						<span id="price" class="red-600">{$product_info['price']}元</span>
+					</div>
+		
+					<div class="form-group margin-top-15">
+						<div class="selectpara-body">
+                            <volist name="product_info['list_p_data_format']" id="voo">
+                                <p class="widget-metas" style="font-size: 14px;"><span>{$voo}</span></p>
+                            </volist>
+						</div>
+					</div>
+
+					<div class="clearfix" style="float: left;height: 30px;" >
+						<include file="./Application/Plugins/CmsProjectYuji/View/Public/baidushare.html" />
+					</div>
+
+					<div class="clearfix"></div>
+
+					<div class="form-group margin-top-30 purchase-btn clearfix" >
+						<a href="javascript:;" class="btn btn-lg btn-squared btn-danger margin-right-20 product-buynow j_product_qrcode_btn" data-type="taobao" >淘宝购买
+
+						</a>
+						
+						<div class="visible-xs-block height-10"></div>
+						<a href="javascript:;" class="btn btn-lg btn-squared btn-primary product-tocart j_product_qrcode_btn" data-type="weixin" >微信购买</a>
+
+
+						<div style="position: relative;width: 304px;height: 200px;z-index: 300;margin-top: 20px;overflow: hidden;">
+							<div style="position: relative;clear: both; left: 50%; float: left;margin: auto;" >
+							<div class="j_qrcode_div" style="display: none; float: left; left: -50%;position: relative;">
+								<div style="width: 200px;height: 200px;background-color: #dfdfdf;">
+	
+						    		<div id="j_qrcode_replace_taobao" class="j_product_qrcode" style="display:block; position:relative;padding:5px;" data-url="{$product_info['url_taobao']}">
+			                        	<img style="position:absolute;left:80px;top:80px;" src="/static/module/cms/images/logo.jpg" width="40" height="40">
+			                        </div>
+
+						    		<div id="j_qrcode_replace_weixin" class="j_product_qrcode" style="display:none; position:relative;padding:5px;" data-url="{$product_info['url_weixin']}">
+			                        	<img style="position:absolute;left:80px;top:80px;" src="/static/module/cms/images/logo.jpg" width="40" height="40">
+			                        </div>
+
+								</div>
+							</div>
+							</div>
+						</div>
+
+
+
+
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>
+
+	<div class="met-showproduct-body">
+		<div class="container">
+			<div class="row no-space">
+				<div class="col-md-9 product-content-body">
+					<div class="row">
+
+					<div class="panel product-detail">
+						<div class="panel-body">
+							<ul class="nav nav-tabs nav-tabs-line met-showproduct-navtabs affix-nav">
+								<li class="active"><a data-toggle="tab" href="#" data-get="product-details">产品信息</a></li>
+
+							</ul>
+							<div class="tab-content">
+								<div class="tab-pane met-editor lazyload clearfix animation-fade active" id="product-details">
+									<div class="editorlightgallery">
+										{$product_info['content']}
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					</div>
+				</div>
+
+				<!--右侧开始-->
+				<div class="col-md-3">
+				<div class="row">
+					<div class="panel product-hot">
+						<div class="panel-body">
+						<h4 class="example-title">热门推荐</h4>
+							<div class="row">
+
+
+								<volist name="recommend_index_product_products" id="vo">
+									<div class="product-hot-list col-md-12 col-sm-4 col-xs-4 text-center margin-bottom-10">
+										<a href="{:U('product/detail',array('id'=>$vo['id']))}" class="img" title="{$vo['title']}">
+											<img data-original="#" class="img-responsive" style="height:250px" alt="{$vo['title']}" src="{$vo['cover_id_format']|common_trans_sub_image}">
+										</a>
+										<a href="#" class="txt" title="{$vo['title']}">{$vo['title']}</a>
+										<p class="margin-bottom-0 red-600">{$vo['price']}元</p>
+									</div>
+								</volist>
+
+							</div>
+						</div>
+					</div>
+				</div>
+				</div>
+				<!--右侧结束-->
+
+			</div>
+		</div>
+	</div>
+</div>

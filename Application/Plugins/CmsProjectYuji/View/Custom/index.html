@@ -1,0 +1,62 @@
+<cms:page_seo name="page_seo"></cms:page_seo>
+
+<div id="jt_page_custom"></div>
+
+<div class="navfix-other"></div>
+
+
+<div class="met-banner">
+	<div class="carousel slide" id="met-banner-slide" data-ride="carousel">
+		<div class="carousel-inner " role="listbox">
+			<div class="item active">
+				<picture>
+					<source srcset="/static/module/cms/images/index/new/custom01.jpg" media="(min-width: 768px)">
+					<img class="cover-image overlay-scale" srcset="/static/module/cms/images/news/pic001.png" alt="">
+				</picture>
+				<div class="carousel-caption p-">
+                      <h3 class="animation-slide-top animation-delay-300" style="color:"></h3>
+                      <p class="animation-slide-bottom animation-delay-600" style="color:"></p>
+                </div>
+			</div>
+		</div>
+	</div>
+</div>
+		<div class="met-column-nav  product-search-body bordernone">
+			<div class="container">
+				<div class="row">
+
+                    <div class="col-md-9 sidebar_tile">
+                        <div class="row">
+                            <ul class="met-column-nav-ul">
+
+                            <cms:category_list name="vo" enname="custom">
+                            	
+                                <li class=""><a href="{:U($vo['cate_url'])}" class="link <php>if(cms_is_current_category($vo['controller_action'],CONTROLLER_NAME,ACTION_NAME)){ echo 'active';}</php>" title="{$vo['title']}">{$vo['title']}</a></li>
+                            </cms:category_list>
+                        </ul>
+                        </div>
+                    </div>
+
+				</div>
+			</div>
+		</div>
+
+<section class="met-show animsition">
+	<div class="container">
+		<div class="row">
+			<div class="met-editor lazyload clearfix">
+				<div class="editorlightgallery">
+
+					<cms:article_onepage_info name="custom_content" enname="$cms_tag['enname']" >
+						{$custom_content['content']}
+					</cms:article_onepage_info>
+
+					
+
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<div class="footfix-other"></div>

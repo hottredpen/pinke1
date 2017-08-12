@@ -1,0 +1,148 @@
+.keywords_list {
+    padding-left: 30px;
+    border-top: 1px solid #e7e7eb;
+}
+.keywords_list li:first-child {
+    border-top-width: 0;
+}
+.keywords_list li {
+    position: relative;
+    line-height: 39px;
+    border-bottom: 1px solid #e7e7eb;
+}
+.keywords_list .desc {
+    padding: 15px 0;
+    margin-right: 200px;
+    line-height: normal;
+}
+.keywords_list .title {
+    display: block;
+    font-weight: 400;
+    font-style: normal;
+    width: auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-wrap: normal;
+}
+.keywords_list .opr {
+    position: absolute;
+    top: 15px;
+    right: 14px;
+    line-height: normal;
+}
+.icon14_common.edit_gray:hover {
+    background: url(/static/module/public/images/base_icon.png) 0 -3098px no-repeat;
+}
+.icon14_common.edit_gray {
+    background: url(/static/module/public/images/base_icon.png) 0 -3080px no-repeat;
+}
+.icon14_common.del_gray:hover {
+    background: url(/static/module/public/images/base_icon.png) 0 -3133px no-repeat;
+}
+.icon14_common.del_gray {
+    background: url(/static/module/public/images/base_icon.png) 0 -3116px no-repeat;
+}
+.keywords_list .opr a {
+    margin-left: 12px;
+}
+.icon14_common {
+    width: 14px;
+    height: 14px;
+    vertical-align: middle;
+    display: inline-block;
+    line-height: 100px;
+    overflow: hidden;
+}
+
+.media_type_list {
+    padding: 0 30px;
+    border-top: 1px solid #e7e7eb;
+}
+.media_type_list li {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    vertical-align: top;
+    margin-right: 14px;
+    line-height: 39px;
+}
+.media_type_list li a {
+    color: #222;
+    text-decoration: none;
+}
+.tab_text .icon_msg_sender {
+    background: url("/static/module/public/images/weixin_reply_type_icon.png") 0 0 no-repeat;
+}
+.tab_img .icon_msg_sender {
+    background: url("/static/module/public/images/weixin_reply_type_icon.png") 0 -60px no-repeat;
+}
+.tab_audio .icon_msg_sender {
+    background: url("/static/module/public/images/weixin_reply_type_icon.png") 0 -180px no-repeat;
+}
+.tab_video .icon_msg_sender {
+    background: url("/static/module/public/images/weixin_reply_type_icon.png") 0 -120px no-repeat;
+}
+.tab_appmsg .icon_msg_sender {
+    background: url("/static/module/public/images/weixin_reply_type_icon.png") 0 -240px no-repeat;
+}
+.icon_msg_sender {
+    margin-right: 3px;
+    margin-top: -2px;
+    *margin-top: 2px;
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.keywords_list .media_content {
+    *zoom: 1;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+.appmsgSendedItem {
+    position: relative;
+    padding-left: 90px;
+    min-height: 80px;
+}
+.appmsgSendedItem .title_wrp {
+    color: #222;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+}
+.appmsgSendedItem .title_wrp .cover {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+.appmsgSendedItem .title_wrp .icon {
+    position: absolute;
+    left: 0;
+    background: transparent url() no-repeat 0 0;
+    width: 80px;
+    height: 80px;
+    vertical-align: middle;
+    display: inline-block;
+    background-color: #d7d8da !important;
+}
+
+.keywords_list .title {
+    display: block;
+    font-weight: 400;
+    font-style: normal;
+    width: auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-wrap: normal;
+}
+.appmsgSendedItem .desc, .appmsgSendedItem .desc a.appmsg_desc {
+    color: #666;
+}
+.keywords_list .desc {
+    padding: 15px 0;
+    margin-right: 100px;
+    line-height: normal;
+}

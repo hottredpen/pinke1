@@ -1,0 +1,381 @@
+.m-carreport-head {
+    z-index: 100;
+    position: relative;
+    width: 100%;
+    height: 45px;
+    background-color: #f6f6f6;
+    overflow: hidden;
+}
+
+.m-carreport-head h1 {
+    color: #333;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 44px;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin: 0 56px;
+    overflow: hidden;
+}
+
+.m-carreport-head .u-head-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-indent: -100px;
+    overflow: hidden;
+    height: 45px;
+    width: 45px;
+}
+
+.m-carreport-head .u-head-back:before{
+    left: 0;
+    -webkit-transform: rotate(-135deg);
+    transform: rotate(-135deg);
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 10px;
+    height: 10px;
+    border-top: 1px solid #888;
+    border-right: 1px solid #888;
+    margin: -6px 0 0 16px;
+}
+
+
+.m-carreport-info {
+    padding: 10px;
+    border-bottom: 1px solid #e3e3e3;
+}
+.m-carreport-info p {
+    position: relative;
+}
+.m-carreport-info .re-tit {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 28px;
+    width: 70px;
+    text-align: right;
+    font-size: 13px;
+    color: #333;
+}
+.m-carreport-info .report-con {
+    margin-left: 70px;
+    display: block;
+    font-size: 13px;
+    color: #333;
+}
+
+
+.m-carreport-detail{
+    border-bottom: 1px solid #e3e3e3;
+}
+
+.m-carreport-detail .u-detail-block .block-title {
+    border-top: 0;
+    height: 48px;
+    text-indent: 20px;
+    background-color: #f5f5f5;
+}
+
+.m-carreport-detail .u-detail-block .block-title a {
+    display: block;
+    height: 48px;
+    line-height: 50px;
+    font-size: 15px;
+    position: relative;
+    color: #333;
+    font-weight: 600;
+}
+.m-carreport-detail .u-detail-block .block-title a:before {
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 15px;
+    background-color: #0098db;
+    top: 17px;
+    left: 15px;
+}
+
+.m-carreport-detail .u-detail-block .block-title .more-con.toggle:after {
+    -webkit-transform: rotate(-45deg);
+    top: 17px;
+}
+
+.m-carreport-detail .u-detail-block .block-title .more-con:after {
+    content: "";
+    position: absolute;
+    right: 12px;
+    top: 20px;
+    width: 8px;
+    height: 8px;
+    border-left: 1px solid #606060;
+    border-bottom: 1px solid #606060;
+    -webkit-transform: rotate(135deg);
+}
+
+.m-carreport-detail .u-detail-block .block-content.active {
+    display: block;
+}
+
+.m-carreport-detail .u-detail-block .block-content {
+    display: none;
+}
+
+.m-carreport-detail .u-detail-block .block-content>p {
+    font-size: 14px;
+    border-top: 1px solid #d7d7d7;
+    color: #666;
+    padding: 10px;
+    line-height: 24px;
+}
+.m-carreport-detail .u-detail-block .car-conent {
+    padding: 0;
+}
+
+.m-carreport-detail .u-detail-block .block-content .tit2 {
+    color: #333;
+    background-color: #f4f4f4;
+    height: 40px;
+    line-height: 40px;
+    text-indent: 24px;
+    position: relative;
+    font-size: 14px;
+    border-top: 1px solid #d7d7d7;
+}
+
+.m-carreport-detail .u-detail-block .block-content .tit2:after {
+    content: "";
+    position: absolute;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background-color: #2baa3f;
+    top: 16px;
+    left: 10px;
+}
+
+.m-carreport-detail .u-detail-block .car-analyse {
+    background: url(../images/carreport/car_kj.png) no-repeat;
+    background-size: 275px auto;
+    margin: 15px auto;
+    width: 275px;
+    height: 242px;
+}
+
+.m-carreport-detail .u-detail-block .report-list li {
+    overflow: hidden;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 10px;
+    border-top: 1px solid #d7d7d7;
+}
+
+.m-carreport-detail .u-detail-block .report-list li p {
+    font-size: 14px;
+    color: #333;
+}
+.m-carreport-detail .u-detail-block .report-list li span {
+    color: #999;
+    font-size: 14px;
+}
+
+.m-carreport-detail .u-detail-block .car-conent .result {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    text-align: center;
+    vertical-align: middle;
+    position: relative;
+}
+.m-carreport-detail .u-detail-block .car-conent .result {
+    background: none;
+}
+.m-carreport-detail .u-detail-block .car-conent .result.yes {
+    width: 14px;
+    height: 14px;
+    border: 1px solid #0098db;
+    border-radius: 50%;
+}
+.m-carreport-detail .u-detail-block .car-conent .result.yes:after {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 5px;
+    width: 3px;
+    height: 7px;
+    border-bottom: 1px solid #0098db;
+    border-right: 1px solid #0098db;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    z-index: 10;
+}
+
+.m-carreport-detail .u-detail-block .check-tit {
+    border-top: 1px solid #dcdcdc;
+    display: inline-block;
+    text-align: center;
+    padding: 8px 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.m-carreport-detail .u-detail-block .check-tit span {
+    padding-left: 20px;
+    color: #999;
+    font-size: 12px;
+    position: relative;
+    margin: 0 3px;
+}
+
+
+.m-carreport-detail .u-detail-block .check-tit span:before {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 0;
+    left: 0;
+    background-clip: padding-box;
+    border-radius: 16px;
+}
+
+.m-carreport-detail .u-detail-block .check-tit span.p-bug1:before {
+    background-color: #f2f2f2;
+}
+
+.m-carreport-detail .u-detail-block .check-tit span.p-bug2:before {
+    background-color: #a6d4fe;
+}
+
+.m-carreport-detail .u-detail-block .check-tit span.p-bug3:before {
+    background-color: #ffcdc3;
+}
+
+.m-carreport-detail .u-detail-block .check-tit span.p-bug4:before {
+    background-color: #d0d0d0;
+}
+
+.m-carreport-detail .u-detail-block .areabox {
+    display: block;
+    width: 250px;
+    background: url(../images/carreport/car_pm.png) no-repeat;
+    background-size: 250px auto;
+    height: 180px;
+    position: relative;
+    margin: 0 auto 12px;
+}
+
+
+
+
+
+
+.m-carreport-detail .u-detail-block .areabox li {
+    display: none;
+    position: absolute;
+    z-index: 10;
+    text-indent: -999em;
+    background: url(../images/carreport/car_bad.png) no-repeat;
+    -ms-background-size: 174px auto;
+    background-size: 174px auto;
+    overflow: hidden;
+}
+
+
+
+.m-carreport-detail .u-detail-block .areabox .door_rl {
+    width: 43px;
+    height: 23px;
+    top: 14px;
+    left: 81px;
+}
+
+.m-carreport-detail .u-detail-block .areabox .door_rl.gray {
+    background-position: -103px -310px;
+}
+
+.m-carreport-detail .u-detail-block .areabox .fender_rl {
+    width: 57px;
+    height: 25px;
+    top: 14px;
+    left: 43px;
+}
+
+.m-carreport-detail .u-detail-block .areabox .fender_rl.gray {
+    background-position: -62px -378px;
+}
+
+.m-carreport-detail .u-detail-block .areabox .fender_rr {
+    width: 57px;
+    height: 25px;
+    top: 141px;
+    left: 43px;
+}
+
+.m-carreport-detail .u-detail-block .areabox .fender_rr.gray {
+    background-position: 0 -342px;
+}
+
+.m-carreport-detail .u-detail-block .areabox .dotted, .car-inside .dotted {
+    position: absolute;
+    z-index: 10;
+    background-image: none;
+    color: #fff;
+    display: inline-block;
+    text-indent: 0;
+}
+
+.m-carreport-detail .u-detail-block .areabox .dotted, .car-inside .dotted, .pro-tit i {
+    display: inline-block;
+    text-indent: 0;
+    background-color: #0098db;
+    font-size: 12px;
+    color: #fff;
+    border-radius: 50px;
+    width: 18px;
+    height: 18px;
+    line-height: 18px;
+    text-align: center;
+    margin-right: 5px;
+    vertical-align: 1px;
+}
+
+.m-carreport-detail .u-detail-block .check-inside {
+    border-top: 1px solid #dcdcdc;
+    padding: 0;
+}
+
+
+
+.m-carreport-detail .u-detail-block .car-inside {
+    width: 215px;
+    background: url(../images/carreport/car_inside01.png) no-repeat;
+    background-size: 215px auto;
+    margin: 10px auto 0;
+    height: 110px;
+    position: relative;
+}
+
+.m-carreport-detail .u-detail-block .car-inside-2 {
+    background: url(../images/carreport/car_inside02.png) no-repeat;
+    width: 200px;
+    height: 262px;
+    background-size: 200px auto;
+}
+
+.m-carreport-detail .u-detail-block .areabox li.blue,.m-carreport-detail .u-detail-block  .areabox li.gray,.m-carreport-detail .u-detail-block  .areabox li.pink {
+    display: block;
+}
+
+.m-carreport-detail .u-detail-block .pro-tit {
+    color: #333;
+    font-size: 14px;
+    background-color: #f4f4f4;
+    height: 40px;
+    line-height: 40px;
+    text-indent: 10px;
+    position: relative;
+}

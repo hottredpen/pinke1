@@ -1,0 +1,50 @@
+<cms:page_seo name="page_seo"></cms:page_seo>
+
+
+
+<div id="jt_page_about"></div>
+
+<div class="navfix-other"></div>
+
+
+<div class="met-column-nav  product-search-body bordernone">
+	<div class="container">
+		<div class="row">
+
+            <div class="col-md-9 sidebar_tile">
+                <div class="row">
+                    <ul class="met-column-nav-ul">
+                    <cms:category_list name="vo" enname="about">
+                        <li class=""><a href="{:U($vo['cate_url'])}" class="link <php>if(cms_is_current_category($vo['controller_action'],CONTROLLER_NAME,ACTION_NAME)){ echo 'active';}</php>" title="{$vo['title']}">{$vo['title']}</a></li>
+                    </cms:category_list>
+                </ul>
+                </div>
+            </div>
+
+            <div class="col-md-3 product_search ">
+				<div class="clearfix" style="float: left;height: 30px;display: none;" >
+					<include file="./Application/Plugins/CmsProjectYuji/View/Public/baidushare.html" />
+				</div>
+            </div>
+
+		</div>
+	</div>
+</div>
+
+<section class="met-show animsition">
+	<div class="container">
+		<div class="row">
+			<div class="met-editor lazyload clearfix">
+				<div class="editorlightgallery">
+
+					<cms:article_onepage_info name="custom_content" enname="$cms_tag['enname']" >
+						{$custom_content['content']}
+					</cms:article_onepage_info>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<div class="footfix-other"></div>

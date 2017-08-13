@@ -43,8 +43,6 @@ pinkePHP 是基于ThinkPHP 3.2.3开发的，它最初的原型是CPK网(项目�
  * 出售插件模块
 ~~~
 
-信条：
-####只有将代码写的足够的简洁，才不会被历史淘汰
 
 <img src="http://www.lankuwangluo.com/data/uploads/201708/yuji_index_banner/71a61a1814708e270.png" alt="图片名称" align='center' />
 
@@ -57,4 +55,21 @@ pinkePHP 是基于ThinkPHP 3.2.3开发的，它最初的原型是CPK网(项目�
 <img src="http://www.lankuwangluo.com/data/uploads/201708/yuji_index_banner/f633aa109e23fceb9.png" alt="图片名称" align='center' />
 
 
-加油！
+<img src="http://www.lankuwangluo.com/data/uploads/201708/yuji_index_banner/244355fee3baf0fc4.pngX" alt="图片名称" align='center' />
+
+<img src="http://www.lankuwangluo.com/data/uploads/201708/yuji_index_banner/da2ee16bc7c8ce20f.png" alt="图片名称" align='center' />
+
+
+目前，js的打包功能不对外公开，购买微信模块或者商业授权，可提供打包细节
+
+
+信条：
+####只有将代码写的足够的简洁，才不会被历史淘汰
+
+
+
+
+
+
+
+

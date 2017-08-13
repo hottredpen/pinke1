@@ -73,7 +73,7 @@ class CmsDocumentAdmin extends CmsBaseAdmin {
 
     public function editCmsDocument(){
         $id              = I('id',0,'intval');
-        $info            = D('Cms/CmsDocument','Datamanager')->getDocumentInfoData_id($id);
+        $info            = D('Cms/CmsDocument','Datamanager')->getDocumentInfoData_id($id,array('egt',0));
         $builder  = D('Admin/Form','Builder');
         $builder->theme('one')->setMetaTitle('修改文章')
                 ->setFormColClass('col-md-10')

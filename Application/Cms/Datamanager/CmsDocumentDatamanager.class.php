@@ -73,10 +73,10 @@ class CmsDocumentDatamanager {
 		$catid                = cms_trans_enname_to_category_id($enname);
 		return $this->getDocumentInfoDataOnePage_catid($catid);
 	}
-	public function getDocumentInfoData_id($id){
+	public function getDocumentInfoData_id($id,$status=1){
 		$map                  = array();
 		$map['d.id']          = $id;
-		$map['d.status']      = 1;
+		$map['d.status']      = $status;
    		$data = $this->_takeFormatData("data",$map,1,1);
 		return $data[0];
 	}

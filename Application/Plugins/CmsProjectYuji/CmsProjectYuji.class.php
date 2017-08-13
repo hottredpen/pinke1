@@ -10,13 +10,13 @@ class CmsProjectYuji extends PluginBaseController{
         // 插件名[必填]
         'name'        => 'CmsProjectYuji',
         // 插件标题[必填]
-        'title'       => '语记伞业的内容管理',
+        'title'       => 'cms的内容管理',
         // 插件唯一标识[必填],格式：插件名.开发者标识.plugin
         'identifier'  => 'yujisanye.hottredpen.plugin',
         // 插件图标[选填]
         'icon'        => 'fa fa-fw fa-globe',
         // 插件描述[选填]
-        'description' => '这个是语记伞业的网页模板主题，如果你是第三方开发者，并打算使用该模板，只需对此模板进行拓展开发',
+        'description' => '这个是关于雨伞的网页模板主题，如果你是第三方开发者，并打算使用该模板，只需对此模板进行拓展开发',
         // 插件作者[必填]
         'author'      => '直观层',
         // 作者主页[选填]
@@ -27,7 +27,7 @@ class CmsProjectYuji extends PluginBaseController{
         'admin'       => '1',
     );
 
-    public $database_prefix = 'xrs_';
+    public $database_prefix = 'pk_';
 
     /**
      * @var array 插件钩子

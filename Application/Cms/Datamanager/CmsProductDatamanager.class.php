@@ -11,8 +11,8 @@ class CmsProductDatamanager {
 		$data = $this->_takeData("num",$map);
 		return (int)$data;
 	}
-	public function getInfo($id){
-		$map['p.status'] = 1;
+	public function getInfo($id,$status=1){
+		$map['p.status'] = $status;
 		$map['p.id']     = $id;
 		$data = $this->_takeFormatData("data",$map,1,1);
 		return $data[0];

@@ -1,8 +1,8 @@
 <?php
 namespace Plugins\CmsProjectYuji\Controller;
-use Cms\Controller\FrontController;
+use Cms\Controller\CmsBaseController;
 
-class FrontBaseController extends FrontController {
+class FrontBaseController extends CmsBaseController {
 
     protected function _initialize() {
         parent::_initialize();

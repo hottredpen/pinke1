@@ -17,7 +17,7 @@ define([],function(){
 							
 							function createMap(){
 								var map = new BMap.Map("dituContent");
-								var point = new BMap.Point(120.252594,29.277712);
+								var point = new BMap.Point(120.123594,29.123712);
 								map.centerAndZoom(point,15);
 								window.map = map;
 							}
@@ -44,7 +44,7 @@ define([],function(){
 							}
 							
 							
-							var markerArr = [{title:"东阳语记伞业有限公司",content:"浙江省东阳市吴宁街道汉宁东路166号3楼",point:"120.252594|29.277712",isOpen:1,icon:{w:23,h:25,l:46,t:21,x:9,lb:12}}
+							var markerArr = [{title:"XXXXX有限公司",content:"168号",point:"120.123594|29.123712",isOpen:1,icon:{w:23,h:25,l:46,t:21,x:9,lb:12}}
 								 ];
 							//´´½¨marker
 							function addMarker(){

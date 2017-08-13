@@ -24,7 +24,7 @@ class ContactController extends FrontBaseController {
         }
         $res = $cmsPostModel->add();
         if($res){
-            return array("error"=>0,"info"=>"留言成功，感谢您对我们语记提建议",'id'=>$res);
+            return array("error"=>0,"info"=>"留言成功，感谢您对我们提建议",'id'=>$res);
         }else{
             return array("error"=>1,"info"=>"添加失败");
         }

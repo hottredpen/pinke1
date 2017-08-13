@@ -72,7 +72,7 @@ class CmsProductAdmin extends CmsBaseAdmin {
 
     public function editCmsProduct(){
         $id                       = I('id',0,'intval');
-        $info                     = D('Cms/CmsProduct','Datamanager')->getInfo($id);
+        $info                     = D('Cms/CmsProduct','Datamanager')->getInfo($id,array('egt',0));
         $builder  = D('Admin/Form','Builder');
         $builder->theme('one')->setMetaTitle('新增产品')
                 ->setPostUrl(U('Cms/saveCmsProduct'))

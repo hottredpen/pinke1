@@ -67,7 +67,9 @@ pinkePHP 是基于ThinkPHP 3.2.3开发的，它最初的原型是CPK网(项目�
 ####只有将代码写的足够的简洁，才不会被历史淘汰
 
 
+QQ群：72473879
 
+社区：pineke.lankuwangluo.com
 
 
 

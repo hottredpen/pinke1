@@ -8,13 +8,9 @@ class AdminModel extends Model{
     const ADMIN_SAVE       = 12; // 超级管理员修改管理员
     const ADMIN_DEL        = 13; // 超级管理员删除管理员
 
-    private $password;
-
     private $tmp_data;
     private $old_data;
     private $scene_id;
-
-    private $tmp_login_admin_data = array();
 
     //字段衍射
     protected $_map = array(
@@ -86,7 +82,7 @@ class AdminModel extends Model{
      ***********************
      */
     public function getLoginUserId(){
-        return $this->tmp_login_admin_data['id'];
+        return $this->tmp_data['login_admin_data']['id'];
     }
     /**
      ***********************
@@ -125,7 +121,7 @@ class AdminModel extends Model{
     // }
 
     protected function set_password(){
-        return $this->_md5_password($this->password);
+        return $this->_md5_password($this->tmp_data['loginpassword']);
     }
 
     private function _md5_password($password,$verify){
@@ -139,7 +135,7 @@ class AdminModel extends Model{
     protected function is_loginusername_pass($username){
         $admin_data = $this->where(array('username'=>$username))->find();
         if($admin_data){
-            $this->tmp_login_admin_data = $admin_data;
+            $this->tmp_data['login_admin_data'] = $admin_data;
             return true;
         }else{
             return false;
@@ -147,7 +143,7 @@ class AdminModel extends Model{
     }
 
     protected function is_loginpassword_pass($password){
-        $admin_data   = $this->tmp_login_admin_data;
+        $admin_data   = $this->tmp_data['login_admin_data'];
         $password_md5 = $this->_md5_password($password,$admin_data['verify']);
         if($admin_data['password'] == $password_md5){
             session('admin', array(
@@ -181,14 +177,14 @@ class AdminModel extends Model{
 
     protected function is_passwordlength_pass($password){
         if(strlen($password) > 4){
-            $this->password = $password;
+            $this->tmp_data['loginpassword'] = $password;
             return true;
         }
         return false;
     }
 
     protected function is_repassword_pass($repassword){
-        if($repassword == $this->password){
+        if($repassword == $this->tmp_data['loginpassword']){
             return true;
         }
         return false;

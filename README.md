@@ -44,22 +44,6 @@ pinkePHP 是基于ThinkPHP 3.2.3开发的，它最初的原型是CPK网(项目�
 ~~~
 
 
-<img src="http://www.lankuwangluo.com/data/uploads/201708/yuji_index_banner/71a61a1814708e270.png" alt="图片名称" align='center' />
-
-<img src="http://www.lankuwangluo.com/data/uploads/201708/yuji_index_banner/629c9495a135e21ef.png" alt="图片名称" align='center' />
-
-<img src="http://www.lankuwangluo.com/data/uploads/201708/yuji_index_banner/29936208f414fe790.png" alt="图片名称" align='center' />
-
-<img src="http://www.lankuwangluo.com/data/uploads/201708/yuji_index_banner/0a5315fc17dd6722d.png" alt="图片名称" align='center' />
-
-<img src="http://www.lankuwangluo.com/data/uploads/201708/yuji_index_banner/f633aa109e23fceb9.png" alt="图片名称" align='center' />
-
-
-<img src="http://www.lankuwangluo.com/data/uploads/201708/yuji_index_banner/244355fee3baf0fc4.pngX" alt="图片名称" align='center' />
-
-<img src="http://www.lankuwangluo.com/data/uploads/201708/yuji_index_banner/da2ee16bc7c8ce20f.png" alt="图片名称" align='center' />
-
-
 目前，js的打包功能不对外公开，购买微信模块或者商业授权，可提供打包细节
 
 
@@ -70,6 +54,16 @@ pinkePHP 是基于ThinkPHP 3.2.3开发的，它最初的原型是CPK网(项目�
 QQ群：72473879
 
 社区：pineke.lankuwangluo.com
+
+## 感谢
+感谢以下的项目,排名不分先后
+	[layer](https://github.com/sentsin/layer)
+    [ThinkPHP](https://github.com/top-think/thinkphp)
+    [requirejs](https://github.com/requirejs/requirejs)
+    [pjax](https://github.com/defunkt/jquery-pjax)
+    [CoreThink](https://github.com/ijry/corethink)
+	[DolphinPHP](https://github.com/caiweiming/DolphinPHP)
+
 
 
 

@@ -124,6 +124,7 @@ class File extends Cache {
         }
         $filename   =   $this->filename($name);
         $data   =   serialize($value);
+        $data   =   str_replace(PHP_EOL, '', $data); // 修复缓存bug https://xianzhi.aliyun.com/forum/read/1973.html
         if( C('DATA_CACHE_COMPRESS') && function_exists('gzcompress')) {
             //数据压缩
             $data   =   gzcompress($data,3);

@@ -57,12 +57,12 @@ QQ群：72473879
 
 ## 感谢
 感谢以下的项目,排名不分先后
-	[layer](https://github.com/sentsin/layer)
-    [ThinkPHP](https://github.com/top-think/thinkphp)
-    [requirejs](https://github.com/requirejs/requirejs)
-    [pjax](https://github.com/defunkt/jquery-pjax)
-    [CoreThink](https://github.com/ijry/corethink)
-	[DolphinPHP](https://github.com/caiweiming/DolphinPHP)
+	- [layer](https://github.com/sentsin/layer)
+    - [ThinkPHP](https://github.com/top-think/thinkphp)
+    - [requirejs](https://github.com/requirejs/requirejs)
+    - [pjax](https://github.com/defunkt/jquery-pjax)
+    - [CoreThink](https://github.com/ijry/corethink)
+	- [DolphinPHP](https://github.com/caiweiming/DolphinPHP)
 
 
 

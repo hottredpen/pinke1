@@ -71,7 +71,9 @@
 
                         
 
-                        <volist name="form_builder['form_items_tab']" id="vo" >
+                        
+                        <php>foreach($form_builder['form_items_tab'] as $key =>$vo){</php>
+
                             <div class="tab-pane   push-20  <php>if($key == 1){ echo 'fade in active';}</php>  " id="tab{$key}" style="<php>if($key == 0){ echo 'display: block;'; }</php>">
                                 <volist name="form_builder['form_items_tab'][$key]" id="form" key="k">
                                     <php>// dump($form);</php>
@@ -84,7 +86,7 @@
                                     <php>unset($form);</php>
                                 </volist>
                             </div>
-                        </volist>
+                        <php>}</php>
 
                     </div>
 

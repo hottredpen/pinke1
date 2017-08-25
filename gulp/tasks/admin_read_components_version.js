@@ -37,6 +37,8 @@ gulp.task('admin_read_components_version', function(){
 
 	    
 	    while ((rs = regexp.exec(data)) != null){
+
+	    	rs[1] = rs[1].replace('switch','pk_switch'); // r.js build时switch 不用过，需要别名
 	        components_arr.push({'name':rs[1],'path':rs[2].replace(/([@~])/g, "\/")});
 	    }
 

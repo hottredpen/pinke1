@@ -1,0 +1,1 @@
+define([],function(){var n={init:function(){console.log("product")}};return n});

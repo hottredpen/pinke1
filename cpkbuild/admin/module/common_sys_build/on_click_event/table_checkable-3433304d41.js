@@ -1,0 +1,1 @@
+define(["jquery"],function(c){var e=c(document);e.on("click",".js-table-checkable thead input:checkbox",function(e){var a=c(this).prop("checked");c(".js-table-checkable tbody input:checkbox").each(function(){var e=c(this);e.prop("checked",a),t(e,a)})});var t=function(c,e){e?c.closest("tr").addClass("active"):c.closest("tr").removeClass("active")}});

@@ -1,0 +1,41 @@
+<php>if($form['type'] == 'ueditor@1.0.0'){</php>
+
+<div class="jt_form_builder_component"
+    data-component-name     = "{$form['type']}"
+    data-builder-div        = ".j_form_item_{$form.name}"
+    data-form-item-name     = "{$form.name}"
+    data-content-id         = "UEditor_{$form['name']}" 
+    data-name               = "{$form['name']}" 
+    data-is-init            = "false"
+></div>
+
+<php>
+echo common_builder_echo_style($form['type']);
+</php>
+
+
+    <div class="form-group j_form_item_{$form.name} {$form.extra.class} {$form_builder['all_item_class']}">
+        <label class="{$form['item_col']|common_builder_form_item_col_echo_l} control-label" for="j_form_item_val_{$form.name}">{$form.title}：<span class="text-danger">*</span></label>
+        <div class="{$form['item_col']|common_builder_form_item_col_echo_r}">
+
+
+            <php>if((int)$form['options']['width'] == 0){
+                $form['options']['width'] = '100%';
+                }
+            </php>
+
+            <php>if((int)$form['options']['height'] == 0){
+                $form['options']['height'] = '500px';
+                }
+            </php>
+
+
+            <script id="UEditor_{$form['name']}" name="{$form['name']}" type="text/plain" style="width:{$form['options']['width']};height:{$form['options']['height']};">
+                {$form['value']}
+            </script>
+
+
+
+        </div>
+    </div>
+<php>}</php>

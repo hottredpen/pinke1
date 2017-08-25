@@ -31,7 +31,6 @@ class FormBuilder extends FormBaseBuilder {
 			'cpk_pictures'                => 'cpk_pictures@1.0.0',
 			'datepicker'                  => 'datepicker@1.0.0',
 			'daterangepicker'             => 'daterangepicker@1.0.0',
-			// 'div'                         => 'div',
 			'filter_box'                  => 'filter_box@1.0.0',
 			'imgbox'                      => 'imgbox@1.0.0',
 			'menu_auth'                   => 'menu_auth@1.0.0',

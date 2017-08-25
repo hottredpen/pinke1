@@ -1,4 +1,4 @@
-define(['jquery','jquery-datepicker'],function($){
+define(['jquery','jquery_datepicker'],function($){
 
 var component = {
 	createObj : function(){

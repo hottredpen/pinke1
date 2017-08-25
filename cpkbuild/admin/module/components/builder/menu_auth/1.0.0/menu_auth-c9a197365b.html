@@ -1,0 +1,87 @@
+<php>if($form['type'] == 'menu_auth@1.0.0'){</php>
+
+<div class="jt_form_builder_component"
+    data-component-name     = "{$form['type']}"
+    data-builder-div        = ".j_form_item_{$form.name}"
+    data-form-item-name     = "{$form.name}"
+    data-is-init            = "false"
+></div>
+
+
+
+    <div class="form-group j_form_item_{$form.name} {$form.extra.class} {$form_builder['all_item_class']}">
+
+        <div class="auth">
+
+            <php>foreach($form['options']['all_module_menu_list'] as $module_name => $vo1 ){</php>
+
+                <div class="{$module_name}">
+                    <div class="cui-control cui-checkbox">
+                        <label class="css-input css-checkbox css-checkbox-primary">
+                            <input type="checkbox" name="menu_auth[{$module_name}][]" data-module-name="{$module_name}" <php>if(in_array($vo1['id'], $form['options']['info_menu_auth'][$module_name])) echo "checked";</php> value="{$vo1.id}">
+                            <span></span>
+                            <span> {$vo1.title}</span>
+                        </label>
+
+
+
+                        <div class="auth{$vo1.id}" style="padding-left: 25px;">
+
+                            <php>foreach($vo1['_child']  as  $vo2 ){</php>
+                                <label class="css-input css-checkbox css-checkbox-primary">
+                                    <input type="checkbox" name="menu_auth[{$module_name}][]" data-module-name="{$module_name}" <php>if(in_array($vo2['id'], $form['options']['info_menu_auth'][$module_name])) echo "checked";</php> value="{$vo2.id}">
+                                    <span class="cui-control-indicator"></span>
+                                    <span> {$vo2.title}</span>
+                                </label>
+                                <div class="auth{$vo2.id}" style="padding-left: 25px;">
+                                   
+                                    <php>foreach($vo2['_child']  as  $vo3 ){</php>
+                                        <label class="css-input css-checkbox css-checkbox-primary">
+                                            <input type="checkbox" name="menu_auth[{$module_name}][]" data-module-name="{$module_name}" <php>if(in_array($vo3['id'], $form['options']['info_menu_auth'][$module_name])) echo "checked";</php> value="{$vo3.id}">
+                                            <span class="cui-control-indicator"></span>
+                                            <span> {$vo3.title}</span>
+                                        </label>
+                                        <notempty name="vo3._child">
+                                            <div class="auth{$vo3.id}" style="padding-left: 25px;">
+
+                                                <php>foreach($vo3['_child']  as  $vo4 ){</php>
+                                                    <notempty name="vo4._child">
+                                                        <label class="css-input css-checkbox css-checkbox-primary" style="padding-left: 10px;">
+                                                            <input type="checkbox" name="menu_auth[{$module_name}][]" data-module-name="{$module_name}" <php>if(in_array($vo4['id'], $form['options']['info_menu_auth'][$module_name])) echo "checked";</php> value="{$vo4.id}">
+                                                            <span class="cui-control-indicator"></span>
+                                                            <span> {$vo4.title}</span>
+                                                        </label>
+                                                    <else />
+                                                         <label class="css-input css-checkbox css-checkbox-primary" style="padding-left: 10px;">
+                                                            <input type="checkbox" name="menu_auth[{$module_name}][]" data-module-name="{$module_name}" <php>if(in_array($vo4['id'], $form['options']['info_menu_auth'][$module_name])) echo "checked";</php> value="{$vo4.id}">
+                                                            <span class="cui-control-indicator"></span>
+                                                            <span> {$vo4.title}</span>
+                                                        </label>
+                                                    </notempty>
+                                                    <notempty name="vo4._child">
+                                                        <div class="auth{$vo4.id}" style="padding-left: 25px;">
+                                                            
+                                                            <php>foreach($vo4['_child']  as  $vo5 ){</php>
+                                                                <label class="css-input css-checkbox css-checkbox-primary" style="padding-left: 10px;">
+                                                                    <input type="checkbox" name="menu_auth[{$module_name}][]" data-module-name="{$module_name}" <php>if(in_array($vo5['id'], $form['options']['info_menu_auth'][$module_name])) echo "checked";</php> value="{$vo5.id}">
+                                                                    <span class="cui-control-indicator"></span>
+                                                                    <span> {$vo5.title}</span>
+                                                                </label>
+                                                            <php>}</php>
+                                                        </div>
+                                                    </notempty>
+                                                <php>}</php>
+                                            </div>
+                                        </notempty>
+                                    <php>}</php>
+                                </div>
+                            <php>}</php>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+            <php>}</php>
+        </div>
+
+    </div>
+<php>}</php>

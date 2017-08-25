@@ -1,0 +1,3 @@
+main所依赖的js
+
+该目录下的js统一放到tools下

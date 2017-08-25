@@ -4,6 +4,9 @@ var component = {
 	getName : function(){
 		return "select@1.0.0";
 	},
+	getAuthKey : function(){
+		return "c9f0f895fb98ab9159f5-fad694e614a212e85c67-b4b147bc522828731f1a-104449694941f91e47c5f9c1df512e5b"; // 检测是授权组件
+	},
 	createObj : function(){
 		var obj = {};
 		var o_document = $(document);

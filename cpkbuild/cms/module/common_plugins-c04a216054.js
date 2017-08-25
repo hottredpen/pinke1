@@ -1,0 +1,1 @@
+define(["jquery","./cpk_plugins/fastclick","./cpk_plugins/nprogress"],function(n,c){n(document).ready(function(){c.attach(document.body)})});

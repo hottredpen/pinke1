@@ -1,0 +1,1 @@
+define(["jquery"],function(e){var n={getName:function(){return"textarea@1.0.0"},getAuthKey:function(){return"3c59dc048e8850243be8-f8032feb3513d5049b58-b4b147bc522828731f1a-bd9ac4b38426d19fe181908ae96462b3"},createObj:function(){function n(){}function t(){}var r={},u=(e(document),{builderDiv:"",formItemName:""});return r.init=function(r){u=e.extend({},u,r),n(),t()},r}};return n});

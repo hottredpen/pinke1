@@ -1,0 +1,30 @@
+<php>if($form['type'] == 'datepicker@1.0.0'){</php>
+
+<div class="jt_form_builder_component"
+    data-component-name     = "{$form['type']}"
+    data-builder-div        = ".j_form_item_{$form.name}"
+    data-form-item-name     = "{$form.name}"
+    data-input-id           = "#j_date_{$form['name']}"
+    data-is-init            = "false"
+></div>
+
+<php>
+echo common_builder_echo_style($form['type']);
+</php>
+
+
+    <div class="form-group j_form_item_{$form.name} {$form.extra.class} {$form_builder['all_item_class']}">
+        <notempty name="form['title']">
+            <label class="{$form['item_col']|common_builder_form_item_col_echo_l} control-label" for="j_form_item_val_{$form.name}">
+                <php>if($form['title'] != "-"){</php>
+                {$form.title}：<span class="text-danger">*</span>
+                <php>}</php>
+            </label>
+        </notempty>
+        <div class="{$form['item_col']|common_builder_form_item_col_echo_r} ">
+
+            <input type="text" id="j_date_{$form['name']}" class="form-control input date" name="{$form.name}" value="<notempty name='form.value'>{$form.value|common_format_time='Y-m-d'}</notempty>" {$form.extra.attr}>
+
+        </div>
+    </div>
+<php>}</php>

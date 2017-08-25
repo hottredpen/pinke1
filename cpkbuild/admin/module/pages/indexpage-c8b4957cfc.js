@@ -1,0 +1,1 @@
+define(["jquery","app","chart"],function(i,n,t){var e={init:function(){i(function(){n.init(),n.initHelpers("slick")}),require(["./oneui_tools/oneui_dashboard"],function(i){i.init()})}};return e});

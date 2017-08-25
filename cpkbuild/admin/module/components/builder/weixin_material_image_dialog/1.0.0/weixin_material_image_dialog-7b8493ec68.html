@@ -1,0 +1,118 @@
+<php>if($form['type'] == 'weixin_material_image_dialog@1.0.0'){</php>
+
+<div class="jt_form_builder_component" 
+    data-component-name     = "{$form['type']}"
+    data-builder-div        = ".j_form_item_{$form.name}"
+    data-form-item-name     = "{$form.name}"
+    data-is-init            = "false"
+></div>
+
+<php>
+echo common_builder_echo_style($form['type']);
+</php>
+
+
+<div class="form-group j_form_item_{$form.name} {$form.extra.class} u-component-{$form['type']} {$form_builder['all_item_class']}" style="overflow: hidden;">
+    <php>if($form['title'] != ''){</php>
+    <label class="{$form['item_col']|common_builder_form_item_col_echo_l} control-label" for="j_form_item_val_{$form.name}">{$form.title}：<span class="text-danger">*</span></label>
+    <php>}</php>
+
+    <div class="">
+
+        <div class="img_pick_panel inner_container_box side_l cell_layout">
+            <div class="inner_side">
+                <div class="group_list">
+                    <div class="inner_menu_box">
+                        <dl class="inner_menu js_group">
+                            <dd class="inner_menu_item  <php>if((int)$_GET['image_group']==0){ echo 'selected';}</php>  " data-groupid="0">
+                                <a href="{:U('Weixin/choose_material_image_dialog',array('builder_trigger_name'=>$form['options']['builder_trigger_name'],'image_group'=>0))}" class="inner_menu_link" title="全部图片" data-pjax-container="#{$form['options']['builder_id_name']}" >
+                                    <strong>全部图片</strong><em class="num">(<span>{$form['options']['all_num']}</span>)</em>
+                                </a>
+                            </dd>
+
+                            <dd class="inner_menu_item  <php>if((int)$_GET['image_group']==1){ echo 'selected';}</php>  " data-groupid="1">
+                                <a href="{:U('Weixin/choose_material_image_dialog',array('builder_trigger_name'=>$form['options']['builder_trigger_name'],'image_group'=>1))}" class="inner_menu_link" title="未分组" data-pjax-container="#{$form['options']['builder_id_name']}">
+                                    <strong>未分组</strong><em class="num">(<span>4</span>)</em>
+                                </a>
+                            </dd>
+
+                            <dd class="inner_menu_item  <php>if((int)$_GET['image_group']==3){ echo 'selected';}</php>  " data-groupid="3">
+                                <a href="{:U('Weixin/choose_material_image_dialog',array('builder_trigger_name'=>$form['options']['builder_trigger_name'],'image_group'=>3))}" class="inner_menu_link" title="文章配图" data-pjax-container="#{$form['options']['builder_id_name']}">
+                                    <strong>文章配图</strong><em class="num">(<span>4</span>)</em>
+                                </a>
+                            </dd>
+
+                        </dl>
+                        <div class="inner_menu_item">
+                            <a href="javascript:;" class="inner_menu_link js_creategroup js_popover">新建分组</a>
+                        </div>
+                    </div>                    
+                </div>
+            </div>
+            <div class="inner_main">
+                <div class="img_pick_area">
+                    <div class="sub_title_bar in_dialog">
+                        <div class="upload_box r align_right">
+
+
+                            <div class="m-public-uploadpic">
+                                <input type="file" name="weixinimage_upload" id="weixinimage_upload" class="btn-blue" style="display:none;" />
+                                <input type="hidden" name="fileid" id="file_ids" value="">
+                                <span class="flashCheckBox"></span>
+                            </div>
+
+
+                        </div>
+                        <div class="img_water_tips mini_tips icon_after r weak_text" style="height: 30px;">
+
+                        </div>
+                    </div>
+                    <div class="img_pick_area_inner">
+                        <div class="img_pick">
+                            <ul id="j_material_dialog_image_list" class=" group js_list img_list">
+                                <volist name="form['options']['list']" id="vo">
+                                    <li class="img_item J_choose_this_image" data-builder-trigger-name="{$form['options']['builder_trigger_name']}">
+                                        <label class="frm_checkbox_label img_item_bd selected222222">
+                                            <div class="pic_box">
+                                                <span class="content-thumb" style="background-image:url({$vo['url']});"></span>
+                                            </div>
+                                            <span class="content-check">
+                                                <label class="check-label">
+                                                    <input type="hidden" name="image_media_id" value="{$vo['media_id']}">
+                                                </label>
+                                            </span>
+                                            <span class="lbl_content">
+                                                {$vo['name']}
+                                            </span>
+                                            <div class="selected_mask">
+                                                <div class="selected_mask_inner"></div>
+                                                <div class="selected_mask_icon"></div>
+                                            </div>
+                                        </label>
+                                    </li>
+                                </volist>
+                            </ul>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="pull-right">
+                            {$form['options']['page']}
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <p class="dialog_ft_desc">已选<span class="js_selected">0</span>个，可选100个</p>
+        </div>
+
+
+
+
+
+    </div>
+</div>
+
+
+
+
+
+<php>}</php>

@@ -18,6 +18,10 @@
         app           : 'empty:',
         bootstrap_notify  : 'empty:',
         js_md5        : 'empty:',
+        uploadify     : 'empty:',
+        nestable      : 'empty:',
+        jquery_datepicker : 'empty:',
+        ueditor       : 'empty:',
 
     },
     modules: [

@@ -1,0 +1,10 @@
+.m-public-imgboxupload{min-height:30px;cursor: pointer; position: relative;width: 480px;height: 48px;background-color: #dfdfdf;border-radius: 5px;overflow: hidden;}
+.m-public-imgboxupload .imgbox img{position: absolute;top:0px;left: 0px;width: 100%;height: 100%;}
+.m-public-imgboxupload .fileInputBox{position: absolute;top:0px;left: 0px;}
+.m-public-imgboxupload input {display: none;}
+.m-public-imgboxupload .u-imgboxupload-removebtn{position: absolute;top: 5px;right: 5px;z-index: 300;padding: 8px;background: #333 none repeat scroll 0% 0%;border-radius: 4px;box-shadow: 0px 0px 0px 1px rgba(255, 255, 255, 0.2);color: #FFF;text-decoration: none;font-size: 13px;line-height: 10px;}
+.m-public-imgboxupload .u-imgboxupload-removebtn:hover{background: #E25440 none repeat scroll 0% 0%;color: #FFF;cursor: pointer;}
+.m-public-imgboxupload .u-imgboxupload-startbtn{text-align: center;line-height: 50%;color: #666;}
+.m-public-imgboxupload .uploadify-button {}
+.m-public-imgboxupload .uploadify:hover .uploadify-button {}
+.m-public-imgboxupload .uploadify:hover .u-imgboxupload-startbtn{color: #fff; }

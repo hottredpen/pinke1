@@ -1,0 +1,54 @@
+<php>if($form['type'] == 'imgbox@1.0.0'){</php>
+
+<div class="jt_form_builder_component"
+    data-component-name     = "{$form['type']}"
+    data-builder-div        = ".j_form_item_{$form.name}"
+    data-file-upload-id     = "#file_upload{$k}"
+    data-typename           = "{$form['options']['upload_config']['typename']}"
+    data-inputname          = "{$form['options']['upload_config']['typename']}_{$form['name']}"
+    data-auto-size          = "{$form['options']['upload_config']['autosize']}"
+    data-width              = "{$form['options']['upload_config']['width']}"
+    data-height             = "{$form['options']['upload_config']['height']}"
+    data-is-init            = "false"
+></div>
+<php>
+echo common_builder_echo_style($form['type']);
+</php>
+
+    <div class="form-group j_form_item_{$form.name} {$form.extra.class} {$form_builder['all_item_class']}">
+        <label class="{$form['item_col']|common_builder_form_item_col_echo_l} control-label" for="j_form_item_val_{$form.name}">{$form.title}：<span class="text-danger">*</span></label>
+        <div class="{$form['item_col']|common_builder_form_item_col_echo_r} ">
+
+            <div id="{$form['options']['upload_config']['typename']}_{$form['name']}Box" 
+                class="m-public-imgboxupload j_imgboxupload" 
+                style="width: {$form['options']['upload_config']['width']}px;height: {$form['options']['upload_config']['height']}px;margin-left: 10px;">
+                <php>
+                    $_img_url_ = '';
+                    if($form['options']['upload_config']['upload_return_type'] == 1 || $form['options']['upload_config']['upload_return_type'] == -1){
+                        $_img_url_ = common_trans_sub_image(common_format_cover_id($form['value']));
+                    }else if($form['options']['upload_config']['upload_return_type'] == 2){
+                        $_img_url_ = common_trans_scale_image(common_format_cover_id($form['value']));
+                    }else{
+                        $_img_url_ = common_format_cover_id($form['value']);
+                    }
+                </php>
+
+                <a class="imgbox" href="" rel="group" style="display:none;"><img src="{$_img_url_}" ></a>
+                <input  type="file" name="mypic" id="file_upload{$k}" class="fileInputBox" />
+                <div id="fileQueueHide" style="display: none;">
+                </div>
+                <div class="u-imgboxupload-removebtn" style="display: none">删除</div>
+                <input type="hidden" id="j_{$form['options']['upload_config']['typename']}_{$form['name']}_input"    name="{$form['options']['upload_config']['typename']}_{$form['name']}" value="">
+                <input type="hidden" id="j_{$form['options']['upload_config']['typename']}_{$form['name']}_id_input" name="{$form['name']}" value="{$form['value']}">
+            </div>
+
+            <notempty name="form.tip">
+                <div>
+                <span class="check-tips text-muted small">{$form.tip}</span>
+                </div>
+            </notempty>
+            
+
+        </div>
+    </div>
+<php>}</php>

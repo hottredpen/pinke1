@@ -199,7 +199,7 @@ define(['jquery','js_md5','./test_components','validator'],function($,md5,compon
 
 
         if(('#j_list_filter_time').length > 0){
-            require(['jquery-datepicker'],function(){
+            require(['jquery_datepicker'],function(){
                 $("#j_list_filter_time_from").datepicker({
                     autoclose: true,
                     format: "yyyy-mm-dd"

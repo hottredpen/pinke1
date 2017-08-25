@@ -21,6 +21,9 @@ define('APP_DEBUG',true);
 // 开启微信调试模式
 define('WEIXIN_DEBUG',false);
 
+// 当前系统是否是demo，（demo情况下无法进行增删改）
+define('IS_DEMO',true);
+
 // 定义应用目录
 define('APP_PATH','./Application/');
 

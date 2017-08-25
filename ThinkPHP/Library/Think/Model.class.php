@@ -1042,6 +1042,9 @@ class Model {
         // 数据自动验证
         if(!$this->autoValidation($data,$type)) return false;
 
+        if(!$this->afterAutoValidation($data,$type)) return false;
+
+
         // 表单令牌验证
         if(!$this->autoCheckToken($data)) {
             $this->error = L('_TOKEN_ERROR_');
@@ -1228,6 +1231,10 @@ class Model {
             // 批量验证的时候最后返回错误
             if(!empty($this->error)) return false;
         }
+        return true;
+    }
+
+    protected function afterAutoValidation($data,$type){
         return true;
     }
 

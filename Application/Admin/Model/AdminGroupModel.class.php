@@ -1,7 +1,7 @@
 <?php
 namespace Admin\Model;
-use Think\Model;
-class AdminGroupModel extends Model{
+use Common\Model\CommonModel;
+class AdminGroupModel extends CommonModel{
 
     const ADMIN_ADD        = 11; // 添加
     const ADMIN_SAVE       = 12; // 修改

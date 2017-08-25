@@ -1,8 +1,8 @@
 <?php
 namespace Admin\Model;
-use Think\Model;
+use Common\Model\CommonModel;
 use OT\Database;
-class AdminDatabaseModel extends Model{
+class AdminDatabaseModel extends CommonModel{
 
     const ADMIN_BACK     = 10; // 还原
     const ADMIN_ADD      = 11; // 备份

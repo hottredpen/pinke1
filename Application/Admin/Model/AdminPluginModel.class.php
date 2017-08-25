@@ -1,7 +1,7 @@
 <?php
 namespace Admin\Model;
-use Think\Model;
-class AdminPluginModel extends Model{
+use Common\Model\CommonModel;
+class AdminPluginModel extends CommonModel{
 
     const ADMIN_ADD  = 11;
     const ADMIN_SAVE = 12;

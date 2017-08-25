@@ -1,9 +1,9 @@
-define(['jquery','ueditor'],function($,ueditor){
+define(['jquery'],function($){
 
 // 所有已实例化的ueditor 对象数组
 var g_ueditor_arr = window.g_ueditor_arr || [];
 
-var ueditor = {
+var component = {
 	getName : function(){
 		return "ueditor@1.0.0";
 	},
@@ -27,25 +27,29 @@ var ueditor = {
 		}
 
 		function _init_something(){
-			$(function(){
-				// console.log(config.contentId);
 
-	            var _ueditor = new UE.ui.Editor();
-	            _ueditor.render(config.contentId);
+			require(['ueditor'],function(ueditor){
+				$(function(){
+					// console.log(config.contentId);
 
-	            var _ueditor_obj = {
-	            	"ueditor_obj" : _ueditor
-	            }
-	            g_ueditor_arr.push(_ueditor_obj);
-	            window.g_ueditor_arr = g_ueditor_arr;
-	            // console.log(g_ueditor_arr);
+		            var _ueditor = new UE.ui.Editor();
+		            _ueditor.render(config.contentId);
+
+		            var _ueditor_obj = {
+		            	"ueditor_obj" : _ueditor
+		            }
+		            g_ueditor_arr.push(_ueditor_obj);
+		            window.g_ueditor_arr = g_ueditor_arr;
+		            // console.log(g_ueditor_arr);
 
 
-	            $(document).on("clear_UEditor_"+config.name,function(){
-	                _ueditor.setContent('');
-	            });
+		            $(document).on("clear_UEditor_"+config.name,function(){
+		                _ueditor.setContent('');
+		            });
 
+				});
 			});
+
 		}
 
 		function onSomeThingBtnEvent(){
@@ -56,6 +60,6 @@ var ueditor = {
 	}
 }
 
-return ueditor;
+return component;
 
 });

@@ -1,4 +1,4 @@
-define(['jquery','jquery_datepicker'],function($){
+define(['jquery'],function($){
 
 var component = {
 	getName : function(){
@@ -23,14 +23,14 @@ var component = {
 		}
 
 		function _init_something(){
-
-            $(config.inputId).datepicker({
-                autoclose: true,
-                format: "yyyy-mm-dd"
-            }).on("changeDate",function(){
-                $(document).trigger("Jt_datepicker_change",[config.inputId]);
-            });
-               
+			require(['jquery_datepicker'],function(){
+	            $(config.inputId).datepicker({
+	                autoclose: true,
+	                format: "yyyy-mm-dd"
+	            }).on("changeDate",function(){
+	                $(document).trigger("Jt_datepicker_change",[config.inputId]);
+	            });
+	        });  
 		}
 		return obj;
 	}

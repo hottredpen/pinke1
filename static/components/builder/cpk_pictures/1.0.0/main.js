@@ -1,4 +1,4 @@
-define(['jquery','nestable'],function($){
+define(['jquery'],function($){
 
 var cpk_pictures = {
     getName : function(){
@@ -32,7 +32,7 @@ var cpk_pictures = {
 
 		function _init_something(){
 
-			require([pinkephp.web_static_url+'static/components/tools/cpk_uploadify.js'],function(cpk_uploadify){
+			require([pinkephp.web_static_url+'static/components/tools/cpk_uploadify.js','nestable'],function(cpk_uploadify){
                 var _uploadtype        = config.uploadType;
                 var _upload_init_input = config.uploadInitInput;
                 var _uploadify         = cpk_uploadify.createObj();

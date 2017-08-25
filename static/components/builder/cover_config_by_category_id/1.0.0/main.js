@@ -1,4 +1,4 @@
-define(['jquery','uploadify'],function($){
+define(['jquery'],function($){
 
 var component = {
     getName : function(){
@@ -25,7 +25,7 @@ var component = {
 		function _init_something(){
 
 
-            require([pinkephp.web_static_url+'static/components/tools/cpk_imgbox_upload.js'],function(CPK_imgbox_upload){
+            require([pinkephp.web_static_url+'static/components/tools/cpk_imgbox_upload.js','uploadify'],function(CPK_imgbox_upload){
 
                 $(document).on('click','.J_cover_config_btn',function(){
 

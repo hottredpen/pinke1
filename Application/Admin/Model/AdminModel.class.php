@@ -56,6 +56,7 @@ class AdminModel extends CommonModel{
         array('repassword', 'is_repassword_pass', '两次密码输入不一致', self::MUST_VALIDATE,'callback',self::ADMIN_ADD),
         array('email', 'is_notempty_pass', '邮箱不能为空', self::MUST_VALIDATE,'function',self::ADMIN_ADD),
         array('email', 'is_email_format_pass', '错误的邮箱格式', self::MUST_VALIDATE,'function',self::ADMIN_ADD),
+        array('group', 'is_group_pass', '请选择所属分组', self::MUST_VALIDATE,'callback',self::ADMIN_ADD),
         array('group', 'is_not_add_super_group_pass', '只能有一位超级管理员', self::MUST_VALIDATE,'callback',self::ADMIN_ADD),
 
 
@@ -71,6 +72,7 @@ class AdminModel extends CommonModel{
         array('email', 'is_notempty_pass', '邮箱不能为空', self::MUST_VALIDATE,'function',self::ADMIN_SAVE),
         array('email', 'is_email_format_pass', '错误的邮箱格式', self::MUST_VALIDATE,'function',self::ADMIN_SAVE),
         array('status', 'is_not_change_super_status_pass', '修改时不能禁用超级管理员', self::MUST_VALIDATE,'callback',self::ADMIN_SAVE),
+        array('group', 'is_group_pass', '请选择所属分组', self::MUST_VALIDATE,'callback',self::ADMIN_SAVE),
         array('group', 'is_not_edit_not_own_super_group_pass', '只能有一位超级管理员', self::MUST_VALIDATE,'callback',self::ADMIN_SAVE),
         
 
@@ -227,6 +229,13 @@ class AdminModel extends CommonModel{
         $admin   = session("admin");
         $adminid = $admin['id'];
         if($adminid == $id){
+            return false;
+        }
+        return true;
+    }
+
+    protected function is_group_pass($group){
+        if($group <= 0){
             return false;
         }
         return true;

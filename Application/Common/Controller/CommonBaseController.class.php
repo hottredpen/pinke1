@@ -169,7 +169,7 @@ class CommonBaseController extends Controller {
         $map = array();
 
         // 搜索框搜索
-        if ($search_field != '' && $keyword !== '') {
+        if ($search_field != '' && $keyword != '') {
             $map[$search_field] = array('like','%'.$keyword.'%');
         }
 

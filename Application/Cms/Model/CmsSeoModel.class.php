@@ -1,7 +1,7 @@
 <?php
 namespace Cms\Model;
-use Think\Model;
-class CmsSeoModel extends Model{
+use Common\Model\CommonModel;
+class CmsSeoModel extends CommonModel{
 
     protected $tmp_name;
     protected $tmp_pid;

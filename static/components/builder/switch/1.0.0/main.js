@@ -32,6 +32,7 @@ var component = {
             $(config.builderDiv + ' .J_form_item_switch').on('click',function(){
                 var _value = $(this).val() == 1 ? 0 : 1;
                 $(this).val(_value);
+                $(this).parent().find('.j_form_switch_real_value').val(_value);
             });
 		}
 

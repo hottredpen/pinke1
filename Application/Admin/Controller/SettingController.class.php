@@ -42,7 +42,8 @@ class SettingController extends BackController {
         $AdminAdminHandleObject = $this->visitor->AdminAdminHandleObject();
         $res = $AdminAdminHandleObject->saveSetting();
         if($res['error']==0 && $res['info'] != ""){
-            $this->cpk_success($res['info'].",刷新缓存后生效",array('backurl'=>U('cache/index')));
+            F('WEB_SETTING',null);  // @todo 用函数清理
+            $this->cpk_success($res['info']);
         }else{
             $this->cpk_error($res['info']);
         }

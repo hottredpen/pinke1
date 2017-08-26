@@ -1,7 +1,7 @@
 <?php
 namespace Cms\Model;
-use Think\Model;
-class CmsBlockCategoryModel extends Model{
+use Common\Model\CommonModel;
+class CmsBlockCategoryModel extends CommonModel{
 
     protected $pid;
 

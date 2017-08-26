@@ -37,7 +37,8 @@ return array(
                 'Admin',
                 'Api',
                 'Cms',
-                'User'
+                'User',
+                'Weixin'
         ),
 
 	// 'URL_MODULE_MAP' => array('Admin'=>'admin_plugin'),//模块映射

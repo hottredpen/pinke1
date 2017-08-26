@@ -1,11 +1,25 @@
 define(['jquery'],function($){
-	var page = {
-		init : function(){
-			var o_replce_send_box_manager = $('#j_replce_send_box_manager');
-			var last_list_id = 0;
 
+var page_trigger = {
+	createObj : function(){
+		var obj = {};
+		var o_document = $(document);
+		var o_replce_send_box_manager = $('#j_replce_send_box_manager');
+		var last_list_id = 0;
+
+		
+        var config = {
+                "builderDiv"       : "",
+        };
+
+		obj.init = function(userconfig){
 			console.log("talk_one_by_one init");
+			config       = $.extend({}, config, userconfig);
+			_init_something();
+			_onDocumentBtn();
+		}
 
+		function _init_something(){
 			$(function(){
 			    $("html, body .m-message-list").scrollTop($('#j-anchor-message-replay').offset().top );
 
@@ -19,7 +33,6 @@ define(['jquery'],function($){
 			    console.log(last_list_id);
 
 			});
-
 
 			if($("#jt_load_send_box").length > 0){
 
@@ -44,8 +57,9 @@ define(['jquery'],function($){
 			}
 
 
+		}
 
-
+		function _onDocumentBtn(){
 			// 发送框里的取消
 			$(document).on('J_builder_form_cancel_click',function(e,ele){
 				var replace_cur = o_replce_send_box_manager.attr('data-cur-replace-div');
@@ -92,17 +106,16 @@ define(['jquery'],function($){
 				}
 				$(document).trigger('Jt_builder_form_init'); // 部分按钮需重新绑定
 			});
-
-
-			function _fun_replace_a_b(replace_a,replace_b){
-	            var $replace_a = $(replace_a).clone(true);  
-	            var $replace_b = $(replace_b).replaceWith($replace_a);  
-	            $(replace_a).replaceWith($replace_b);  
-			}
-
-
-
 		}
+		function _fun_replace_a_b(replace_a,replace_b){
+            var $replace_a = $(replace_a).clone(true);  
+            var $replace_b = $(replace_b).replaceWith($replace_a);  
+            $(replace_a).replaceWith($replace_b);  
+		}
+		return obj;
 	}
-	return page;
+}
+
+return page_trigger;
+
 });

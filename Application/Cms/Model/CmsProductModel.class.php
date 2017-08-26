@@ -1,7 +1,7 @@
 <?php
 namespace Cms\Model;
-use Think\Model;
-class CmsProductModel extends Model{
+use Common\Model\CommonModel;
+class CmsProductModel extends CommonModel{
 
     const ADMIN_ADD      = 11;//管理员添加
     const ADMIN_SAVE     = 12;//管理员修改

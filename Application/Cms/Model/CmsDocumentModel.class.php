@@ -1,7 +1,7 @@
 <?php
 namespace Cms\Model;
-use Think\Model;
-class CmsDocumentModel extends Model{
+use Common\Model\CommonModel;
+class CmsDocumentModel extends CommonModel{
 
     const ADMIN_ADD  = 11; // 添加
     const ADMIN_SAVE = 12; // 修改

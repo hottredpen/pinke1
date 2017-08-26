@@ -34,7 +34,7 @@ class AdminUploadconfigController extends BackController{
         $builder->theme('one')->setMetaTitle('上传配置列表')
                 ->ajax_url(U('Admin/AdminUploadconfig/ajaxAdminUploadconfig'))
                 ->addTopButton('layer',array('data-action'=>'addAdminUploadconfig','data-width'=>"800px",'data-height'=>'1050px','data-title'=>'新增-上传配置'))
-                ->setSearch(array('name'=>'附件名称','typename'=>'目录标示'),'',U('admin/uploadconfig/index'))
+                ->setSearch(array('name'=>'附件名称','typename'=>'目录标示'),'',U('Admin/AdminUploadconfig/index'))
                 ->addOrder('typename')
                 ->addFilter('sub_type','function','admin_local_upload_sub_type_name')
                 ->addFilter('scale_type','function','admin_local_upload_scale_type_name')

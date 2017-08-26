@@ -23,8 +23,15 @@
                     }
                 </php>
                 <label class="css-input switch switch-{$_switch_size} switch-primary ">
-                    <input class="J_form_item_switch" <php>if($form['value'] == 1){ echo 'checked=""';}</php> type="checkbox" value="{$form['value']|intval}"  name="{$form['name']}"><span></span>
+                    <input class="J_form_item_switch" <php>if($form['value'] == 1){ echo 'checked=""';}</php> type="checkbox" value="{$form['value']|intval}"  name="{$form['name']}_checkbox"><span></span>
+
+                    <!-- 此字段才是真实提交字段，因为上面的input为checkbox类型，如果为0，name的值将不会提交-->
+                    <input class="j_form_switch_real_value form-control" type="hidden"  value="0" name="{$form['name']}" >
+
                 </label>
+
+
+
 
             <notempty name="form.tip">
             <div>

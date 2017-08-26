@@ -1,7 +1,7 @@
 <?php
 namespace Cms\Model;
-use Think\Model;
-class CmsServicePostModel extends Model{
+use Common\Model\CommonModel;
+class CmsServicePostModel extends CommonModel{
 
     const INFO_ADD      = 11; // 添加
     const INFO_SAVE     = 12; // 修改

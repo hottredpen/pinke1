@@ -1,7 +1,7 @@
 <?php
 namespace Cms\Model;
-use Think\Model;
-class CmsSettingModel extends Model{
+use Common\Model\CommonModel;
+class CmsSettingModel extends CommonModel{
 
     const CHECK_DATA     = 11; // 数据批量检测
     const SAVE_INFO      = 12; // 单个修改

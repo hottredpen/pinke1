@@ -1,7 +1,7 @@
 <?php
 namespace Cms\Model;
-use Think\Model;
-class CmsDocumentArticleModel extends Model{
+use Common\Model\CommonModel;
+class CmsDocumentArticleModel extends CommonModel{
 
     const INFO_ADD  = 11; // 添加
     const INFO_SAVE = 12; // 修改

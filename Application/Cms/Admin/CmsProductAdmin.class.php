@@ -53,7 +53,7 @@ class CmsProductAdmin extends CmsBaseAdmin {
         $info    = array();
         $builder  = D('Admin/Form','Builder');
         $builder->theme('one')->setMetaTitle('新增产品')
-                ->setPostUrl(U('Cms/addCmsProduct'))
+                ->setPostUrl(U('Cms/createCmsProduct'))
                 ->setPostBackUrl(U('Cms/product'))
                 ->addFormItem('category_id', 'select', '产品分类','',select_list_as_tree('cms_product_category', 'title',array(), 'id','id asc'))
                 ->addFormItem('title', 'text', '产品标题')

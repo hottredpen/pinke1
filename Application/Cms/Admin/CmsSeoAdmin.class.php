@@ -46,7 +46,7 @@ class CmsSeoAdmin extends CmsBaseAdmin {
     public function addCmsSeo(){
         $builder  = D('Admin/Form','Builder');
         $builder->theme('one')->setMetaTitle('新增SEO')
-                ->setPostUrl(U('Cms/addCmsSeo'))
+                ->setPostUrl(U('Cms/createCmsSeo'))
                 ->addFormItem('pid', 'select', '页面所属模块','',select_list_as_tree('cms_seo', 'name', array(0=>'作为新模块'), 'id','ordid desc'))
                 ->addFormItem('name', 'text', '名称')
                 ->addFormItem('module', 'text', '模块')

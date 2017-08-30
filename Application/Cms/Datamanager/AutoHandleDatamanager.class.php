@@ -96,10 +96,10 @@ class AutoHandleDatamanager {
                 break;
 
             // 产品
-            case 'addCmsProduct':
+            case 'createCmsProduct':
                 $thisConfig = array(
                     'name'        => '产品',
-                    'action'      => 'add',
+                    'action'      => 'create',
                     'field'       => 'name,title,category_id,price,content,keywords,description,list_p_data,status,cover_ids,url_taobao,url_weixin',
                     'key'         => 11
                 );
@@ -130,10 +130,10 @@ class AutoHandleDatamanager {
                 break;
 
             // 产品分类
-            case 'addCmsProductCategory':
+            case 'createCmsProductCategory':
                 $thisConfig = array(
                     'name'        => '产品分类',
-                    'action'      => 'add',
+                    'action'      => 'create',
                     'field'       => 'name,title,pid,status',
                     'key'         => 11
                 );
@@ -217,10 +217,10 @@ class AutoHandleDatamanager {
 
 
             // seo
-            case 'addCmsSeo':
+            case 'createCmsSeo':
                 $thisConfig = array(
                     'name'        => 'Seo',
-                    'action'      => 'add',
+                    'action'      => 'create',
                     'field'       => 'module,action,pid,name,other,title_tpl,keywords_tpl,description_tpl,status',
                     'key'         => 11
                 );
@@ -248,78 +248,6 @@ class AutoHandleDatamanager {
                     'field'       => 'id',
                     'key'         => 13
                 );
-                break;
-
-            // cms模型
-            case 'addCmsType':
-                $thisConfig = array(
-                    'name'        => 'cms模型',
-                    'action'      => 'add',
-                    'field'       => 'title,name,icon,status',
-                    'key'         => 11
-                );
-                break;
-            case 'saveCmsType':
-                $thisConfig = array(
-                    'name'        => 'cms模型',
-                    'action'      => 'save',
-                    'field'       => 'title,name,icon,status',
-                    'key'         => 12
-                );
-                break;
-            case 'ajaxCmsType':
-                $thisConfig = array(
-                    'name'        => 'cms模型',
-                    'action'      => 'ajax',
-                    'field'       => 'title,name,icon,status',
-                    'key'         => 12
-                );
-                break;
-            case 'deleteCmsType':
-                $thisConfig = array(
-                    'name'        => 'cms模型',
-                    'action'      => 'delete',
-                    'field'       => 'id',
-                    'key'         => 13
-                );
-                break;
-
-            // 模型字段
-            case 'addCmsAttribute':
-                $thisConfig = array(
-                    'name'        => '模型字段',
-                    'action'      => 'add',
-                    'field'       => 'title,name,doc_type,type,status',
-                    'key'         => 11
-                );
-                break;
-            case 'saveCmsAttribute':
-                $thisConfig = array(
-                    'name'        => '模型字段',
-                    'action'      => 'save',
-                    'field'       => 'title,name,doc_type,type,status',
-                    'key'         => 12
-                );
-                break;
-            case 'ajaxCmsAttribute':
-                $thisConfig = array(
-                    'name'        => '模型字段',
-                    'action'      => 'ajax',
-                    'field'       => 'title,name,doc_type,type,status',
-                    'key'         => 12
-                );
-                break;
-            case 'deleteCmsAttribute':
-                $thisConfig = array(
-                    'name'        => '模型字段',
-                    'action'      => 'delete',
-                    'field'       => 'id',
-                    'key'         => 13
-                );
-                break;
-            default:
-                // 没有找到
-                return false;
                 break;
 
 		}

@@ -45,7 +45,7 @@ class CmsProductCategoryAdmin extends CmsBaseAdmin {
         $info['pid'] = $id;
         $builder  = D('Admin/Form','Builder');
         $builder->theme('one')->setMetaTitle('新增分类')
-                ->setPostUrl(U('Cms/addCmsProductCategory'))
+                ->setPostUrl(U('Cms/createCmsProductCategory'))
                 ->addFormItem('pid', 'select', '上级分类','上级分类',select_list_as_tree('cms_product_category', 'title', array(0=>'作为一级分类'), 'id'))
                 ->addFormItem('title', 'text', '分类名称')
                 ->addFormItem('name', 'text', '分类标示')

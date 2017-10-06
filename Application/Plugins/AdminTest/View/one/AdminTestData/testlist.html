@@ -1,0 +1,54 @@
+<BeforeTemplate:page_init name="ddd" title="后台管理" loadjs="admin_test_list"></BeforeTemplate:page_init>
+
+
+
+
+<div class="col-md-12">
+	<div class="col-md-6 col-md-offset-1">
+	    <label class="css-input css-checkbox css-checkbox-primary">
+	        <input type="checkbox" class="" name="insertdb" value="1">
+	        <span></span>是否插入数据                    
+	    </label>
+    </div>
+</div>
+
+
+
+	<php>foreach($test_data as $key => $value){</php>
+
+		<ul class="" >
+			<volist name="value['test_data_ids_data']" id="vo">
+				<li class="col-md-12 j_task_id_for_test_{$vo['id']} j_task_id_for_test" data-task-id="{$vo['id']}">
+
+				<div class="col-md-3">{$vo['title']}</div>
+					
+				<div class="col-md-3">{$vo['assert']}</div>
+			
+				
+
+				<div class="j_test_assert_info_{$vo['id']} j_test_assert_info col-md-3" ></div>
+				
+				<div class="j_test_assert_status_{$vo['id']} j_test_assert_status col-md-3"></div>
+
+			
+				</li>
+			</volist>
+		</ul>
+
+		<div class="clearfix"></div>
+
+		<ul style="margin-top: 10px;">
+				<li class="col-md-12 j_task_id_for_test_{$vo['id']} j_task_id_for_test" data-task-id="{$vo['id']}">
+					<div class="col-md-3">====>插入数据</div>
+					<div class="col-md-3">{$vo['assert']}</div>
+					<div class="j_test_assert_info_0 j_test_assert_info col-md-3" ></div>
+					<div class="j_test_assert_status_0 j_test_assert_status col-md-3"></div>
+				</li>
+		</ul>
+
+
+<a class="J_start_admin_test" data-task-id="{$task_id}" href="javascript:;" target="_self">开始测试</a>
+
+	<php>}</php>
+
+

@@ -20,24 +20,29 @@ class AdminTestTaskAdmin extends AdminTestBaseAdmin {
         $builder->theme('one')->setMetaTitle('单元测试列表')
                 ->SetTabNav(array(
                         array('title'=>'配置','href'=>U('Admin/AdminTest/setting')),
+                        array('title'=>'测试数据','href'=>U('Admin/AdminTest/testDataList')),
                         array('title'=>'单元测试','href'=>'javascript:;'),
                         array('title'=>'集成测试','href'=>U('Admin/AdminTest/group_task')),
                         array('title'=>'测试记录','href'=>U('Admin/AdminTest/task_log')),
-                    ),1)
+                    ),2)
                 ->setSearch(array('title'=>'测试标题'),'',U('admin/admin/index'))
                 ->ajax_url(U('Admin/AdminTest/ajaxAdminTestTask'))
                 ->addTopButton('layer',array('data-action'=>'addAdminTestTask','data-width'=>"800px",'data-height'=>'520px','data-title'=>'新增-单元测试'))
                 ->addOrder('last_time')
                 ->addTableColumn('id', 'ID')
                 ->addTableColumn('title', '测试标题')
-                ->addTableColumn('url', 'url')
-                ->addTableColumn('test_data', '测试数量')
+                ->addTableColumn('model_name', '所属模型')
+                ->addTableColumn('handle_object', '操作对象')
+                ->addTableColumn('action', '行为')
+                ->addTableColumn('test_data_group', '数据组')
+                ->addTableColumn('time', '最后测试时间')
                 ->addTableColumn('status', '状态', 'status')
                 ->addTableColumn('right_button', '操作', 'btn')
                 ->setTableDataList($data_list)
                 ->setPage($data_num,$page_size)
+                ->addRightButton('custom',array('title'=>'添加数据组','href'=>U('admin/AdminTest/test_data_group_list',array('task_id'=>'__id__'))))
+                ->addRightButton('custom',array('title'=>'准备测试','href'=>U('admin/AdminTest/before_start_task',array('id'=>'__id__'))))
                 ->addRightButton('layer',array('data-action'=>'editAdminTestTask','data-width'=>"800px",'data-height'=>'520px','data-title'=>'编辑-单元测试'))
-                ->addRightButton('custom',array('title'=>'添加测试数据','url'=>U()))
                 ->addRightButton('delete_confirm',array('data-action'=>'deleteAdmin','data-itemname'=>'单元测试'))
                 ->assign_builder()
                 ->admindisplay('Common@builder:ListBuilder');
@@ -72,6 +77,7 @@ class AdminTestTaskAdmin extends AdminTestBaseAdmin {
                 ->assign_builder()
                 ->admindisplay('Common@builder:FormBuilder');
     }
+
 
 
 

@@ -4,7 +4,7 @@ use Admin\HandleObject\BaseHandleObject;
 /**
  * 管理员操作对象
  */
-class AdminTestHandleObject extends BaseHandleObject {
+class AdminTestAdminHandleObject extends BaseHandleObject {
     protected $uid;
     function __construct($uid=0) {
         parent::__construct($uid);

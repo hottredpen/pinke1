@@ -10,15 +10,32 @@ class AdminTestController extends BackController {
         $this->action_list =  array(
 
             // 配置
-            'setting'                         => 'AdminTestBase/index',
-
+            'setting'                => 'AdminTestBase/index',
+            
             // 测试任务
-            'task'              => 'AdminTestTask/task',
-            'addAdminTestTask'  => 'AdminTestTask/addAdminTestTask',
-            'editAdminTestTask' => 'AdminTestTask/editAdminTestTask',
-
+            'task'                   => 'AdminTestTask/task',
+            'addAdminTestTask'       => 'AdminTestTask/addAdminTestTask',
+            'editAdminTestTask'      => 'AdminTestTask/editAdminTestTask',
+            
             // 
-            'group_task'   => 'AdminTestTask/group_task',
+            'group_task'             => 'AdminTestTask/group_task',
+            
+            'testDataList'           => 'AdminTestData/testDataList',
+            'addAdminTestData'       => 'AdminTestData/addAdminTestData',
+            
+            
+            
+            
+            'addTestDataForTask'     => 'AdminTestData/addTestDataForTask',
+            'editAdminTestData'      => 'AdminTestData/editAdminTestData',
+            
+            'before_start_task'      => 'AdminTestData/before_start_task',
+            
+            'test_data_group_list'   => 'AdminTestDataGroup/test_data_group_list',
+            
+            'addAdminTestDataGroup'  => 'AdminTestDataGroup/addAdminTestDataGroup',
+            'editAdminTestDataGroup' => 'AdminTestDataGroup/editAdminTestDataGroup',
+
 
         );
     }

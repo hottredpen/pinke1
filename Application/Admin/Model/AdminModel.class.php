@@ -8,8 +8,6 @@ class AdminModel extends CommonModel{
     const ADMIN_SAVE       = 12; // 超级管理员修改管理员
     const ADMIN_DEL        = 13; // 超级管理员删除管理员
 
-    private $password;
-
     private $tmp_data;
     private $old_data;
     private $scene_id;
@@ -29,8 +27,10 @@ class AdminModel extends CommonModel{
 
         // 超级管理员添加管理员
         array('create_time','time',self::ADMIN_ADD,'function'),
+        array('update_time','time',self::ADMIN_ADD,'function'),
+        array('verify','set_verify_add',self::ADMIN_ADD,'callback'),
         array('password','set_password',self::ADMIN_ADD,'callback'),
-
+        array('last_ip','127.0.0.1',self::ADMIN_ADD),
         // 超级管理员修改管理员
         array('update_time','time',self::ADMIN_SAVE,'function'),
         array('password','set_password',self::ADMIN_SAVE,'callback'),
@@ -58,6 +58,7 @@ class AdminModel extends CommonModel{
         array('email', 'is_email_format_pass', '错误的邮箱格式', self::MUST_VALIDATE,'function',self::ADMIN_ADD),
         array('group', 'is_group_pass', '请选择所属分组', self::MUST_VALIDATE,'callback',self::ADMIN_ADD),
         array('group', 'is_not_add_super_group_pass', '只能有一位超级管理员', self::MUST_VALIDATE,'callback',self::ADMIN_ADD),
+        array('group', 'get_verify_add', 'return_true', self::MUST_VALIDATE,'callback',self::ADMIN_ADD),
 
 
         // 超级管理员修改管理员
@@ -115,22 +116,16 @@ class AdminModel extends CommonModel{
      * 业务方法
      ***********************
      */
-    // protected function is_form_token_pass(){
-    //     $token      = $_POST['form_token'];
-    //     $token_salt =  $_POST['form_token_salt'];
-    //     $ok_token   = md5(get_client_ip().$token_salt.strtolower(MODULE_NAME.CONTROLLER_NAME."addadmin"));
-    //     if($ok_token == $token){
-    //         return true;
-    //     }else{
-    //         return false;
-    //     }
-    // }
-
     protected function set_password(){
-        return $this->_md5_password($this->password);
+        if($this->old_data['verify']){
+            $verify = $this->old_data['verify'];
+        }else{
+            $verify = $this->tmp_data['verify'];
+        } 
+        return $this->_md5_password($this->tmp_data['password'],$verify);
     }
 
-    private function _md5_password($password,$verify){
+    private function _md5_password($password="",$verify=""){
         return md5($password.md5($verify).C('AUTHCODE'));
     }
 
@@ -167,6 +162,10 @@ class AdminModel extends CommonModel{
         }
     }
 
+    protected function get_verify_add(){
+        $this->tmp_data['verify'] = common_random_string(6);
+        return true;
+    }
 
 
 
@@ -183,14 +182,14 @@ class AdminModel extends CommonModel{
 
     protected function is_passwordlength_pass($password){
         if(strlen($password) > 4){
-            $this->password = $password;
+            $this->tmp_data['password'] = $password;
             return true;
         }
         return false;
     }
 
     protected function is_repassword_pass($repassword){
-        if($repassword == $this->password){
+        if($repassword == $this->tmp_data['password']){
             return true;
         }
         return false;
@@ -267,5 +266,10 @@ class AdminModel extends CommonModel{
         }
         return true;
     }
+
+    protected function set_verify_add(){
+        return $this->tmp_data['verify'];
+    }
+
 
 }

@@ -3,7 +3,7 @@ namespace Cms\Datamanager;
 
 class CmsProductDatamanager {
 
-	public function getData($p=1,$page_size=10,$map,$order){
+	public function getData($p=1,$page_size=10,$map=array(),$order=" p.id desc "){
 		$data = $this->_takeFormatData("data",$map,$p,$page_size,$order);
 		return $data;
 	}

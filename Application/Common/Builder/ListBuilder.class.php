@@ -52,7 +52,7 @@ class ListBuilder extends CommonBaseController {
      * 获取builder_id
      * 为pjax局部刷新使用
      */
-    public function getBuilderId($name){
+    public function getBuilderId(){
         return $this->_builder_id;
     }
     /**
@@ -183,14 +183,8 @@ class ListBuilder extends CommonBaseController {
                 $my_attribute['title'] = '新增';
                 $my_attribute['class'] = 'J_layer_dialog btn btn-primary';
                 $my_attribute['href']  = 'javascript:;';
-                // data-argument 的格式统一使用&name1=value1&name2=value2的样式
-                $argument       = explode("&", $attribute['data-argument']);
-                $argument_array = array();
-                foreach ($argument as $key => $value) {
-                    list($arg_name,$arg_value) = explode("=", $value);
-                    $argument_array[$arg_name] = $arg_value;
-                }
-                $my_attribute['data-url'] = U( MODULE_NAME.'/'.CONTROLLER_NAME.'/'.$attribute['data-action'],$argument_array);
+                // 无参数时直接使用data-action ，有参数时请直接使用data-url
+                $my_attribute['data-url'] = U( MODULE_NAME.'/'.CONTROLLER_NAME.'/'.$attribute['data-action']);
                 // 替换
                 if ($attribute && is_array($attribute)) {
                     $my_attribute = array_merge($my_attribute, $attribute);
@@ -293,19 +287,9 @@ class ListBuilder extends CommonBaseController {
                 $my_attribute['title'] = '编辑';
                 $my_attribute['class'] = 'J_layer_dialog label label-primary';
                 $my_attribute['href']  = 'javascript:;';
-                // data-argument 的格式统一使用&name1=value1&name2=value2的样式
-                if($attribute['data-url'] != ""){
-                    $my_attribute['data-url'] = $attribute['data-url'];
-                }else{
-                    $argument       = explode("&", $attribute['data-argument']);
-                    $argument_array = array();
-                    foreach ($argument as $key => $value) {
-                        list($arg_name,$arg_value) = explode("=", $value);
-                        $argument_array[$arg_name] = $arg_value;
-                    }
-                    $argument_array[$this->_table_data_list_key] = '__id__';
-                    $my_attribute['data-url'] = U( MODULE_NAME.'/'.CONTROLLER_NAME.'/'.$attribute['data-action'],$argument_array);
-                }
+                // 只有id参数时用data-action ,有其他参数时用data-url
+                $argument_array[$this->_table_data_list_key] = '__id__';
+                $my_attribute['data-url'] = U( MODULE_NAME.'/'.CONTROLLER_NAME.'/'.$attribute['data-action'],$argument_array);
 
                 // 替换默认值
                 if ($attribute && is_array($attribute)) {
@@ -508,6 +492,7 @@ class ListBuilder extends CommonBaseController {
         if ($this->_top_button_list) {
             foreach ($this->_top_button_list as &$button) {
                 $button['attribute'] = $this->compileHtmlAttr($button);
+                $button['attribute'] = $this->_replace_underline_var($button['attribute'],$data);
             }
         }
 

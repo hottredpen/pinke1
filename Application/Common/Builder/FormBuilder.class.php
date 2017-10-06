@@ -85,7 +85,7 @@ class FormBuilder extends CommonBaseController {
      * @param $extra   额外自定义项目,主要为组件非必须的，用于展示、触发及关联额外其他item的拓展数据
      * @return $this
      */
-    public function addFormItem($name, $type, $title, $tip, $options = array(), $extra = array()) {
+    public function addFormItem($name="", $type="", $title="", $tip="", $options = array(), $extra = array()) {
         $item['tab']         = 0;
         $item['group']       = 0;
         $item['name']        = $name;
@@ -146,7 +146,7 @@ class FormBuilder extends CommonBaseController {
     /**
      * 设置tab
      */
-    public function setTabNav($tab_list, $current_tab) {
+    public function setTabNav($tab_list=array(), $current_tab=0) {
         $this->_tab_nav = array('tab_list' => $tab_list, 'current_tab' => $current_tab);
         return $this;
     }

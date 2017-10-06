@@ -48,6 +48,10 @@ class CommonBaseController extends Controller {
         ));
     }
 
+    protected function json($data){
+        parent::ajaxReturn($data);
+    }
+
     protected function cpk_status_error($status=0,$info="错误",$urlOrData=""){
         IS_AJAX && $this->ajaxReturn((int)$status,$info,$urlOrData);
         $this->error($info, $urlOrData);
@@ -119,7 +123,11 @@ class CommonBaseController extends Controller {
         if(strstr(strtolower($templateFile),'plugins://')){
             C('DEFAULT_THEME','');
             $templateFile = str_replace("Plugins://", "Plugins/".PK_PLUGIN_NAME."@", $templateFile);
-            $layout = "Plugins/".PK_PLUGIN_NAME."@".$layout;
+            if(C('ADMIN_DISPLAY')){
+                $layout = $layout;
+            }else{
+                $layout = "Plugins/".PK_PLUGIN_NAME."@".$layout;
+            }
         }
 
         G('viewStartTime');

@@ -36,8 +36,10 @@ class TestTaskModel extends Model{
 
 
     public function test_do($handleObj,$action_name){
+        C('PK_TESTING',1);
         //先测试正确的（因为输出错误后后面都会出错）
         $_POST                         = $this->_format_post_data($this->okPostData);
+        dump($_POST);
         $res                           = $handleObj->$action_name();
         $this->test_return_id          = $res['id'];
         $_success_outdata              = $this->_takeOutdata(array('testtitle'=>"检测测试数据里的正确数据",'errorinfo'=>$this->test_success_info),$res,$_POST);
@@ -122,30 +124,34 @@ class TestTaskModel extends Model{
 
 
     private function _last_postdata($testdata){
+
+        // dump($testdata);
+        // exit();
+
 	    $last_array = array();
 	    foreach ($testdata as $key => $value) {
-	    	list($_postfield,$_postvalue,$_postbadvalue,$_errorinfo,$_testtitle,$_pre_togger_field_arr,$_visitor_info) = $value;
+	    	// list($_postfield,$_postvalue,$_postbadvalue,$_errorinfo,$_testtitle,$_pre_togger_field_arr,$_visitor_info) = $value;
 
             $last_array[$key]['thiskey']              = $key;
-            $last_array[$key]['errorinfo']            = $_errorinfo;
-            $last_array[$key]['right_value']          = $_postvalue;
-            $last_array[$key]['errorvalue']           = $_postbadvalue;
-            $last_array[$key]['errorfield']           = $_postfield;
-            $last_array[$key]['testtitle']            = $_testtitle;
+            $last_array[$key]['errorinfo']            = $value['assert'];
+            $last_array[$key]['right_value']          = $value['field_success_value'];
+            $last_array[$key]['errorvalue']           = $value['field_error_value'];
+            $last_array[$key]['errorfield']           = $value['field_name'];
+            $last_array[$key]['testtitle']            = $value['title'];
             $last_array[$key]['pre_togger_field_arr'] = $_pre_togger_field_arr;
-            $last_array[$key]['visitor_info']        = $_visitor_info;
+            $last_array[$key]['visitor_info']         = $_visitor_info;
 	    }
 
 	    $key_array = array();
 	    foreach ($testdata as $key => $value) {
-	    	if(!in_array($value[0], $key_array)){
-	    		array_push($key_array, $value[0]);
-                // $value[0]（字段）  $value[1]（正确值）
-	    		$right_value[$value[0]] = $value[1];
+	    	if(!in_array($value['field_name'], $key_array)){
+	    		array_push($key_array, $value['field_success_value']);
+	    		$right_value[$value['field_name']] = $value['field_success_value'];
 	    	}
 	    }
 
         $this->okPostData = $right_value;
+
 
 	    foreach ($testdata as $key => $value) {
 	    	$last_array[$key]['postdata'] = $right_value;

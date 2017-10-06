@@ -84,6 +84,9 @@ function is_filter_pass($str){
  * 验证表格token
  */
 function is_form_token_pass(){
+    if(C('PK_TESTING')){
+        return true;
+    }
     $token       = $_POST['form_token'];
     $from_action = _util_replace_action_to_from_action(ACTION_NAME); // 获取当前动作的前动作
     $token_arr   = explode("-", $token);

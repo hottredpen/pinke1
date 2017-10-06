@@ -43,7 +43,7 @@ function admin_local_upload_scale_type_name($id=null){
     return $data;
 }
 
-function admin_local_admin_group_name($admin_group){
+function admin_local_admin_group_name($admin_group=0){
     if(!F('admin_local_admin_group_name')){
         $data = M('admin_group')->getField('id,title');
         F('admin_local_admin_group_name',$data);

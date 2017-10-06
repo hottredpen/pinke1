@@ -6,7 +6,7 @@ class AdminDatamanager{
 
 	}
 
-    public function getData($p=1,$page_size=20,$map=array(),$order){
+    public function getData($p=1,$page_size=20,$map=array(),$order=""){
         $data = $this->_takeFormatData("data",$map,$p,$page_size,$order);
         return $data;
     }
@@ -22,7 +22,7 @@ class AdminDatamanager{
         return $data;
     }
 
-    private function _takeFormatData($type,$map,$p,$page_size,$order){
+    private function _takeFormatData($type="",$map=array(),$p=1,$page_size=10,$order=""){
         $data = $this->_takeData("data",$map,$p,$page_size,$order);
         return $data;
     }

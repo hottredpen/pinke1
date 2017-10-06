@@ -6,18 +6,18 @@ class AdminModuleDatamanager{
 
 	}
 
-    public function getData($p=1,$page_size=20,$map=array(),$order){
+    public function getData($p=1,$page_size=20,$map=array(),$order=""){
         $data = $this->_takeFormatData("data",$map,$p,$page_size,$order);
         return $data;
     }
 
-    public function getInfo($id){
+    public function getInfo($id=0){
         $map['id'] = $id;
         $data = $this->_takeFormatData("data",$map,1,1);
         return $data[0];
     }
 
-    public function getNum($map){
+    public function getNum($map=array()){
         $data = $this->_takeData("num",$map);
         return $data;
     }

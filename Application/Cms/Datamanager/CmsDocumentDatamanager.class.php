@@ -125,7 +125,7 @@ class CmsDocumentDatamanager {
 		return $data;
 	}
 
-	private function _takeFormatData($type,$map=array(),$p=1,$page_size=20,$order){
+	private function _takeFormatData($type,$map=array(),$p=1,$page_size=20,$order=" d.id desc "){
 		$data = $this->_takeData($type,$map,$p,$page_size,$order);
 		foreach ($data as $key => $value) {
 			$data[$key]['href_url']  = MODULE_NAME."/".$this->_get_controller_action_name_by_catid($value['category_id'],"/",MODULE_NAME);

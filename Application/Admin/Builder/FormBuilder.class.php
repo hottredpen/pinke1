@@ -49,7 +49,8 @@ class FormBuilder extends FormBaseBuilder {
 			'weixin_material_image_dialog'=> 'weixin_material_image_dialog@1.0.0',
 			'weixin_member_card_preview'  => 'weixin_member_card_preview@1.0.0',
 			'weixin_news_side_preview'    => 'weixin_news_side_preview@1.0.0',
-			'weixin_send_box'             => 'weixin_send_box@1.0.0'
+			'weixin_send_box'             => 'weixin_send_box@1.0.0',
+			'admin_test_doing_list'       => 'admin_test_doing_list@1.0.0'
 
 
 		);

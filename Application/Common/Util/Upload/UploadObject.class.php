@@ -330,6 +330,9 @@ class UploadObject{
         // 插入附件管理表()
         $_data = array();
         $_data['uid']       = $this->uid;
+        $_data['item_id']   = 0;
+        $_data['media_id']  = "";
+        $_data['wechat_url '] = "";
         $_data['url']       = "/".$this->savePath.$this->newname;
         $_data['addtime']   = time();
         $_data['item_id']   = 0;
@@ -337,6 +340,8 @@ class UploadObject{
         $_data['filename']  = $this->newfilename;
         $_data['ext']       = trim($this->ext,".");
         $_data['filesize']  = $this->filesize;
+        $_data['width']     = 0; // @todo
+        $_data['height']    = 0; // @todo
         $_data['name']      = $this->oldname;
         $_data['sha1']      = sha1_file(realpath (__ROOT__ . $this->savePath.$this->newname));
         $res = $this->file_model->add($_data);

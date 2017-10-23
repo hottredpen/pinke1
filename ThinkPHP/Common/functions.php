@@ -1043,14 +1043,16 @@ function cpk_replace_url($url,$domain){
     //$main_domain = $domain_arr[0];
 
     $config_array = C('REPLACE_CPK_URL');
-    foreach ($config_array as $key => $value) {
-        preg_match_all($key,$url,$mat);
-        if(count($mat[1])>0){
-            for($i=0;$i<count($mat)-1;$i++){
-                $url = preg_replace("/{:".$i."}/", $mat[$i+1][0], $value);
-                $value = $url;
+    if(isset($config_array) && count($config_array) > 0){
+        foreach ($config_array as $key => $value) {
+            preg_match_all($key,$url,$mat);
+            if(count($mat[1])>0){
+                for($i=0;$i<count($mat)-1;$i++){
+                    $url = preg_replace("/{:".$i."}/", $mat[$i+1][0], $value);
+                    $value = $url;
+                }
+                return $url;
             }
-            return $url;
         }
     }
     return $url;

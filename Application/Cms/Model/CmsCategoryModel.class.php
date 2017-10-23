@@ -23,6 +23,7 @@ class CmsCategoryModel extends CommonModel{
     protected $_auto = array(
         //管理员添加
         array('addtime','time',self::ADMIN_ADD,'function'),
+        array('update_time','time',self::ADMIN_ADD,'function'),
         array('deep','set_deep',self::ADMIN_ADD,'callback'),
         //管理员修改
         array('update_time','time',self::ADMIN_SAVE,'function'),

@@ -560,12 +560,10 @@ class ListBuilder extends CommonBaseController {
      */
     private function _replace_underline_var($value,$data){
         // 升级版，可以用__openid__这种类型获取$data['openid']的值
-        if(preg_match_all("/__(.*)__/",$value,$matches)){
-            $value = preg_replace(
-                '/__(.*)__/i',
-                $data[$matches[1][0]],
-                $value
-            );
+        // 多个的替换的优化升级
+        preg_match_all("/__([\w]*)__/", $value, $all_match,PREG_SET_ORDER);
+        for($i=0; $i< count($all_match); $i++){
+            $value = str_replace($all_match[$i][0], $data[$all_match[$i][1]], $value);
         }
         return $value;
     }

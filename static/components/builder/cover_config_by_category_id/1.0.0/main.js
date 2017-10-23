@@ -66,7 +66,7 @@ var component = {
                     this_data.k      = o_this.attr('data-k');
                     this_data.imgurl = o_this.attr('data-imgurl');
                     this_data.subimgurl = o_this.attr('data-subimgurl');
-                    this_data.cover_id = parseInt("{$form['value']}");
+                    this_data.cover_id = o_this.attr('data-coverid');
 
                     var catid        = o_this.attr('data-catid');
                     var from_module  = o_this.attr('data-frommodule');

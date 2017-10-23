@@ -16,7 +16,7 @@ class FileController extends FileBaseController {
         if($catid == 0){
             IS_AJAX && $this->ajaxReturn(0,'请先选择具体分类');
         }
-        $configData = M('admin_uploadconfig')->where(array('catid'=>array("like","%".$catid."%"),'from_module'=>$from_module))->find();
+        $configData = M('admin_uploadconfig')->where(array('catid'=>array("like","%,".$catid.",%"),'from_module'=>$from_module))->find();
         if(!$configData){
             IS_AJAX && $this->ajaxReturn(0,'请到附件上传配置处，添加该分类下的缩略图大小配置');
         }

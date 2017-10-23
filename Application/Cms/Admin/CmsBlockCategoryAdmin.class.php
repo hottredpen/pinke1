@@ -16,6 +16,16 @@ class CmsBlockCategoryAdmin extends CmsBaseAdmin{
     }
 
     public function block_category(){
+
+
+
+        $right_button['no'][0]['title']     = '编辑';
+        $right_button['no'][0]['attribute'] = 'class="J_layer_dialog label label-primary" href="javascript:;" data-url="/Admin/Cms/editCmsBlockCategory/id/__id__" data-width="600px" data-height="400px" data-title="编辑-区块分类"';
+
+        $right_button['no'][1]['title']     = '删除';
+        $right_button['no'][1]['attribute'] = 'class="J_confirmurl label label-danger" href="javascript:;" data-uri="/Admin/Cms/deleteCmsBlockCategory"  data-id="__id__" data-msg="确定要删除id=__id__的列表项吗？"';
+
+
         $data_list = M("cms_block_category")->order('sort desc')->select();
         $tree      = new \Common\Util\Tree();
         $data_list = $tree->toFormatTree($data_list,'title');
@@ -32,9 +42,14 @@ class CmsBlockCategoryAdmin extends CmsBaseAdmin{
                 ->addTableColumn('status', '状态', 'status')
                 ->addTableColumn('right_button', '操作', 'btn')
                 ->setTableDataList($data_list)
-                ->addRightButton('layer',array('name'=>'add_sub_cate','title'=>'添加子分类','data-action'=>'addCmsBlockCategory','data-width'=>"600px",'data-height'=>'400px','data-title'=>'编辑-区块分类'))
+                ->addRightButton('custom',array('title'=>'查看内容','href'=>U('admin/Cms/block',array('_filter'=>'category_id','_filter_content'=>'__id__'))))
+
                 ->addRightButton('layer',array('data-action'=>'editCmsBlockCategory','data-width'=>"600px",'data-height'=>'400px','data-title'=>'编辑-区块分类'))
                 ->addRightButton('delete_confirm',array('data-action'=>'deleteCmsBlockCategory','data-itemname'=>'区块分类'))
+                ->alterTableData(
+                    array('key' => 'pid', 'value' => '0'),
+                    array('right_button' => $right_button)
+                )
                 ->assign_builder()
                 ->admindisplay('Common@builder:ListBuilder');
     }

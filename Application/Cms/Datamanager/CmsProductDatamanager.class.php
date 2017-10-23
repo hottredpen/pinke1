@@ -7,11 +7,11 @@ class CmsProductDatamanager {
 		$data = $this->_takeFormatData("data",$map,$p,$page_size,$order);
 		return $data;
 	}
-	public function getNum($map){
+	public function getNum($map=array()){
 		$data = $this->_takeData("num",$map);
 		return (int)$data;
 	}
-	public function getInfo($id,$status=1){
+	public function getInfo($id=0,$status=1){
 		$map['p.status'] = $status;
 		$map['p.id']     = $id;
 		$data = $this->_takeFormatData("data",$map,1,1);
@@ -20,7 +20,7 @@ class CmsProductDatamanager {
 	/**
      * 多表查询时的相同字段处理
      */
-    public function replaceMap($map){
+    public function replaceMap($map=array()){
         $replace_arr = array(
             'title'     => 'p.title',
         );
@@ -28,7 +28,7 @@ class CmsProductDatamanager {
         return $newmap;
     }
 
-	private function _takeFormatData($type,$map,$p,$page_size,$order){
+	private function _takeFormatData($type="",$map=array(),$p=1,$page_size=10,$order=" p.id desc "){
 		$data = $this->_takeData("data",$map,$p,$page_size,$order);
 		foreach ($data as $key => $value) {
 			$data[$key]['list_p_data_format'] = cms_format_list_p_data($value['list_p_data']);
@@ -39,7 +39,7 @@ class CmsProductDatamanager {
 	}
 
 
-    private function _takeData($type="data",$searchmap=array(),$p=1,$page_size=20,$order){
+    private function _takeData($type="data",$searchmap=array(),$p=1,$page_size=20,$order=" p.id desc "){
 
 		// 采用新的offset_1  来增强 p
 		// 取消原有的 page($p.','.$page_size)

@@ -77,6 +77,14 @@ class AutoHandleDatamanager {
 
 
             // 网站留言
+            case 'ajaxCmsPost':
+                $thisConfig = array(
+                    'name'        => '网站留言',
+                    'action'      => 'ajax',
+                    'field'       => 'status',
+                    'key'         => 12
+                );
+                break;
             case 'deleteCmsPost':
                 $thisConfig = array(
                     'name'        => '网站留言',

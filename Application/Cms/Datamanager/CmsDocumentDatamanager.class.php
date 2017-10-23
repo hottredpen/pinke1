@@ -8,7 +8,7 @@ class CmsDocumentDatamanager {
 	/**
 	 * 获取数据
 	 */
-	public function getDocumentData($p=1,$page_size=20,$map=array(),$order){
+	public function getDocumentData($p=1,$page_size=20,$map=array(),$order=" d.id desc "){
 		$data = $this->_takeFormatData("data",$map,$p,$page_size,$order);
 		return $data;
 	}
@@ -20,7 +20,7 @@ class CmsDocumentDatamanager {
 		return $data;
 	}
 
-	public function getDocumentNum_catid($catid,$searchmap=array()){
+	public function getDocumentNum_catid($catid=0,$searchmap=array()){
 		$map = array();
 		$map['d.category_id'] = $catid;
 		$map['d.status']      = 1;
@@ -30,7 +30,7 @@ class CmsDocumentDatamanager {
 		return $data;
 	}
 
-	public function getDocumentData_catid($catid,$p=1,$page_size=20,$searchmap=array()){
+	public function getDocumentData_catid($catid=0,$p=1,$page_size=20,$searchmap=array()){
 		$map                  = array();
 		$map['d.category_id'] = $catid;
 		$map['d.status']      = 1;
@@ -194,7 +194,7 @@ class CmsDocumentDatamanager {
     }
 
 
-	private function _takeData($type="data",$searchmap=array(),$p=1,$page_size=20,$order){
+	private function _takeData($type="data",$searchmap=array(),$p=1,$page_size=20,$order=" d.id desc "){
 		// 采用新的offset:1  来增强 p
 		// 取消原有的 page($p.','.$page_size)
 		// 采用新的 	limit($offset.','.$page_size)

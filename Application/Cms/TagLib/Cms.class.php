@@ -42,6 +42,7 @@ class Cms extends TagLib {
         $parse .= '$__ARTICLE_LIST__ = D("Cms/CmsDocument","Datamanager")->getDocumentData_enname('.$enname.','.$p.','.$page_size.','.$searchmap.');';
         $parse .= ' ?>';
 
+        $parse .= '<php>if(count($__ARTICLE_LIST__) == 0){ echo "<div class=\"col-md-12  text-center\">暂无数据</div>";} </php>';
         $parse .= '<php> $'.$key.' = 0; </php>';
         $parse .= '<php> foreach( $__ARTICLE_LIST__  as $'.$name.'){ </php>';
         $parse .= '<php> $'.$key.' ++; </php>';

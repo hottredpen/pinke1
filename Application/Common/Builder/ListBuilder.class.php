@@ -1,13 +1,5 @@
 <?php
-// +----------------------------------------------------------------------
-// | 品客PHP框架 [ pinkePHP ]
-// +----------------------------------------------------------------------
-// | 版权所有 2016~2017 浙江蓝酷网络科技有限公司 [ http://www.lankuwangluo.com ]
-// +----------------------------------------------------------------------
-// | 官方网站: http://www.pinkephp.com
-// +----------------------------------------------------------------------
-// | 开源协议 ( http://www.apache.org/licenses/LICENSE-2.0 )
-// +----------------------------------------------------------------------
+
 namespace Common\Builder;
 use Common\Controller\CommonBaseController;
 /**
@@ -231,7 +223,7 @@ class ListBuilder extends CommonBaseController {
      * $tab_list Tab列表array('title'=>'sss','href'=>'#')  
      * $current_tab_index 当前tab的index
      */
-    public function setTabNav($tab_list, $current_tab_index) {
+    public function setTabNav($tab_list="", $current_tab_index=0) {
         $this->_tab_nav = array(
             'tab_list' => $tab_list,
             'current_tab' => $current_tab_index
@@ -534,7 +526,7 @@ class ListBuilder extends CommonBaseController {
         $list_builder['order_columns']       = $this->_order_columns;     // 需要排序的字段
         $list_builder['filter_columns']      = $this->_filter_columns;    // 需要筛选的字段
         $list_builder['filter_time']         = $this->_filter_time_field_name; // 时间筛选
-
+        $list_builder['meta_title']          = $this->_meta_title;
         // dump($this->_table_data_list);
         // exit();
 

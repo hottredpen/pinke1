@@ -3,6 +3,9 @@
  * 时间格式化
  */
 function common_format_time($time = NULL, $format='Y-m-d H:i') {
+    if(strstr($time,'-') || strstr($time,'/')){
+        $time = strtotime($time);
+    }
     $time = $time === NULL ? time() : intval($time);
     return date($format, $time);
 }

@@ -87,6 +87,9 @@ function is_form_token_pass(){
     if(C('PK_TESTING')){
         return true;
     }
+    if(C('PK_RESTFUL_TOKEN')){
+        return true; // 目前直接返回true,后期加验证
+    }
     $token       = $_POST['form_token'];
     $from_action = _util_replace_action_to_from_action(ACTION_NAME); // 获取当前动作的前动作
     $token_arr   = explode("-", $token);
@@ -123,6 +126,7 @@ function _util_replace_action_to_from_action($this_action){
         case 'importDatabase':
             $from_action = "importConfirm"; // 还原数据
             break;
+
         default:
             $from_action =  preg_replace('/create([A-Z]{1}[\w]+)/', 'add$1', $this_action);
             $from_action =  preg_replace('/save([A-Z]{1}[\w]+)/', 'edit$1', $from_action);

@@ -31,6 +31,9 @@ class AdminBaseHandleObject extends BaseHandleObject {
      */
     public function logout(){
         session('admin', null);
+        // todo 以下的用钩子删除对应模块内的
+        unset($_SESSION['_store_sys_info_']);
+        unset($_SESSION['_store_sys_user_info_']);
         return array("error"=>0,"info"=>"登出成功");
     }
 }

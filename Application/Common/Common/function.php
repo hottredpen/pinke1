@@ -465,6 +465,15 @@ function  common_random_string($len = 6) {
     }
     return $output;
 }
+function errorinfo_explode_error_code($info){
+    preg_match_all("/[.*?]*@([a-z0-9_-]+)@/", $info, $all_match,PREG_SET_ORDER);
+    $code = 0;
+    for($i=0; $i< count($all_match); $i++){
+        $info = str_replace($all_match[$i][0], "" , $info);
+        $code = (int)$all_match[$i][1];
+    }
+    return array('info'=>$info,'error_code'=>$code);
+}
 
 if (!function_exists('mysql_get_server_info')) {
     function mysql_get_server_info(){

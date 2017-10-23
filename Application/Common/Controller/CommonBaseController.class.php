@@ -1,13 +1,5 @@
 <?php
-// +----------------------------------------------------------------------
-// | 品客PHP框架 [ pinkePHP ]
-// +----------------------------------------------------------------------
-// | 版权所有 2016~2017 浙江蓝酷网络科技有限公司 [ http://www.lankuwangluo.com ]
-// +----------------------------------------------------------------------
-// | 官方网站: http://www.pinkephp.com
-// +----------------------------------------------------------------------
-// | 开源协议 ( http://www.apache.org/licenses/LICENSE-2.0 )
-// +----------------------------------------------------------------------
+
 namespace Common\Controller;
 use Think\Controller;
 /**
@@ -40,11 +32,12 @@ class CommonBaseController extends Controller {
         }
     }
     
-	protected function ajaxReturn($status=1, $msg='', $data='') {
+	protected function ajaxReturn($status=1, $msg='', $data='',$error_code=0) {
         parent::ajaxReturn(array(
-            'status' => $status,
-            'msg'    => $msg,
-            'data'   => $data
+            'status'     => $status,
+            'msg'        => $msg,
+            'error_code' => $error_code,
+            'data'       => $data
         ));
     }
 
@@ -58,7 +51,16 @@ class CommonBaseController extends Controller {
     }
 
     protected function cpk_error($info="错误",$urlOrData=""){
-        IS_AJAX && $this->ajaxReturn(0,$info,$urlOrData);
+        // 如果info中有类似：不能为空@156，对错误消息进行拆分处理
+        $error_code = 0;
+        if(strstr($info,"@")){
+            $code_return = errorinfo_explode_error_code($info);
+            if((int)$code_return['error_code'] > 0){
+                $error_code = $code_return['error_code'];
+                $info       = $code_return['info'];
+            }
+        }
+        IS_AJAX && $this->ajaxReturn(0,$info,$urlOrData,$error_code);
         if(is_array($urlOrData) && $urlOrData['backurl'] != ''){
             $this->error($info, $urlOrData['backurl']);
         }else{

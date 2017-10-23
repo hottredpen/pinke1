@@ -1,13 +1,5 @@
 <?php
-// +----------------------------------------------------------------------
-// | 品客PHP框架 [ pinkePHP ]
-// +----------------------------------------------------------------------
-// | 版权所有 2016~2017 浙江蓝酷网络科技有限公司 [ http://www.lankuwangluo.com ]
-// +----------------------------------------------------------------------
-// | 官方网站: http://www.pinkephp.com
-// +----------------------------------------------------------------------
-// | 开源协议 ( http://www.apache.org/licenses/LICENSE-2.0 )
-// +----------------------------------------------------------------------
+
 namespace Admin\Controller;
 
 class AdminDatabaseController extends BackController{
@@ -23,7 +15,7 @@ class AdminDatabaseController extends BackController{
         $builder->theme('one')->setMetaTitle('当前数据库表')
                 ->setListCheckboxFieldName('name')
                 ->ajax_url(U('Admin/ajaxAdmin'))
-                ->addTopButton('custom',array('title'=>'备份','class'=>'J_batch_layer_dialog btn btn-primary','data-action'=>'batchsetgroupform_WeixinUser','data-width'=>"700px",'data-title'=>'设置标签','data-target-from'=>'ids','data-uri'=>U( 'admin/AdminDatabase/exportConfirm')))
+                ->addTopButton('custom',array('title'=>'备份','class'=>'J_batch_layer_dialog btn btn-primary','data-width'=>"700px",'data-title'=>'设置标签','data-target-from'=>'ids','data-uri'=>U( 'admin/AdminDatabase/exportConfirm')))
                 ->addOrder('last_time')
                 ->addTableColumn('name', '表名')
                 ->addTableColumn('rows', '行数')

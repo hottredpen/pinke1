@@ -1,13 +1,5 @@
 <?php
-// +----------------------------------------------------------------------
-// | 品客PHP框架 [ pinkePHP ]
-// +----------------------------------------------------------------------
-// | 版权所有 2016~2017 浙江蓝酷网络科技有限公司 [ http://www.lankuwangluo.com ]
-// +----------------------------------------------------------------------
-// | 官方网站: http://www.pinkephp.com
-// +----------------------------------------------------------------------
-// | 开源协议 ( http://www.apache.org/licenses/LICENSE-2.0 )
-// +----------------------------------------------------------------------
+
 namespace Admin\Controller;
 use Common\Controller\CommonBaseController;
 
@@ -84,6 +76,7 @@ class BackController extends CommonBaseController {
         if(C('CPK_FROM_MODULE_ADMIN')){
             // 来自模块或者插件的admin
             $module_name = CONTROLLER_NAME;
+
         }else{
             $module_name = "Admin";
         }
@@ -108,6 +101,8 @@ class BackController extends CommonBaseController {
 
             // 如果来自插件的非映射操作
             if(defined('PK_PLUGIN_NAME')){
+                include_once APP_PATH. $module_name .'/Common/function.php';
+                include_once APP_PATH."Plugins/". PK_PLUGIN_NAME .'/Common/function.php';
                 // 不提供_before_和_after_方法，因为是AutoHandle如果里面有其他业务逻辑，请创建具体方法
                 $file = './Application/Plugins/'.PK_PLUGIN_NAME.'/Datamanager/AutoHandleDatamanager.class.php';
                 if(!is_file($file)){
@@ -121,6 +116,7 @@ class BackController extends CommonBaseController {
                 }
             // 来自模块的非映射操作
             }else{
+                include_once APP_PATH. $module_name .'/Common/function.php';
                 // 不提供_before_和_after_方法，因为是AutoHandle如果里面有其他业务逻辑，请创建具体方法
                 $file = './Application/'.$module_name.'/Datamanager/AutoHandleDatamanager.class.php';
                 if(!is_file($file)){

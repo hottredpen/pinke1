@@ -5,7 +5,9 @@ namespace Admin\HandleObject;
  * 管理员操作对象
  */
 class BaseHandleObject {
-	protected $uid;
+	
+    protected $uid;
+    protected $_extend_module;
 
     public function __construct($uid) {
     	if((int)$uid>0){
@@ -37,8 +39,13 @@ class BaseHandleObject {
         } else {
             // 不存在时，检测是否是add、save、delete+模型名称的类型
             if(C('CPK_FROM_MODULE_ADMIN')){
-                $module_name = CONTROLLER_NAME;
+                if( defined('PK_ADMIN_MODULE_NAME') ){
+                    $module_name = PK_ADMIN_MODULE_NAME;
+                }else{
+                    $module_name = CONTROLLER_NAME;
+                }
                 include_once APP_PATH. $module_name .'/Common/function.php';
+
             }else{
                 $module_name = "Admin";
             }
@@ -56,9 +63,10 @@ class BaseHandleObject {
                     return $this->_action_do_return(PK_PLUGIN_NAME,$thisConfig,$args,$is_plugins);
                 }
             }else{
+                include_once APP_PATH. "Admin" .'/Common/function.php';
                 $file = './Application/'.$module_name.'/Datamanager/AutoHandleDatamanager.class.php';
                 if(!is_file($file)){
-                    return array('error'=>1,'info'=>'未在'.$module_name.'分组下的AutoHandleDatamanager.class.php中找到该方法');
+                    return array('error'=>1,'info'=>'未在'.$module_name.'分组下的AutoHandleDatamanager.class.php中找到该方法11');
                 }
                 $thisConfig = D($module_name.'/AutoHandle','Datamanager')->getConfigData($method);
                 if($thisConfig){
@@ -67,7 +75,8 @@ class BaseHandleObject {
             }
 
         }
-        return array('error'=>1,'info'=>'未在'.$module_name.'分组下的Admin'.$module_name.'HandleObject找到'.$method.'方法，且在AutoHandleDatamanager中也未找到该方法'.$method);
+        return array('error'=>1,'info'=>'未在'.$module_name.'分组下的Admin'.$module_name.'HandleObject找到'.$method.'方法，且在AutoHandleDatamanager中也未找到该方法'.$method."或者未定义PK_ADMIN_MODULE_NAME");
+
     }
 
 

@@ -1,1 +1,0 @@
-define(["jquery"],function(n){var e={getName:function(){return"text"},createObj:function(){function e(){}function t(){}var o={},u=(n(document),{builderDiv:"",formItemName:""});return o.init=function(o){console.log("component text default"),u=n.extend({},u,o),e(),t()},o}};return e});

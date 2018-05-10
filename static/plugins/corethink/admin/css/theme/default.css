@@ -1,9 +1,0 @@
-/* 左侧导航 */
-#sidebar .navside.navside-default .navside-nav>li>a:hover {
-    background-color: #f8f8f8;
-}
-#sidebar .navside.navside-default .navside-nav>.active > a,
-#sidebar .navside.navside-default .navside-nav>.active > a:hover {
-    color: #fff;
-    background-color: #3fa9f5;
-}

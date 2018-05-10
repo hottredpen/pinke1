@@ -1,1 +1,0 @@
-define([],function(){var n={init:function(){console.log("custom")}};return n});

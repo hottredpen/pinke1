@@ -1,1 +1,0 @@
-define(["jquery"],function(n){var e={getName:function(){return"password@1.0.0"},getAuthKey:function(){return"6f4922f45568161a8cdf-7658d0d2112eb26ad6d9-b4b147bc523828731f1a-9daa6bc30102a4753a1bca06bbf44744"},createObj:function(){function e(){}function t(){}var r={},u=(n(document),{builderDiv:"",formItemName:""});return r.init=function(r){u=n.extend({},u,r),e(),t()},r}};return e});

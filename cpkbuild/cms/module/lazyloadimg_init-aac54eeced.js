@@ -1,1 +1,0 @@
-define(["jquery","./cpk_plugins/lazyload"],function(a){a(function(){a("img.lazyloadImg").lazyload({effect:"fadeIn"})})});

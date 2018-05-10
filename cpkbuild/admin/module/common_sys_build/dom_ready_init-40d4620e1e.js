@@ -1,1 +1,0 @@
-define(["jquery","../cpk_plugins/fancybox"],function(n){n(function(){n("a[rel=group]").fancybox()})});

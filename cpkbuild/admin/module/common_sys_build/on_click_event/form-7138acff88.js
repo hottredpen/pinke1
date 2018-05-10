@@ -1,1 +1,0 @@
-define(["jquery","layer_dialog"],function(c,e){c(document).on("click",".J_builder_form_cancel",function(){var i=c(this).closest(".layui-layer-page").attr("times");e.close(i),c(document).trigger("J_builder_form_cancel_click",[this])}),c(document).on("click",'[data-toggle="tabs"] li',function(){c(this).find("a").tab("show")})});

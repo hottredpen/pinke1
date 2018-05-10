@@ -1,1 +1,0 @@
-define(["jquery"],function(n){var t={createObj:function(){function t(){}function e(){}var u={},i=(n(document),{materialTypeInput:""});return u.init=function(u){i=n.extend({},i,u),t(),e()},u}};return t});

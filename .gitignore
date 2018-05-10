@@ -4,8 +4,5 @@ build
 /data
 Application/Html/
 node_modules
-phpmyadmin
 .DS_Store
 script/admin/module/components/builder
-admin_base.html
-cms_yuji_base.html

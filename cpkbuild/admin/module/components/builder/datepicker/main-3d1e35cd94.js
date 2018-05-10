@@ -1,1 +1,0 @@
-define(["jquery","jquery_datepicker"],function(e){var n={createObj:function(){function n(){e(r.inputId).datepicker({autoclose:!0,format:"yyyy-mm-dd"})}var t={},r=(e(document),{inputId:""});return t.init=function(t){console.log("builder cpk_pictures"),r=e.extend({},r,t),n()},t}};return n});

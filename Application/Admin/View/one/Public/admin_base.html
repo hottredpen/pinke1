@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<!--[if IE 9]>         <html class="ie9 no-focus"> <![endif]-->
+<!--[if gt IE 9]><!--> <html class="no-focus"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+
+        <title>后台管理</title>
+
+        <meta name="description" content="OneUI - Admin Dashboard Template & UI Framework created by pixelcave and published on Themeforest">
+        <meta name="author" content="pixelcave">
+        <meta name="robots" content="noindex, nofollow">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1.0">
+
+        <!-- Icons -->
+        <!-- The following icons can be replaced with your own, they are used by desktop and mobile browsers -->
+        <link rel="shortcut icon" href="/static/pk/favicon.ico">
+
+        <!-- OneUI CSS framework -->
+        <link rel="stylesheet" id="css-main" href="/static/themes/oneui/css/oneui.css">
+
+        <php>if(APP_DEBUG==false){</php>
+        <link href="/cpkbuild/admin/module/css/common-6dfcd30c36.css" rel="stylesheet" media="screen" />
+        <link href="/cpkbuild/admin/module/css/adminPage-d41d8cd98f.css" rel="stylesheet" media="screen" />
+        <php>}else{</php>
+        <link href="/script/admin/module/css/common<php>echo '.css';</php>" rel="stylesheet" media="screen" />
+        <link href="/script/admin/module/css/<php>echo 'admin'; </php>Page.css" rel="stylesheet" media="screen" />
+        <php>}</php>
+
+        <style>
+            .jt_form_builder_component{
+                display: none;
+            }
+            .pk_layout_without{
+                padding-left: 0!important;
+            }
+            .pk_layout_without .layout_side{
+                display: none!important;
+            }
+            .pk_layout_without#pjax-container{
+                margin-left: 0px!important;
+            }
+            .pk_layout_without .j_builder_meta_title{
+                display: none!important;
+            }
+        </style>
+        <php>// C('ADMIN_REQUIRE_BUILD_JS',true);</php>
+        <script>
+            var pinkephp = {
+                "web_static_url" : "{:C('COMMON_WEBSITE_URL')}",
+                "website_url"  : "{:C('COMMON_WEBSITE_URL')}",
+                "debug" : "<php>if(APP_DEBUG==false){ echo 'false';}else{echo 'true';}</php>",
+                "components_build" : "<php>if(C('ADMIN_REQUIRE_BUILD_JS')){ echo 'true';}else{echo 'false';}</php>",
+                "web_openid"  : "{:C('COMMON_WEB_OPENID')}",
+                "_filter" : "",
+                "_filter_content" : "",
+                "_field_display"  : "",
+                "get_filter_list" : "{:U('admin/index/getfilterlist')}",
+            }
+        </script>
+
+
+    </head>
+<body>
+
+<!-- Page Container -->
+<div id="page-container" class="sidebar-l sidebar-o side-scroll header-navbar-fixed {$pk_layout_class}">
+
+<div class="layout_side">
+
+    <!-- Sidebar -->
+    <nav id="sidebar" style="overflow-y:scroll;">
+        <!-- Sidebar Scroll Container -->
+        <div id="sidebar-scroll">
+            <!-- Sidebar Content -->
+            <!-- Adding .sidebar-mini-hide to an element will hide it when the sidebar is in mini mode -->
+            <div class="sidebar-content">
+                <!-- Side Header -->
+                <div class="side-header side-content bg-white-op " style="padding-left: 6px;padding-right: 10px;">
+                    <!-- Layout API, functionality initialized in App() -> uiLayoutApi() -->
+                    <button class="btn btn-link text-gray pull-right hidden-md hidden-lg" type="button" data-toggle="layout" data-action="sidebar_close">
+                        <i class="fa fa-times"></i>
+                    </button>
+                    <!-- Themes functionality initialized in App() -> uiHandleTheme() -->
+                    <div class="btn-group pull-right">
+                        <button class="btn btn-link text-gray dropdown-toggle" data-toggle="dropdown" type="button">
+                            <i class="si si-drop"></i>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-right font-s13 sidebar-mini-hide">
+
+                        </ul>
+                    </div>
+                    <a class="h5 text-white" href="{:U('admin/index/index')}">
+                        
+                        <img style="max-height: 34px;" src="/static/pk/images/logo.png" class="logo" alt="pinkephp">
+                        <span style="margin-left: 10px;">后台管理系统</span>
+                    </a>
+                </div>
+                <!-- END Side Header -->
+
+                <!-- Side Content -->
+                <div class="side-content" id="sidebar-menu">
+                   
+
+                    <ul class="nav-main">
+                        <volist name="left_menu" id="val" >
+                            <li class="open j_left_menu_top_tab_name j_left_menu_top_tab_name_{$val['top_tab_name']}" style="display: none;">
+                                <a class="nav-submenu j_menu_name" data-menu-name="{$val.name}" data-toggle="nav-submenu" href="javascript:void(0);"><i class="si si-wrench"></i><span class="sidebar-mini-hide">{$val.name}</span></a>
+                                <ul>
+                                    <volist name="val['sub']" id="sval" >
+                                        <li>
+                                            <a class="j_left_menu_mca j_left_menu_mca_admin_{$sval['controller_name']|strtolower}_{$sval['action_name']|strtolower}"   href="{:U('admin/'.$sval['controller_name'].'/'.$sval['action_name'])}{$sval.data}" ><i class="fa fa-fw fa-wrench"></i>{$sval.name}</a>
+                                        </li>
+                                    </volist>
+                                </ul>
+                            </li>
+                        </volist>
+                    </ul>                   
+                </div>
+                <!-- END Side Content -->
+            </div>
+            <!-- Sidebar Content -->
+        </div>
+        <!-- END Sidebar Scroll Container -->
+    </nav>
+
+    <!-- END Sidebar -->
+
+    <!-- Header -->
+
+    <header id="header-navbar" class="content-mini content-mini-full" style="padding: 10px;">
+        <!-- Header Navigation Right -->
+        <ul class="nav-header pull-right">
+            <li>
+                <div class="btn-group">
+                    <button class="btn btn-default dropdown-toggle" data-toggle="dropdown" type="button">
+                        
+                        {:session('admin.username')}
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-right">
+                        <li class="dropdown-header">{:session('admin.username')} ({:session('admin.rolename')})</li>
+                        <li class="divider"></li>
+                        <li>
+                            <a tabindex="-1" href="{:U('admin/index/logout')}" target="_self">
+                                <i class="si si-logout pull-right"></i>退出帐号
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <a class="btn btn-default J_ajax_post_url" href="javascript:;" data-url="{:U('admin/admin/qclear')}" data-original-title="清空缓存">
+                    <i class="fa fa-trash"></i>
+                </a>
+            </li>
+        </ul>
+        <!-- END Header Navigation Right -->
+
+        <!-- Header Navigation Left -->
+        <ul class="nav nav-pills pull-left">
+            <li class="hidden-md hidden-lg">
+                <!-- Layout API, functionality initialized in App() -> uiLayoutApi() -->
+                <a href="javascript:void(0)" data-toggle="layout" data-action="sidebar_toggle"><i class="fa fa-navicon"></i></a>
+            </li>
+            <li class="hidden-xs hidden-sm">
+                <!-- Layout API, functionality initialized in App() -> uiLayoutApi() -->
+                <a href="javascript:void(0)" title="打开/关闭左侧导航" data-toggle="layout" data-action="sidebar_mini_toggle"><i class="fa fa-bars"></i></a>
+            </li>
+            <volist name="top_menus" id="val">
+                <li class="j_top_menu_top_tab_name j_top_menu_top_tab_name_{$val['controller_name']} hidden-xs hidden-sm  <php>if(strtolower(CONTROLLER_NAME) == $val['controller_name']){ echo 'active';}</php>">
+                    <a href="{:U($val['url'])}"><i class="fa fa-fw fa-gear"></i> {$val['name']}</a>
+                </li>
+            </volist>
+        </ul>
+        <!-- END Header Navigation Left -->
+    </header>
+
+    <div class="clearfix" style="margin-bottom: 66px;"></div>
+    <!-- END Header -->
+
+</div>
+
+    <div id="pjax-container" style="background-color: #fff;" class="{$pk_layout_class}">
+    <block name="body_main">
+        {$fetch_html}
+    </block>
+    </div>
+
+
+
+</div>
+<!-- END Page Container -->
+
+<php>if(APP_DEBUG==false){</php>
+<script data-main="<php>echo remove_js_for_cpkbuild('/cpkbuild/admin/module/adminPage-3ebac9006a.js');</php>" src="/cpkbuild/admin/module/require-d4e9bb9def.js"></script>
+<php>}else{</php>
+<script data-main="/script/admin/module/adminPage" src="/script/admin/module/<php>echo 'require';</php>.js"></script>
+<php>}</php>
+<a id="j_layout_click_a_to_url" href="{:U()}"></a>
+</body>
+</html>

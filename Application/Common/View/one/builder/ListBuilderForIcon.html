@@ -1,0 +1,181 @@
+<BeforeTemplate:page_init name="ddd" title="后台管理" loadjs=""></BeforeTemplate:page_init>
+
+
+<style>
+.tdedit {
+    background: url(/static/pk/images/tdedit.gif) no-repeat right 2px;
+    padding-right: 14px;
+}
+</style>
+
+
+
+<div id="{$list_builder['builder_id']}" class="builder listbuilder-box " style="background-color: #fff;">
+
+<notempty name="list_builder['meta_title']">
+<div  class="j_builder_meta_title content bg-gray-lighter">
+    <div class="row items-push">
+        <div class="col-sm-7">
+            <h1 class="page-heading">{$list_builder['meta_title']}</h1>
+        </div>
+        <div class="col-sm-5 text-right hidden-xs">
+            <ol class="breadcrumb push-10-t">
+                <!-- todo -->
+<!--                 <li><i class="fa fa-map-marker"></i></li>
+                <li><a class="link-effect" href="javascript:void(0);">系统</a></li>
+                <li><a class="link-effect" href="javascript:void(0);">系统功能</a></li>
+                <li><a class="link-effect" href="javascript:void(0);">节点管理</a></li> -->
+            </ol>
+        </div>
+    </div>
+</div>
+</notempty>
+
+<div class="panel-body">
+    <!-- Tab导航 -->
+    <notempty name="list_builder['tab_nav']">
+        <div class="builder-tabs">
+            <div class="row">
+                <div class="col-xs-12">
+                    <ul class="nav nav-tabs">
+                        <volist name="list_builder['tab_nav']['tab_list']" id="_tab">
+                            <li class="<php>if($list_builder['tab_nav']['current_tab'] == $key) echo 'active';</php>"><a href="{$_tab.href}">{$_tab.title}</a></li>
+                        </volist>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="form-group"></div>
+    </notempty>
+
+    <!-- 顶部工具栏按钮 -->
+    <notempty name="list_builder['top_button_list']">
+        <div class="builder-toolbar">
+            <div class="row">
+                <div class="col-xs-12 col-sm-9 button-list clearfix">
+                    <div class="form-group">
+                        <volist name="list_builder['top_button_list']" id="_button">
+                            <a {$_button.attribute}>{$_button.title}</a>&nbsp;
+                        </volist>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </notempty>
+
+    
+    <div class="builder-toolbar">
+        <form class="search-bar" method="get" action="{$list_builder['search'].url}" role="form">
+            <div class="row">
+                
+                <div class="col-xs-12 col-sm-4 clearfix" style="margin-bottom: 10px;">
+                    
+                        <notempty name="list_builder['search']">
+                        <input type="hidden" name="search_field" id="j_builder_search_field_input" value="<php>echo $search_field == '' ? $list_builder['search']['field_all'] : $search_field;</php>">
+                        <div class="input-group">
+                            <div class="input-group-btn">
+                                <button class="btn btn-default" data-toggle="dropdown" type="button" aria-expanded="false">
+                                    <font class="j_search_field_name">搜索</font> <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a class="J_search_field_btn j_search_field_btn" href="javascript:void(0)" data-field="{$list_builder['search'].field_all}" data-field-name="搜索">搜索</a>
+                                    </li>
+
+                                    <php>foreach($list_builder['search']['fields'] as $key => $value){</php>
+                                    <li>
+                                        <a class="J_search_field_btn j_search_field_btn" href="javascript:void(0)" data-field="{$key}" data-field-name="{$value}">{$value}</a>
+                                    </li>
+                                    <php>}</php>
+                                </ul>
+                            </div>
+                            <input type="text" class="form-control" value="{$keyword}" name="keyword" placeholder="{$list_builder['search'].placeholder}">
+
+                            <notempty name="_filter">
+                                <input type="hidden" class="form-control" value="{$_filter}" name="_filter">
+                            </notempty>
+
+                            <notempty name="_filter_content">
+                                <input type="hidden" class="form-control" value="{$_filter_content}" name="_filter_content">
+                            </notempty>
+
+                            <php>if($list_builder['is_without_layout']){</php>
+                                <input type="hidden" class="form-control" value="{$list_builder['is_without_layout']}" name="_without_layout">
+                            <php>}</php>
+                            
+
+
+                            <div class="input-group-btn">
+                                <button class="btn btn-default search-btn"><i class="fa fa-search"></i></button>
+                            </div>
+
+                        </div>
+                        </notempty>
+                    
+
+                </div>
+                
+
+                <!-- 时间段搜索 -->
+                <notempty name="list_builder['filter_time']">
+                <div class="form-inline time-filter">
+                    <div class="time-filter">
+                        <div class="input-daterange input-group" data-date-format="yyyy-mm-dd">
+                            <input class="form-control" type="text" id="j_list_filter_time_from" name="_filter_time_from" value="{$_filter_time_from}" placeholder="开始日期">
+                            <span class="input-group-addon"><i class="fa fa-chevron-right"></i></span>
+                            <input class="form-control" type="text" id="j_list_filter_time_to" name="_filter_time_to" value="{$_filter_time_to}" placeholder="结束日期">
+                        </div>
+                        <input type="hidden"  id="j_list_filter_time" name="_filter_time" value="{$list_builder['filter_time']}">
+                        <button  class="btn btn-default search-btn">确定</button>
+                    </div>
+                </div>
+                </notempty>
+
+            </div>
+        </form>
+    </div>
+    
+
+
+
+    <!-- 数据列表 -->
+    <div class="builder-container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="builder-table">
+                    <div>
+                        <ul style="padding-left: 0;padding-bottom: 1px;margin-bottom: 20px;list-style: none;overflow: hidden;text-align: center;">
+                                <volist name="list_builder['table_data_list']" id="data">
+                                    <li class="J_component_choose_this_icon" data-show_icon="{$data['show_icon']}" style="float: left;width: 5%;padding: 15px;margin: 0 -1px -1px 0;font-size: 12px;line-height: 1.4;text-align: center;border: 1px solid #ddd;cursor: pointer;">
+                                        <php> foreach ($list_builder['table_column_list'] as $column){</php>
+                                              <php>if($column['name'] == 'show_icon'){</php>
+                                                    <i class="{$data[$column['name']]}"></i>
+                                              <php>}</php>
+                                        <php>}</php>
+                                    </li>
+                                </volist>
+                        </ul>
+
+                        <empty name="list_builder['table_data_list']">
+                            <div class="builder-data-empty">
+                                <php>$tdcolspan = count($list_builder['table_column_list'])+2;</php>
+                                <div class="text-center empty-info" colspan="{$tdcolspan}">
+                                    <i class="fa fa-database"></i> 暂时没有数据<br>
+                                    <span class="small">本系统由 pinkephp 强力驱动</span>
+                                </div>
+                            </div>
+                        </empty>
+
+
+                    <notempty name="list_builder['table_data_page']">
+                        <ul class="pagination" style="float: right;">{$list_builder['table_data_page']}</ul>
+                    </notempty>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

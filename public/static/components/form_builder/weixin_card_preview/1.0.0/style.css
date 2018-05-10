@@ -1,0 +1,260 @@
+.card_preview_area[style^="background-color"] {
+    background-image: url(/static/components/builder/weixin_card_preview/images/topbar_white29bc6c.png);
+}
+.card_preview_area {
+    float: left;
+    width: 318px;
+    margin-right: 16px;
+    padding-bottom: 150px;
+    overflow: hidden;
+    background: #f6f6f8 url(/static/components/builder/weixin_card_preview/images/topbar28a82e.png) no-repeat center 5px;
+}
+.card_preview_area .card_body {
+    margin: 64px 10px 10px;
+}
+.card_preview_area .msg_title {
+    text-align: center;
+    height: 62px;
+    line-height: 85px;
+    font-size: 11px;
+    color: #fff;
+    display: none;
+}
+.msg_card_section.shop {
+    margin: 0;
+    padding: 0;
+    border-bottom: 1px dashed #e7e7eb;
+    position: relative;
+    background-color: #fff;
+    border-radius: 5px 5px 0 0;
+    -moz-border-radius: 5px 5px 0 0;
+    -webkit-border-radius: 5px 5px 0 0;
+}
+.msg_card_section {
+    position: relative;
+}
+.msg_card_section.shop .shop_panel {
+    padding: 21px 12px 12px;
+    *height: 137px;
+    min-height: 137px;
+    height: auto;
+    text-align: center;
+    position: relative;
+}
+.card_preview_area .logo_area {
+    position: relative;
+    margin-bottom: 7px;
+    line-height: 42px;
+    color: #8d8d8d;
+    margin-top: -40px;
+}
+.card_preview_area .logo {
+    display: block;
+    width: 38px;
+    height: 38px;
+    padding-top: 0;
+    margin: 0 auto;
+    border-radius: 22px;
+    -moz-border-radius: 22px;
+    -webkit-border-radius: 22px;
+    float: none;
+    border: 1px solid #e7e7eb;
+    background-color: #fff;
+}
+.logo {
+    float: left;
+    padding-top: 10px;
+    font-size: 24px;
+}
+.card_preview_area .logo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    -moz-border-radius: inherit;
+    -webkit-border-radius: inherit;
+}
+.card_preview_area .msg_area {
+    *overflow: hidden;
+}
+.msg_card_section.shop .tick_msg {
+    margin-bottom: 6px;
+}
+.msg_card_section.shop .tick_msg .card_name {
+    font-weight: normal;
+    font-size: 28px;
+    word-break: break-word;
+    word-wrap: break-word;
+    margin: 0;
+}
+.btn_use_card[style^="background"] {
+    color: #fff;
+}
+.btn_use_card {
+    border-width: 0;
+    background-color: #f4f5f9;
+}
+.btn {
+    min-width: 60px;
+}
+.btn {
+    display: inline-block;
+    overflow: visible;
+    padding: 0 22px;
+    height: 30px;
+    line-height: 30px;
+    *line-height: 28px;
+    vertical-align: middle;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    font-size: 14px;
+    border-width: 1px;
+    border-style: solid;
+    cursor: pointer;
+}
+
+.card_usage {
+    text-align: left;
+    padding: 0 10px 1em;
+    background-color: #fff;
+}
+
+.card_usage ul{
+    margin: 0;
+    padding: 0;
+}
+.card_usage li {
+    overflow: hidden;
+    padding-left: 5em;
+    clear: both;
+    color: #8d8d8d;
+}
+
+.card_usage .usage_label {
+    float: left;
+    margin-left: -5em;
+    color: #222;
+}
+
+
+.msg_card_cell.quick_pay {
+    height: 14px;
+    line-height: 14px;
+    text-align: center;
+    padding: 20px 0;
+    border-top: 1px solid #e7e7eb;
+}
+.card_preview_area .msg_card_cell {
+    background-color: #fff;
+    *zoom: 1;
+}
+
+.msg_card_cell.dispose {
+    display: none;
+}
+.card_preview_area .msg_card_cell {
+    background-color: #fff;
+    *zoom: 1;
+}
+.msg_img_text .list {
+    overflow: hidden;
+    border-bottom: 0;
+}
+.list {
+    margin: 0 10px;
+    border-bottom: 1px solid #e7e7eb;
+}
+.msg_img_text .list .li_panel {
+    padding: 11px 0 0;
+}
+.list li .li_panel {
+    display: block;
+    padding: 11px 30px 11px 0;
+    border-bottom: 1px solid #e7e7eb;
+}
+.list li .li_panel p{
+    margin: 0;
+}
+.section_card_intro {
+    position: relative;
+    width: 100%;
+    height: auto;
+    color: #8d8d8d;
+    overflow: hidden;
+    padding: 0;
+    word-wrap: break-word;
+    word-break: break-all;
+    min-height: 24px;
+}
+.section_card_intro .cover_wrap {
+    overflow: hidden;
+    max-height: 116px;
+    height: auto;
+    padding-top: 5px;
+}
+.section_card_intro img {
+    width: 100%;
+}
+.section_card_intro .cover_summary {
+    height: 24px;
+    background: #000;
+    background: rgba(0,0,0,0.7);
+    margin-top: 0;
+    position: absolute;
+    z-index: 9;
+    left: 0;
+    width: 100%;
+    bottom: 0;
+    color: #fff;
+    text-indent: 1em;
+}
+.msg_img_text .list .li_panel .ic {
+    top: 5px;
+}
+.msg_img_text .list .li_panel .ic {
+    top: 16px;
+}
+.list li .li_panel .ic {
+    position: absolute;
+    top: 36%;
+    right: 5px;
+    width: 16px;
+    height: 15px;
+    background: url(/static/components/builder/weixin_card_preview/images/card_control_z331295.png) 0 -62px no-repeat;
+}
+.msg_card_cell.last_cell {
+    border-radius: 0 0 5px 5px;
+    -moz-border-radius: 0 0 5px 5px;
+    -webkit-border-radius: 0 0 5px 5px;
+}
+.msg_card_cell.shop_detail {
+    border-radius: 0 0 5px 5px;
+    -moz-border-radius: 0 0 5px 5px;
+    -webkit-border-radius: 0 0 5px 5px;
+}
+.card_preview_area .msg_card_cell {
+    background-color: #fff;
+    *zoom: 1;
+}
+.msg_card_cell.last_cell .list {
+    border-bottom-width: 0;
+}
+.msg_card_section {
+    position: relative;
+}
+.msg_card_cell.custom_detail {
+    margin-top: 1em;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+.card_preview_area .msg_card_cell {
+    background-color: #fff;
+    *zoom: 1;
+}
+.msg_card_cell.custom_detail .list {
+    border-bottom-width: 0;
+}

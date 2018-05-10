@@ -1,0 +1,119 @@
+<php>if($form['type'] == 'weixin_card_preview@1.0.0'){</php>
+
+<div class="jt_form_builder_component" 
+    data-component-name     = "{$form['type']}"
+    data-builder-div        = ".j_form_item_{$form.name}"
+    data-form-item-name     = "{$form.name}"
+    data-card-type          = "{$form['options']['info_data']['base_info_card_type']}"
+    data-is-init            = "false"
+></div>
+<php>
+echo common_builder_echo_style($form['type']);
+</php>
+
+<div class="j_weixin_card_preview_builder form-group j_form_item_{$form.name} {$form.extra.class} {$form_builder['all_item_class']}" style="position: relative;">
+
+	<div style="position: absolute;top: 0px;left: 0px;">
+
+
+
+        <div style="background-color: {$form['options']['info_data']['base_info_color']};" class="card_preview_area j_color_bg_preview affix-top" data-spy="affix" data-offset-top="220" data-offset-bottom="490">
+            <div class="card_body" id="js_preview_area"><p class="msg_title">兑换券</p>
+            <div class="js_preview msg_card_section shop disabled">
+                <div class="shop_panel">
+                    <div class="logo_area">
+                        <span class="logo">
+                            <img id="js_logo_url_preview" src="{$form['options']['info_data']['logo_url']}">
+                        </span>
+                        <p id="js_brand_name_preview">{$form['options']['info_data']['base_info_brand_name']}</p>
+                    </div>
+                    <div class="msg_area">
+                        <div class="tick_msg">
+                            <p id="j_title_preview" class="card_name">{$form['options']['info_data']['base_info_title']}</p>
+                            <span style="background-color: {$form['options']['info_data']['base_info_color']};" class="btn btn_use_card js_use_card_button j_color_bg_preview" id="js_color_preview">立即使用</span>
+                        </div>
+
+                        <div class="js_card_pay_money_tips" style="display:none;">
+                        </div>
+                    </div>
+                </div>
+                <div class="card_usage">
+                    <ul>
+
+
+                        <li id="j_use_condition_preview_li"><span class="usage_label" id="j_use_condition_preview_p">使用条件：</span><span id="j_use_condition_preview"></span></li>
+
+
+                        <li><span class="usage_label">可用时间：</span><span id="j_use_time_preview">{$form['options']['info_data']['base_info_date_info_begin_timestamp']|date="Y.m.d",###}-{$form['options']['info_data']['base_info_date_info_end_timestamp']|date="Y.m.d",###}</span><span id="js_time_limit_preview" title="，周一至周日" data-info="这个暂时不显示，抽空弄"></span></li>
+                    </ul>
+                </div>
+
+                <div class="msg_card_cell quick_pay" id="js_shop_wepay" style="display:none">
+                    <a style="color: rgb(144, 88, 203);" href="javascript:;" class="js_title_color_preview">快速买单</a>
+
+                </div>
+            </div>
+            <div class="msg_card_cell dispose">
+                <p>销券设置</p>
+            </div>
+
+            <div class="msg_card_cell msg_img_text js_cover_preview_container">
+                <ul class="list">
+                    <li class="msg_card_section">
+                        <div class="li_panel">
+                            <div class="li_content">
+                                <div class="section_card_intro">
+                                    <div class="cover_wrap" id="j_cover_preview">
+                                        <notempty name="form['options']['info_data']['advanced_info_abstract_icon_url_list_cover_id_format']">
+                                        <img class="j_thumb_fileid_{$form['options']['info_data']['advanced_info_abstract_icon_url_list_cover_id']}" src="{$form['options']['info_data']['advanced_info_abstract_icon_url_list_cover_id_format']}">
+                                        <else />
+                                        <img class="" src="/static/components/builder/weixin_card_preview/images/no_cover_pic.png" >
+                                        </notempty>
+                                    </div>
+                                    <div class="cover_summary">
+                                        
+                                        <span id="j_cover_title_preview">{$form['options']['info_data']['advanced_info_abstract_abstract']}</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="msg_card_cell shop_detail last_cell">
+                <ul class="list">
+                    <li class="msg_card_section js_preview">
+                        <div class="li_panel" href="">
+                            <div class="li_content">
+                                <p>适用门店</p>
+                            </div>
+                            <span class="ic ic_go"></span>
+                        </div>
+                    </li>
+                    <li class="msg_card_section js_preview last_li">
+                        <div class="li_panel" href="">
+                            <div class="li_content">
+                                <p>公众号</p>
+                            </div>
+                            <span class="ic ic_go"></span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="msg_card_cell custom_detail">
+                <ul class="list" id="js_custom_url_preview"><li class="msg_card_section last_li">        <div class="li_panel"><div class="li_content"><p><span class="supply_area"><span class="js_custom_url_tips_pre"></span><span class="ic ic_go"></span></span><span class="js_custom_url_name_pre">自定义入口(选填)</span></p></div>                  </div>                  </li></ul>
+            </div></div></div>
+
+
+
+
+    </div>
+</div>
+
+
+
+
+<php>}</php>

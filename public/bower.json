@@ -1,0 +1,37 @@
+{
+  "name": "pinke",
+  "description": "pinkePHP",
+  "main": "",
+  "authors": [
+    "hottredpen <277488199@qq.com>"
+  ],
+  "license": "apache2.0",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "blueimp-md5": "^2.10.0",
+    "domReady": "requirejs-domReady#^2.0.1",
+    "bootstrap": "3.3.5",
+    "jquery": "^1",
+    "jquery-pjax": "^2.0.1",
+    "js-cookie": "2.1.3",
+    "layer": "3.0.3",
+    "nice-validator": "^1.1.3",
+    "nprogress": "^0.2.0",
+    "require-css": "^0.1.10",
+    "artDialog": "6.0.4",
+    "bootstrap-datepicker": "^1.8.0",
+    "remarkable-bootstrap-notify": "^3.1.3",
+    "fancybox": "fancyBox#^3.3.5",
+    "layui": "lay#2.2.5",
+    "font-awesome": "Font-Awesome#4.7.0",
+    "fex-webuploader": "^0.1.5"
+  }
+}

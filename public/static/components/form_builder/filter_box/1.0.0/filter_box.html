@@ -1,0 +1,53 @@
+<php>if($form['type'] == 'filter_box@1.0.0'){</php>
+
+<div class="jt_form_builder_component"
+    data-component-name     = "{$form['type']}"
+    data-builder-div        = ".j_form_item_{$form.name}"
+    data-form-item-name     = "{$form.name}"
+    data-is-init            = "false"
+></div>
+
+<php>
+echo common_builder_echo_style($form['type']);
+</php>
+
+
+    <div class="form-group j_form_item_{$form.name} {$form.extra.class} {$form_builder['all_item_class']}">
+        <php>if($form['title'] != ''){</php>
+        <label class="{$form['item_col']|common_builder_form_item_col_echo_l} control-label" for="j_form_item_val_{$form.name}">{$form.title}：<span class="text-danger">*</span></label>
+        <php>}</php>
+        <div class="col-md-12">
+
+            <div class="input-group"><div class="input-group-addon"><i class="fa fa-search"></i></div><input class="js-field-search form-control" type="text" placeholder="查找要筛选的字段"></div>
+
+
+
+                <div class="row"><div class="col-sm-12"><label class="css-input css-checkbox css-checkbox-primary"></label></div></div>
+
+
+                <div class="filter-field-list">
+                <php>// dump($form);</php>
+
+                    <php>foreach($form['options']['data_list'] as $__data__key__ => $__data__value__){</php>
+                        <div>
+                            <label class="J_form_item_checkbox css-input css-checkbox css-checkbox-primary" >
+                                <input type="checkbox" name="{$form.name}[]" value="{$__data__key__}" <in name="__data__key__" value="$form.value"> checked</in> >
+                                <span></span> {$__data__value__}
+                            </label>
+                        </div>
+                    <php>}</php>
+                </div>
+
+
+
+
+
+            <notempty name="form.tip">
+            <div>
+                <span class="check-tips text-muted small">{$form.tip}</span>
+            </div>
+            </notempty>
+        </div>
+    </div>
+<php>}</php>
+

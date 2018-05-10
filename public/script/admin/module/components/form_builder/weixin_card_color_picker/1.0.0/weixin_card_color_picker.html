@@ -1,0 +1,91 @@
+<php>if($form['type'] == 'weixin_card_color_picker@1.0.0'){</php>
+
+<div class="jt_form_builder_component"
+    data-component-name     = "{$form['type']}"
+    data-builder-div        = ".j_form_item_{$form.name}"
+    data-form-item-name     = "{$form.name}"
+    data-is-init            = "false"
+></div>
+
+<php>
+echo common_builder_echo_style($form['type']);
+</php>
+
+
+    <div class="form-group j_form_item_{$form.name} {$form.extra.class} {$form_builder['all_item_class']}">
+        <label class="{$form['item_col']|common_builder_form_item_col_echo_l} control-label" for="j_form_item_val_{$form.name}">{$form.title}：<span class="text-danger">*</span></label>
+        <div class="{$form['item_col']|common_builder_form_item_col_echo_r}">
+
+            <div  class="color_picker dropdown_menu">
+
+                <a id="j_weixin_card_color_picker_select"  href="javascript:;" class="btn dropdown_switch jsDropdownBt">
+                    <input id="j_form_item_val_{$form.name}" type="hidden" name="{$form['name']}" value="{$form['value']}">
+                    <label data-value="{$form['value']}" style="background-color: {$form['value']};" class="j_BtLabel">{$form['value']}</label>
+                    <i class="arrow"></i>
+                </a>
+
+                <div style="display: none;" class="dropdown_data_container j_DropdownList">
+                    <ul class="dropdown_data_list">
+                        
+                            
+                            <li class="dropdown_data_item tr1td1">  
+                                <a href="javascript:;" class="J_choose_this_card_color" data-value="#55BD47" data-index="0" data-name="#55BD47" data-input-id="#j_form_item_val_{$form.name}" >#55BD47</a>
+                            </li>
+                            
+                            <li class="dropdown_data_item tr1td2">  
+                                <a href="javascript:;" class="J_choose_this_card_color" data-value="#10AD61" data-index="1" data-name="#10AD61" data-input-id="#j_form_item_val_{$form.name}">#10AD61</a>
+                            </li>
+                            
+                            <li class="dropdown_data_item tr1td3">  
+                                <a href="javascript:;" class="J_choose_this_card_color" data-value="#35A4DE" data-index="2" data-name="#35A4DE" data-input-id="#j_form_item_val_{$form.name}">#35A4DE</a>
+                            </li>
+                            
+                            <li class="dropdown_data_item tr1td4">  
+                                <a href="javascript:;" class="J_choose_this_card_color" data-value="#3D78DA" data-index="3" data-name="#3D78DA" data-input-id="#j_form_item_val_{$form.name}">#3D78DA</a>
+                            </li>
+                            
+                            <li class="dropdown_data_item tr1td5">  
+                                <a href="javascript:;" class="J_choose_this_card_color" data-value="#9058CB" data-index="4" data-name="#9058CB" data-input-id="#j_form_item_val_{$form.name}">#9058CB</a>
+                            </li>
+                            
+                            <li class="dropdown_data_item tr2td1">  
+                                <a href="javascript:;" class="J_choose_this_card_color" data-value="#DE9C33" data-index="5" data-name="#DE9C33" data-input-id="#j_form_item_val_{$form.name}">#DE9C33</a>
+                            </li>
+                            
+                            <li class="dropdown_data_item tr2td2">  
+                                <a href="javascript:;" class="J_choose_this_card_color" data-value="#EBAC16" data-index="6" data-name="#EBAC16" data-input-id="#j_form_item_val_{$form.name}">#EBAC16</a>
+                            </li>
+                            
+                            <li class="dropdown_data_item tr2td3">  
+                                <a href="javascript:;" class="J_choose_this_card_color" data-value="#F9861F" data-index="7" data-name="#F9861F" data-input-id="#j_form_item_val_{$form.name}">#F9861F</a>
+                            </li>
+                            
+                            <li class="dropdown_data_item tr2td4">  
+                                <a href="javascript:;" class="J_choose_this_card_color" data-value="#E75735" data-index="8" data-name="#E75735" data-input-id="#j_form_item_val_{$form.name}">#E75735</a>
+                            </li>
+                            
+                            <li class="dropdown_data_item tr2td5">  
+                                <a href="javascript:;" class="J_choose_this_card_color" data-value="#D54036" data-index="9" data-name="#D54036" data-input-id="#j_form_item_val_{$form.name}">#D54036</a>
+                            </li>
+                                    
+                        
+                    </ul>
+                </div>
+            </div>
+
+
+
+
+
+            <notempty name="form.tip">
+                <div>
+                <span class="check-tips text-muted small">{$form.tip}</span>
+                </div>
+            </notempty>
+
+        </div>
+    </div>
+<php>}</php>
+
+
+

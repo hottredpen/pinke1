@@ -1,0 +1,38 @@
+<php>if($form['type'] == 'cover_config_by_category_id@1.0.0'){</php>
+
+<div class="jt_form_builder_component" 
+    data-component-name     = "{$form['type']}"
+    data-builder-div        = ".j_form_item_{$form.name}"
+    data-form-item-name     = "{$form.name}"
+    data-cover-div-id       = "#j_cover_div_{$form['name']}" 
+    data-ajax-replace-id    = "#jt_ajax_replace_{$form['name']}"  
+    data-is-init="false"
+></div>
+
+<php>
+echo common_builder_echo_style($form['type']);
+</php>
+
+
+
+    <div class="form-group j_form_item_{$form.name} {$form.extra.class} {$form_builder['all_item_class']}">
+        <label class="{$form['item_col']|common_builder_form_item_col_echo_l} control-label" for="j_form_item_val_{$form.name}">{$form.title}：<span class="text-danger">*</span></label>
+        <div class="{$form['item_col']|common_builder_form_item_col_echo_r} ">
+
+
+            <php>if($form['value'] > 0){</php>
+
+                <div id="jt_ajax_replace_{$form['name']}"  data-k="{$k}" 
+                data-coverid = "{$form['options']['info_data']['cover_id']}"
+                data-imgurl="{$form['options']['info_data']['cover_id_format']}" 
+                data-subimgurl="{$form['options']['info_data']['cover_id_format']|common_trans_sub_image}" data-triggerform="{$form.extra.trigger_from}" data-frommodule="{$form.extra.from_module}" data-catid="{$form['options']['info_data']['category_id']}"></div>
+
+            <php>}else{</php>
+                <div id="j_cover_div_{$form['name']}"><a  href="javascript:;" class="J_cover_config_btn" data-triggerform="{$form.extra.trigger_from}" data-frommodule="{$form.extra.from_module}">获取该分类缩略图配置</a></div>
+
+            <php>}</php>
+
+
+        </div>
+    </div>
+<php>}</php>

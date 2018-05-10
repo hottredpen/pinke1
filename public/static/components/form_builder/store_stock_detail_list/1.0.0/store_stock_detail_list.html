@@ -1,0 +1,149 @@
+<php>if($form['type'] == 'store_stock_detail_list@1.0.0'){</php>
+
+<div class="jt_form_builder_component"
+    data-component-name     = "{$form['type']}"
+    data-builder-div        = ".j_form_item_{$form.name}"
+    data-form-item-name     = "{$form.name}"
+    data-stock-main-type    = "{$form['options']['stockMainType']}"
+    data-is-init            = "false"
+></div>
+
+    <div class="form-group j_form_item_{$form.name} {$form.extra.class} {$form_builder['all_item_class']}">
+
+        <label class="{$form['item_col']|common_builder_form_item_col_echo_l}  control-label" for="j_form_item_val_{$form.name}">
+            <php>if($form['title'] != ''){</php>
+            {$form.title}：<span class="text-danger">*</span>
+            <php>}</php>
+        </label>
+        <div class="{$form['item_col']|common_builder_form_item_col_echo_r} ">
+
+
+
+
+
+    <div class="builder-toolbar">
+        <div class="row">
+            <div class="col-xs-12 col-sm-9 button-list clearfix">
+                <div class="form-group">
+                    <a title="新增" class="J_component_layer_load_list_for_choose_ids btn btn-primary" href="javascript:;" data-url="{$form['options']['chooseProductDialogUrl']}" data-product-url="{$form['options']['getProductListByIds']}" data-width="800px" data-height="520px" data-title="新增-产品" style="margin-left: 20px;">新增</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- 数据列表 -->
+    <div class="builder-container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="builder-table">
+                    <div class="j_tablelist panel panel-default table-responsive" data-acturi="{$list_builder['ajax_url']}">
+                        <table  data-is-treetable-init="false" class="j_builder_treetable table table-bordered table-striped table-hover js-table-checkable">
+                            <thead>
+                                <tr>
+                                    <th class="text-center">
+                                        <label class="css-input css-checkbox css-checkbox-primary remove-margin-t remove-margin-b">
+                                            序号
+                                        </label>
+                                    </th>
+                                    <th class="text-center">
+                                        <label class="css-input css-checkbox css-checkbox-primary remove-margin-t remove-margin-b">
+                                            产品编码
+                                        </label>
+                                    </th>
+                                    <th class="text-center">
+                                        <label class="css-input css-checkbox css-checkbox-primary remove-margin-t remove-margin-b">
+                                            产品名称
+                                        </label>
+                                    </th>
+                                    <th class="text-center">
+                                        <label class="css-input css-checkbox css-checkbox-primary remove-margin-t remove-margin-b">
+                                            <php>if($form['options']['stockMainType'] == 1){</php>
+                                                产品尺寸
+                                            <php>}else{</php>
+                                                仓库总剩余（含待入库）
+                                            <php>}</php>
+                                        </label>
+                                    </th>
+                                    <th class="text-center">
+                                        <label class="css-input css-checkbox css-checkbox-primary remove-margin-t remove-margin-b">
+                                            装箱量
+                                        </label>
+                                    </th>
+                                    <th class="text-center">
+                                        <label class="css-input css-checkbox css-checkbox-primary remove-margin-t remove-margin-b">
+                                            <php>if($form['options']['stockMainType'] == 1){</php>
+                                                入库数量
+                                            <php>}else{</php>
+                                                出库数量
+                                            <php>}</php>
+                                        </label>
+                                    </th>
+                                    <th class="text-center">
+                                        <label class="css-input css-checkbox css-checkbox-primary remove-margin-t remove-margin-b">
+                                            <php>if($form['options']['stockMainType'] == 1){</php>
+                                                入库件数
+                                            <php>}else{</php>
+                                                出库件数
+                                            <php>}</php>
+                                        </label>
+                                    </th>
+                                    <th class="text-center">
+                                        <label class="css-input css-checkbox css-checkbox-primary remove-margin-t remove-margin-b">
+                                            <php>if($form['options']['stockMainType'] == 1){</php>
+                                                入库价格
+                                            <php>}else{</php>
+                                                出库价格
+                                            <php>}</php>
+                                        </label>
+                                    </th>
+                                    <th class="text-center">
+                                        <label class="css-input css-checkbox css-checkbox-primary remove-margin-t remove-margin-b">
+                                            生产日期
+                                        </label>
+                                    </th>
+                                    <th>
+                                        <label class="css-input css-checkbox css-checkbox-primary remove-margin-t remove-margin-b">
+                                            操作
+                                        </label>
+                                    </th>
+                                </tr>
+                            </thead>
+
+                            <tbody class="j_append_choose_product">
+
+
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <notempty name="list_builder['table_data_page']">
+                        <ul class="pagination" style="float: right;">{$list_builder['table_data_page']}</ul>
+                    </notempty>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+    </div>
+<php>}</php>

@@ -1,0 +1,363 @@
+<php>if($form['type'] == 'weixin_send_box@1.0.0'){</php>
+
+
+<div class="jt_form_builder_component" 
+    data-component-name      = "{$form['type']}"
+    data-builder-div         = ".j_form_item_{$form.name}"
+    data-form-item-name      = "{$form.name}"
+	data-material-type-input = "{$form['options']['trigger_from']}_material_type"
+	data-component-trigger-from-id = "#j_weixin_send_box_main_div_{$form['options']['trigger_from']}" 
+	data-is-init="false"
+></div>
+
+<php>
+echo common_builder_echo_style($form['type']);
+</php>
+
+
+
+<div class="form-group j_form_item_{$form.name} {$form.extra.class} u-component-weixin_material_send_box {$form_builder['all_item_class']}">
+
+	<php>if($form['title'] != ''){</php>
+    <label class="{$form['item_col']|common_builder_form_item_col_echo_l} control-label" for="j_form_item_val_{$form.name}">{$form.title}：<span class="text-danger">*</span></label>
+    <php>}</php>
+
+    <div class="{$form['item_col']|common_builder_form_item_col_echo_r} ">
+
+		<div id="j_weixin_send_box_main_div_{$form['options']['trigger_from']}"  class="j_weixin_send_box_main_div msg_sender">
+
+			<div class="msg_tab">
+			    <div class="tab_navs_panel">
+
+			        <div class="tab_navs_wrp">
+			            <ul class="tab_navs j_tab_navs  {$form['extra']['tab_navs_class']}" style="margin-left:0;padding-left: 0px;">
+			                
+			                <li class="tab_nav tab_text width6 <php>if($form['extra']['selected_nav'] == 'text'){ echo 'selected';}</php>  J_sendbox_tabnav j_sendbox_tabnav" data-type="1" data-tab=".j_textArea" data-tooltip="文字">
+			                    <a href="javascript:void(0);" onclick="return false;">&nbsp;<i class="icon_msg_sender"></i><span class="msg_tab_title">文字</span></a>
+			                </li>
+
+			                <li class="tab_nav tab_appmsg width6 <php>if($form['extra']['selected_nav'] == 'news'){ echo 'selected';}</php> J_sendbox_tabnav j_sendbox_tabnav " data-type="3" data-tab=".j_appmsgArea" data-tooltip="图文消息">
+			                    <a href="javascript:void(0);" onclick="return false;">&nbsp;<i class="icon_msg_sender"></i><span class="msg_tab_title">图文消息</span></a>
+			                </li>
+			                
+			                <li class="tab_nav tab_img width6 <php>if($form['extra']['selected_nav'] == 'image'){ echo 'selected';}</php> J_sendbox_tabnav j_sendbox_tabnav" data-type="2" data-tab=".j_imgArea" data-tooltip="图片">
+			                    <a href="javascript:void(0);" onclick="return false;">&nbsp;<i class="icon_msg_sender"></i><span class="msg_tab_title">图片</span></a>
+			                </li>
+			                
+			                <li class="tab_nav tab_audio width6 <php>if($form['extra']['selected_nav'] == 'voice'){ echo 'selected';}</php> J_sendbox_tabnav j_sendbox_tabnav" data-type="4" data-tab=".j_audioArea" data-tooltip="语音">
+			                    <a href="javascript:void(0);" onclick="return false;">&nbsp;<i class="icon_msg_sender"></i><span class="msg_tab_title">语音</span></a>
+			                </li>
+			                
+			                <li class="tab_nav tab_video width6 <php>if($form['extra']['selected_nav'] == 'video'){ echo 'selected';}</php>  J_sendbox_tabnav j_sendbox_tabnav" data-type="5" data-tab=".j_videoArea" data-tooltip="视频">
+			                    <a href="javascript:void(0);" onclick="return false;">&nbsp;<i class="icon_msg_sender"></i><span class="msg_tab_title">视频</span></a>
+			                </li>
+			                
+			                <li class="tab_nav tab_cardmsg width6 <php>if($form['extra']['selected_nav'] == 'card'){ echo 'selected';}</php>  no_extra J_sendbox_tabnav j_sendbox_tabnav" data-type="98" data-tab=".j_cardArea" data-tooltip="卡券">
+			                    <a href="javascript:void(0);" onclick="return false;">&nbsp;<i class="icon_msg_sender"></i><span class="msg_tab_title">卡券</span></a>
+			                </li>
+
+
+			                <li class="tab_nav tab_redpack width6 <php>if($form['extra']['selected_nav'] == 'redpack'){ echo 'selected';}</php>  no_extra J_sendbox_tabnav j_sendbox_tabnav" data-type="99" data-tab=".j_redpackArea" data-tooltip="红包">
+			                	<a href="javascript:void(0);" onclick="return false;">&nbsp;<i class="icon_msg_sender"></i><span class="msg_tab_title">红包</span></a>
+			                </li>
+
+			                <input  name="{$form['options']['trigger_from']}_material_type" value="1" type="hidden">
+			                
+			            </ul>
+			        </div>
+			    </div>
+				<div class="tab_panel">
+					<!-- 图文 -->
+					<php>
+						if($form['options']['builder_data']['reply_type'] == 3){
+							$news_media_id = $form['options']['builder_data']['media_id'];
+						}else{
+							$news_media_id = '';
+						}					
+					</php>
+				    <div id="j_material_box_name_news_{$form['options']['trigger_from']}" 
+				    		style="<php>if($form['extra']['selected_nav'] == 'news'){ echo 'display: block;'; }else{ echo 'display: none;'; }</php>" 
+
+				    class="j_sendbox_tab_content tab_content">
+				    	<div class="j_appmsgArea inner ">
+							<input class="j_material_box_media_id_input" name="{$form['options']['trigger_from']}_material_news_media_id" value="{$news_media_id}" type="hidden">
+						    <div class="tab_cont_cover  u-box-info <php>if($news_media_id != ''){ echo 'hidden';}</php>" data-index="0" >
+			                    <div class="media_cover">
+						            <span class="create_access">
+										<a class="J_layer_dialog add_gray_wrp u-box-info" href="javascript:;" data-url="/Admin/Weixin/choose_material_news_dialog/builder_trigger_name/{$form['options']['trigger_from']}" data-title="选择图文"  data-width="1020px" data-height="">
+			                                <i class="icon36_common add_gray"></i>
+			                                <strong>从素材库中选择</strong>
+			                            </a>
+						            </span>
+			                    </div>
+						        <div class="media_cover">
+						            <span class="create_access">
+			                            <a target="_blank" class="add_gray_wrp" href="{:U('Weixin/addNewsDetail')}">
+						                    <i class="icon36_common add_gray"></i>
+						                    <strong>新建图文消息</strong>
+						                </a>
+						            </span>
+						        </div>
+						    </div>	    		
+				    		
+					      	<div class="u-box-wrap <php>if($news_media_id == ''){ echo 'hidden';}</php>">
+								<php>
+								if($form['options']['builder_data']['reply_type'] == 3){
+									$news_list = $form['options']['builder_data']['media_data'];
+								}
+								</php>
+								<div class="m-materialnews-list show_in_material_box">  
+									<include file='./Application/Common/Builder/weixin/matiral_news_list.html' type='' />
+								</div>
+								<a class="J_delete_material_news_box wrap-delete" href="javascript:;" data-builder-trigger-name="{$form['options']['trigger_from']}" style="left: 305px;">删除</a>
+					      	</div>
+
+
+
+				    	</div>
+				    </div>
+				    
+
+
+		        	<!-- 文字 -->
+					<php>
+						if($form['options']['builder_data']['reply_type'] == 1){
+							$text_media_id = (int)$form['options']['builder_data']['media_id'];
+							$text_content = $form['options']['builder_data']['media_data']['content'];
+						}else{
+							$text_media_id = '';
+						}
+					</php>
+				    <div id="j_material_box_name_text_{$form['options']['trigger_from']}" class="j_sendbox_tab_content tab_content" style="<php>if($form['extra']['selected_nav'] == 'text'){ echo 'display: block;'; }else{ echo 'display: none;'; }</php>" >
+				    	<div class="j_textArea inner">
+				    		<input class="j_material_box_media_id_input" name="{$form['options']['trigger_from']}_material_text_media_id" value="{$text_media_id}" type="hidden">
+			                <div class="tab_cont_cover   u-box-info " data-index="1" data-type="1">
+			                    <div class="media_cover">
+						            <span class="create_access" style="padding: 0px;">
+										<textarea class="j_material_text_textarea_{$form['options']['trigger_from']}" style="width: 100%;height: 150px;" name="{$form['options']['trigger_from']}_material_text_send_content">{$text_content}</textarea>
+						            </span>
+			                    </div>
+			                    <div class="media_cover">
+						            <span class="create_access">
+						                <a class="J_layer_dialog add_gray_wrp" data-url="/Admin/Weixin/choose_material_text_dialog/builder_trigger_name/{$form['options']['trigger_from']}" data-width="830px" href="javascript:;" data-title="选择-微信图片">
+			                                <i class="icon36_common add_gray"></i>
+			                                <strong>选择文本素材</strong>
+			                            </a>
+						            </span>
+			                    </div>
+			                </div>
+
+						</div>
+				    </div>
+				    
+
+					<!-- 图片 -->
+					<php>
+						if($form['options']['builder_data']['reply_type'] == 2){
+							$image_media_id = $form['options']['builder_data']['media_id'];
+						}else{
+							$image_media_id = '';
+						}					
+					</php>
+				    <div id="j_material_box_name_image_{$form['options']['trigger_from']}" style="<php>if($form['extra']['selected_nav'] == 'image'){ echo 'display: block;'; }else{ echo 'display: none;'; }</php>"  class="j_sendbox_tab_content tab_content">
+				    	<div class="j_imgArea inner ">
+				    		<input class="j_material_box_media_id_input" name="{$form['options']['trigger_from']}_material_image_media_id" value="{$image_media_id}" type="hidden">
+			                <div class="tab_cont_cover   u-box-info <php>if($image_media_id != ''){ echo 'hidden';}</php>" data-index="2" data-type="2">
+			                    <div class="media_cover">
+						            <span class="create_access">
+										<a class="J_layer_dialog u-box-info add_gray_wrp" href="javascript:;" data-url="/Admin/Weixin/choose_material_image_dialog/builder_trigger_name/{$form['options']['trigger_from']}" data-title="选择图片"  data-width="830px" data-height="650px">
+			                                <i class="icon36_common add_gray"></i>
+			                                <strong>从素材库中选择</strong>
+			                            </a>
+						            </span>
+			                    </div>
+			                    <div class="media_cover">
+						            <span class="create_access">
+						                <a class="J_layer_dialog add_gray_wrp" data-url="/Admin/Weixin/imageDialog" data-width="830px" href="javascript:;" data-title="选择-微信图片">
+			                                <i class="icon36_common add_gray"></i>
+			                                <strong>上传图片</strong>
+			                            </a>
+						            </span>
+			                    </div>
+			                </div>
+
+					        <div class="u-box-wrap clearfix <php>if($image_media_id == ''){ echo 'hidden';}</php> " >
+							    <a class="wrap-imgbox" href="#" style="width: 200px;height: 200px;display: block;position: relative;">
+							        <span id="j_material_image_imgbox_bg_{$form['options']['trigger_from']}" class="imgbox_bg " style="background-image:url({$form['options']['builder_data']['media_data']['url']});"></span>
+							    </a>
+							    <a class="J_delete_material_image_box wrap-delete" href="javascript:;" data-builder-trigger-name="{$form['options']['trigger_from']}" style="left: 205px;">删除</a>
+					        </div>
+
+
+				    		
+				    	</div>
+				    </div>
+					<!-- 语音 -->
+					<php>
+						if($form['options']['builder_data']['reply_type'] == 4){
+							$voice_media_id = $form['options']['builder_data']['media_id'];
+						}else{
+							$voice_media_id = '';
+						}					
+					</php>
+				    <div id="j_material_box_name_voice_{$form['options']['trigger_from']}"  class="j_sendbox_tab_content tab_content" style="<php>if($form['extra']['selected_nav'] == 'voice'){ echo 'display: block;'; }else{ echo 'display: none;'; }</php>" >
+				    	<div class="j_audioArea inner ">
+				    		<input class="j_material_box_media_id_input" name="{$form['options']['trigger_from']}_material_voice_media_id" value="{$voice_media_id}" type="hidden">
+			                <div class="tab_cont_cover u-box-info <php>if($voice_media_id != ''){ echo 'hidden';}</php>" data-index="4" data-type="4">
+			                    <div class="media_cover">
+						            <span class="create_access">
+										<a class="J_layer_dialog u-box-info add_gray_wrp" href="javascript:;" data-url="/Admin/Weixin/choose_material_voice_dialog/builder_trigger_name/{$form['options']['trigger_from']}" data-title="选择语音"  data-width="830px" data-height="570px">
+			                                <i class="icon36_common add_gray"></i>
+			                                <strong>从素材库(语音)中选择</strong>
+			                            </a>
+						            </span>
+			                    </div>
+			                    <div class="media_cover">
+						            <span class="create_access">
+						                <a class="add_gray_wrp " id="msgSendAudioUploadBt" href="javascript:;">
+			                                <i class="icon36_common add_gray"></i>
+			                                <strong>新建语音</strong>
+			                            </a>
+						            </span>
+			                    </div>
+			                </div>
+				    		
+					        <div class="u-box-wrap clearfix <php>if($voice_media_id == ''){ echo 'hidden';}</php>" >
+								<div class="voice_box">  
+									<div style='background-color:#2b99ff;color:#fff;padding:10px;width:400px;'>[语音]{$form['options']['builder_data']['media_data']['name']}</div>
+								</div>
+							    <a class="J_delete_material_voice_box wrap-delete" href="javascript:;" data-builder-trigger-name="{$form['options']['trigger_from']}" style="left: 405px;">删除</a>
+					        </div>
+
+				    	</div>
+				    </div>
+
+					<!-- 视频 -->
+					<php>
+						if($form['options']['builder_data']['reply_type'] == 5){
+							$video_media_id = $form['options']['builder_data']['media_id'];
+						}else{
+							$video_media_id = '';
+						}					
+					</php>
+				    <div id="j_material_box_name_video_{$form['options']['trigger_from']}"  class="j_sendbox_tab_content tab_content" style="<php>if($form['extra']['selected_nav'] == 'video'){ echo 'display: block;'; }else{ echo 'display: none;'; }</php>" >
+				    	<div class="j_videoArea inner ">
+				    		<input class="j_material_box_media_id_input" name="{$form['options']['trigger_from']}_material_video_media_id" value="{$video_media_id}" type="hidden">
+			                <div class="tab_cont_cover u-box-info <php>if($video_media_id != ''){ echo 'hidden';}</php>" data-index="5" data-type="5">
+			                    <div class="media_cover">
+						            <span class="create_access">
+										<a class="J_layer_dialog u-box-info add_gray_wrp" href="javascript:;" data-url="/Admin/Weixin/choose_material_video_dialog/builder_trigger_name/{$form['options']['trigger_from']}" data-title="选择视频"  data-width="830px" data-height="570px">
+			                                <i class="icon36_common add_gray"></i>
+			                                <strong>从素材库(视频)中选择</strong>
+			                            </a>
+						            </span>
+			                    </div>
+			                    <div class="media_cover">
+						            <span class="create_access">
+						                <a target="_blank" class="add_gray_wrp" href="/cgi-bin/appmsg?t=media/videomsg_edit&amp;action=video_edit&amp;type=15&amp;lang=zh_CN&amp;token=1116355692">
+			                                <i class="icon36_common add_gray"></i>
+			                                <strong>新建视频</strong>
+			                            </a>
+						            </span>
+			                    </div>
+			                </div>
+					        <div class="u-box-wrap clearfix <php>if($video_media_id == ''){ echo 'hidden';}</php>" >
+								<div class="video_box">  
+									<div style='background-color:#2b99ff;color:#fff;padding:10px;width:400px;'>[视频]{$form['options']['builder_data']['media_data']['name']}</div>
+								</div>
+							    <a class="J_delete_material_video_box wrap-delete" href="javascript:;" data-builder-trigger-name="{$form['options']['trigger_from']}" style="left: 405px;">删除</a>
+					        </div>
+				    	</div>
+				    </div>
+				    
+					<!-- 卡券 -->
+					<php>
+						if($form['options']['builder_data']['reply_type'] == 98){
+							$card_media_id = $form['options']['builder_data']['media_id'];
+						}else{
+							$card_media_id = '';
+						}					
+					</php>
+				    <div id="j_material_box_name_card_{$form['options']['trigger_from']}" style="<php>if($form['extra']['selected_nav'] == 'card'){ echo 'display: block;'; }else{ echo 'display: none;'; }</php>"  class="j_sendbox_tab_content tab_content">
+				    	<div class="j_cardArea inner ">
+				    		
+				    		<input class="j_material_box_media_id_input" name="{$form['options']['trigger_from']}_material_card_media_id" value="{$card_media_id}" type="hidden">
+
+			                <div class="tab_cont_cover   u-box-info <php>if($card_media_id != ''){ echo 'hidden';}</php>" data-index="99" data-type="99">
+			                    <div class="media_cover">
+						            <span class="create_access">
+										<a class="J_layer_dialog u-box-info add_gray_wrp" href="javascript:;" data-url="{:U('admin/WeixinCard/choose_card_dialog',array('builder_trigger_name'=>$form['options']['trigger_from']))}" data-title="选择卡券"  data-width="830px" data-height="570px">
+			                                <i class="icon36_common add_gray"></i>
+			                                <strong>从卡券库中选择</strong>
+			                            </a>
+						            </span>
+			                    </div>
+			                    <div class="media_cover">
+						            <span class="create_access">
+										<a class="J_layer_dialog add_gray_wrp" href="javascript:;" data-url="/Admin/Weixin/addform_WeixinCardTicket" data-title="新建卡券"  data-width="900px" data-height="700px">
+			                                <i class="icon36_common add_gray"></i>
+			                                <strong>新建卡券</strong>
+			                            </a>
+						            </span>
+			                    </div>
+			                </div>
+
+					        <div class="u-box-wrap clearfix <php>if($card_media_id == ''){ echo 'hidden';}</php>" >
+								<div class="card_box">  
+									<div style='background-color:#d26a5c;color:#fff;padding:10px;width:400px;'>[卡券]{$form['options']['builder_data']['media_data']['wishing']} 金额：{$form['options']['builder_data']['media_data']['min_value']}~{$form['options']['builder_data']['media_data']['max_value']}</div>
+								</div>
+							    <a class="J_delete_material_card_box wrap-delete" href="javascript:;" data-builder-trigger-name="{$form['options']['trigger_from']}" style="left: 405px;">删除</a>
+					        </div>
+				    		
+				    	</div>
+				    </div>
+				    
+
+					<!-- 红包 -->
+					<php>
+						if($form['options']['builder_data']['reply_type'] == 99){
+							$redpack_media_id = $form['options']['builder_data']['media_id'];
+						}else{
+							$redpack_media_id = '';
+						}					
+					</php>
+				    <div id="j_material_box_name_redpack_{$form['options']['trigger_from']}" style="<php>if($form['extra']['selected_nav'] == 'redpack'){ echo 'display: block;'; }else{ echo 'display: none;'; }</php>"  class="j_sendbox_tab_content tab_content">
+				    	<div class="j_redpackArea inner ">
+				    		
+				    		<input class="j_material_box_media_id_input" name="{$form['options']['trigger_from']}_material_redpack_media_id" value="{$redpack_media_id}" type="hidden">
+			                <div class="tab_cont_cover   u-box-info <php>if($redpack_media_id != ''){ echo 'hidden';}</php>" data-index="99" data-type="99">
+			                    <div class="media_cover">
+						            <span class="create_access">
+										<a class="J_layer_dialog u-box-info add_gray_wrp" href="javascript:;" data-url="{:U('admin/weixin/choose_redpack_dialog',array('builder_trigger_name'=>$form['options']['trigger_from']))}" data-title="选择红包"  data-width="830px" data-height="570px">
+			                                <i class="icon36_common add_gray"></i>
+			                                <strong>从红包库中选择</strong>
+			                            </a>
+						            </span>
+			                    </div>
+			                    <div class="media_cover">
+						            <span class="create_access">
+										<a class="J_layer_dialog add_gray_wrp" href="javascript:;" data-url="/Admin/Weixin/addform_WeixinRedpack" data-title="新建红包"  data-width="900px" data-height="700px">
+			                                <i class="icon36_common add_gray"></i>
+			                                <strong>新建红包</strong>
+			                            </a>
+						            </span>
+			                    </div>
+			                </div>
+
+					        <div class="u-box-wrap clearfix <php>if($redpack_media_id == ''){ echo 'hidden';}</php>" >
+								<div class="redpack_box">  
+									<div style='background-color:#d26a5c;color:#fff;padding:10px;width:400px;'>[红包]{$form['options']['builder_data']['media_data']['wishing']} 金额：{$form['options']['builder_data']['media_data']['min_value']}~{$form['options']['builder_data']['media_data']['max_value']}</div>
+								</div>
+							    <a class="J_delete_material_redpack_box wrap-delete" href="javascript:;" data-builder-trigger-name="{$form['options']['trigger_from']}" style="left: 405px;">删除</a>
+					        </div>
+				    		
+				    	</div>
+				    </div>
+
+				</div>
+			</div>
+		</div>
+    </div>
+</div>
+
+<php>}</php>

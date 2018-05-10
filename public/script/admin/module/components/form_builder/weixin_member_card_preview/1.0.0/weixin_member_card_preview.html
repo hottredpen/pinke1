@@ -1,0 +1,99 @@
+<php>if($form['type'] == 'weixin_member_card_preview@1.0.0'){</php>
+
+<div class="jt_form_builder_component" 
+    data-component-name     = "{$form['type']}"
+    data-builder-div        = ".j_form_item_{$form.name}"
+    data-form-item-name     = "{$form.name}"
+    data-is-init            = "false"
+></div>
+
+<php>
+echo common_builder_echo_style($form['type']);
+</php>
+
+<div class="j_weixin_member_card_preview_builder form-group j_form_item_{$form.name} {$form.extra.class} {$form_builder['all_item_class']}" style="position: relative;">
+
+	<div style="position: absolute;top: 0px;left: 0px;">
+
+
+        <div class="card_preview_area member_card affix-top" data-spy="affix" data-offset-top="220" data-offset-bottom="490"><div class="card_body" id="js_preview_area"><div class="js_preview msg_card_section shop ">
+            <div class="shop_panel j_color_bg_preview j_background_pic_url_preview" style="background-color: {$form['options']['info_data']['base_info_color']}; background-image:url({$form['options']['info_data']['background_pic_url']});" >
+                <div class="mask"></div>
+                <div class="logo_area">
+                    <span class="logo">
+                        <img id="js_logo_url_preview" src="{$form['options']['info_data']['logo_url']}">
+                    </span>
+                    <span id="j_brand_name_preview">{$form['options']['info_data']['brand_name']}</span>
+                    <p class="card_name" id="j_title_preview">{$form['options']['info_data']['title']}</p>
+                    <span class="qrcode"></span>
+                </div>
+                <div class="msg_area">
+                    <span class="member_number">0268 8888 8888</span>
+                    <span class="icon_info"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="msg_card_cell member_extend_area clearfix" style="display:none;">
+
+            <div class="member_extend_item">
+                <div class="member_extend_title">积分</div>
+                <div style="color: rgb(85, 189, 71);" class="member_extend_des js_title_color_preview">100</div>
+            </div>
+        </div>
+
+        <div class="msg_card_cell quick_pay " id="js_wepay_item" style="display:none;">
+            <a style="color: rgb(85, 189, 71);" href="javascript:;" class="btn_card_preview js_title_color_preview js_use_card_button">使用</a>
+        </div>
+
+        <div class="msg_card_cell shop_detail last_cell">
+            <ul class="list">
+                <li class="msg_card_section">
+                    <div class="li_panel" href="">
+                        <div class="li_content">
+                            <p>适用门店</p>
+                        </div>
+                        <span class="ic ic_go"></span>
+                    </div>
+                </li>
+                <li class="msg_card_section last_li">
+                    <div class="li_panel" href="">
+                        <div class="li_content">
+                            <p>公众号</p>
+                        </div>
+                        <span class="ic ic_go"></span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="msg_card_cell custom_detail">
+            <ul class="list" id="js_custom_url_preview">
+                <li class="msg_card_section last_li">        
+                    <div class="li_panel">
+                        <div class="li_content">
+                            <p>
+                                <span class="supply_area">
+                                    <span class="j_custom_cell1_tips">{$form['options']['info_data']['custom_cell1_tips']}</span>
+                                    <span class="ic ic_go"></span>
+                                </span>
+                                <span class="j_custom_cell1_name">{$form['options']['info_data']['custom_cell1_name']}</span>
+                            </p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div></div></div>
+
+
+
+
+
+    </div>
+
+</div>
+
+
+
+
+<php>}</php>

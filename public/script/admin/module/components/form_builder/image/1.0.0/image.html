@@ -1,0 +1,127 @@
+<php>if($form['type'] == 'image@1.0.0'){</php>
+
+<div class="jt_form_builder_component"
+    data-component-name     = "{$form['type']}"
+    data-builder-div        = ".j_form_item_{$form.name}"
+    data-form-item-name     = "{$form.name}"
+    data-tell-input-id      = "#j_form_item_val_{$form.name}"
+    data-is-init            = "false"
+></div>
+<style>
+
+/* 文件上传 */
+.file-item.thumbnail{
+    display: inline-block;
+    position: relative;
+    margin-right:15px;
+    float: left;
+}
+.file-item.thumbnail .info{
+    display: none;
+}
+.file-item.thumbnail .remove-picture{
+    position: absolute;
+    right: -5px;
+    top: -5px;
+    font-size: 18px;
+    color: #CA4949;
+    cursor: pointer;
+    display: none;
+    z-index: 5;
+}
+.file-item.thumbnail .remove-picture:hover{
+    color: #EC6969;
+}
+.file-item.thumbnail .move-picture{
+    background: gainsboro;
+    padding: 2px;
+    cursor: move;
+    color: #ABABAB;
+    position: absolute;
+    left: -6px;
+    top: -5px;
+    border-radius: 50%;
+    display: none;
+    z-index: 5;
+}
+.file-item.thumbnail:hover .remove-picture,
+.file-item.thumbnail:hover .move-picture{
+    display: block;
+}
+.file-item .progress.progress-xs{
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+.file-item .error,
+.file-item .img-state{
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    right: 4px;
+    color: white;
+    text-align: center;
+    height: 20px;
+    font-size: 14px;
+    line-height: 20px;
+}
+.file-item .error{
+    background: rgba(255, 0, 0, 0.67);
+}
+.file-item .success{
+    background: rgba(25, 167, 75, 0.78);
+}
+.uploader-list .list-group-item img{
+    width: 40px;
+    height: 40px;
+}
+.file-item .remove-file{
+    color: #CA4949;
+    cursor: pointer;
+}
+.file-item .remove-file:hover{
+    color: #EC6969;
+}
+.file-item .fa-check {
+    color: #68C39F;
+    margin-top: 3px;
+}
+</style>
+    <div class="form-group j_form_item_{$form.name} {$form.extra.class} {$form_builder['all_item_class']}">
+        <label class="{$form['item_col']|common_builder_form_item_col_echo_l} control-label" for="j_form_item_val_{$form.name}">
+            <php>if($form['title'] != ''){</php>
+            {$form.title}：<span class="text-danger">*</span>
+            <php>}</php>
+        </label>
+        <div class="{$form['item_col']|common_builder_form_item_col_echo_r} ">
+
+
+
+            <div class="col-xs-12 js-upload-image">
+                <div id="file_list_{$form.name}" class="uploader-list">
+                <php>
+                    $_img_url_ = common_trans_sub_image(common_format_cover_id($form['value']));
+                </php>
+                <notempty name="form['value']">
+                    <div class="file-item thumbnail">
+                        <a class="img-link" data-fancybox="gallery" href="{$_img_url_|common_trans_origin_image}" target="_self">
+                            <img src="{$_img_url_}" width="200" height="200">
+                        </a>
+                        <i class="fa fa-times-circle remove-picture"></i>
+                    </div>
+                </notempty>
+                </div>
+                <div class="clearfix"></div>
+                <input type="hidden" data-name="{$form.name}" data-multiple="false" data-size="0" data-ext='' id="{$form.name}" value="">
+                <div id="picker_{$form.name}">上传单张图片</div>
+                <input type="hidden" id="j_{$form['name']}_input"    name="{$form['options']['upload_config']['typename']}_{$form['name']}" value="">
+                <input type="hidden" id="j_{$form['name']}_id_input" name="{$form['name']}" value="{$form['value']}">
+
+                <notempty name="form.tip">
+                <div>
+                    <span class="check-tips text-muted small">{$form.tip}</span>
+                </div>
+                </notempty>
+            </div>
+        </div>
+    </div>
+<php>}</php>

@@ -1,0 +1,149 @@
+.m-newsside-preview {
+    width: 279px;
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+.m-newsside-preview .u-preview-item{
+    position: relative;
+    z-index: 1;
+    margin-left: -1px;
+    margin-right: -1px;
+    margin-bottom: -1px;
+}
+
+.m-newsside-preview .u-preview-item .item-first-content{
+    padding: 6px;
+    border: 2px solid #ddd;
+    position: relative;
+}
+.m-newsside-preview .u-preview-item .item-first-content .content-coverbox{
+    position: relative;
+    cursor: pointer;
+}
+.m-newsside-preview .u-preview-item .item-first-content .content-coverbox .item_title{
+    font-size: 14px;
+    padding-top: 0;
+    line-height: 28px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,0.6) !important;
+    color: #fff;
+    padding: 0 8px;
+    margin: 0;
+}
+.m-newsside-preview .u-preview-item .item-first-content .content-coverbox .thumb{
+    width: 243px;
+    height: 140px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    overflow: hidden;
+}
+
+.m-newsside-preview .u-preview-item .item-first-content .content-mask{
+    bottom: -1px;
+    line-height: 188px;
+    top: auto;
+    height: 40px;
+    background: rgba(0,0,0,0.5) !important;
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+.m-newsside-preview .u-preview-item:hover .item-first-content .content-mask{
+    display: block;
+    
+}
+.m-newsside-preview .u-preview-item .item-first-content .content-mask a{
+    line-height: 40px;
+    color: #fff;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+}
+.m-newsside-preview .u-preview-item .item-first-content .content-mask a i{
+    line-height: 40px;
+}
+.m-newsside-preview .u-preview-item .item-content{
+    padding: 6px;
+    border-left: 2px solid #ddd;
+    border-right: 2px solid #ddd;
+    border-bottom: 2px solid #ddd;
+    position: relative;
+}
+.m-newsside-preview .u-preview-item.editing .item-content{
+    border: 2px solid #43b548;
+}
+.m-newsside-preview .u-preview-item.editing .item-first-content{
+    border: 2px solid #43b548;
+}
+.m-newsside-preview .u-preview-item .item-content .content-coverbox{
+    position: relative;
+    cursor: pointer;
+    height: 45px;
+}
+.m-newsside-preview .u-preview-item .item-content .item_title{
+    line-height: 22px;
+    max-height: 48px;
+    overflow: hidden;
+    margin:0;
+    color: #222;
+    font-size: 14px;
+}
+
+.m-newsside-preview .u-preview-item .item-content .thumb{
+    float: right;
+    width: 45px;
+    height: 45px;
+    margin-left: 14px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+.m-newsside-preview .u-preview-item .item-content .content-mask{
+    bottom: -1px;
+    top: auto;
+    height: 40px;
+    background: rgba(0,0,0,0.5) !important;
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+.m-newsside-preview .u-preview-item:hover .item-content .content-mask{
+    display: block;
+    
+}
+.m-newsside-preview .u-preview-item .item-content .content-mask a{
+    line-height: 40px;
+    color: #fff;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+}
+.m-newsside-preview .u-preview-item .item-content .content-mask a i{
+    line-height: 40px;
+}
+
+.u-preview-additem{
+    display: block;
+    text-align: center;
+    height: 60px;
+    border: 2px dotted #d9dadc;
+    border-top-width: 0;
+    line-height: 60px;
+}
+.u-preview-additem a{
+    height: 60px;
+    display: block;
+}
+.u-preview-additem a i{
+    color: #999;
+    line-height: 60px;
+}

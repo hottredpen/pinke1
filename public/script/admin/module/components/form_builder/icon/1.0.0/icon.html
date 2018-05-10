@@ -1,0 +1,27 @@
+<php>if($form['type'] == 'icon@1.0.0'){</php>
+
+<div class="jt_form_builder_component"
+    data-component-name     = "{$form['type']}"
+    data-builder-div        = ".j_form_item_{$form.name}"
+    data-form-item-name     = "{$form.name}"
+    data-is-init            = "false"
+></div>
+
+    <div class="form-group j_form_item_{$form.name} {$form.extra.class} {$form_builder['all_item_class']}">
+        <label class="{$form['item_col']|common_builder_form_item_col_echo_l} control-label" for="j_form_item_val_{$form.name}">{$form.title}：<span class="text-danger">*</span></label>
+        <div class="{$form['item_col']|common_builder_form_item_col_echo_r}">
+
+            <div class="input-group">
+                <span class="input-group-addon icon" data-toggle="tooltip" data-placement="bottom" data-original-title="点击选择图标"><i id="j_dynamic_show_icon_{$form.name}" class="{$form.value|common_default='fa fa-plus-circle'}"></i></span>
+                <input class="J_component_layer_load_icon_for_choose_one form-control icon_input" data-url="{:U('admin/index/iconListForDialogChooseOne')}" data-title="{$form['options']['dialogTitle']}" style="background-color: #f2fffe52;" type="text" id="j_form_item_val_{$form.name}" name="{$form.name}" value="{$form.value}" placeholder="请选择图标" {$form.extra.attr} >
+                <span class="J_component_clear_this_icon input-group-addon" data-toggle="tooltip" data-placement="bottom" data-original-title="删除图标"><i class="fa fa-times"></i></span>
+            </div>
+
+            <notempty name="form.tip">
+            <div>
+                <span class="check-tips text-muted small">{$form.tip}</span>
+            </div>
+            </notempty>
+        </div>
+    </div>
+<php>}</php>

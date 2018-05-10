@@ -1,0 +1,52 @@
+<php>if($form['type'] == 'group'){</php>
+
+    <div class="form-group j_form_item_{$form.name} {$form.extra.class} {$form_builder['all_item_class']}">
+        <label class="{$form['item_col']|common_builder_form_item_col_echo_l} control-label" for="j_form_item_val_{$form.name}">
+            <php>if($form['title'] != ''){</php>
+            {$form.title}：<span class="text-danger">*</span>
+            <php>}</php>
+        </label>
+        <div class="{$form['item_col']|common_builder_form_item_col_echo_r} ">
+
+                    <div class="block block-bordered">
+                    
+                        <div class="block-content tab-content block-group">
+
+                            <volist name="form['group_items']" id="form" key="k">
+
+                                <php>if( strstr($form['name'],'empty') ){</php>
+                                    <php>
+                                        if(strstr($form['name'],'empty_')){
+                                            $empty_arr = explode('empty_',$form['name']);
+                                            $empty_num = (int)$empty_arr[1];
+                                        }else{
+                                            $empty_num = 1;
+                                        }
+                                    </php>
+                                    <php>for($i=0;$i<$empty_num;$i++){</php>
+                                        <div class="{$form['group_item_width_col_class']}">
+                                            <div class="form-group ">
+                                            </div>
+                                        </div>
+                                    <php>}</php>
+                                <php>}else{</php>
+                                    <div class="{$form['type']}  <php>if(!strstr($form['type'],'clearfix')){ echo $form['group_item_width_col_class']; }else{ echo 'clearfix';}</php>">
+                                    
+                                        <BeforeTemplate:builder name="111" enname="222">
+
+                                        </BeforeTemplate:builder>
+                                    
+                                    </div>
+                                <php>}</php>
+                                <php>unset($form);</php>
+                            </volist>
+
+                        </div>
+                    </div>
+
+
+        </div>
+    </div>
+
+
+<php>}</php>

@@ -1,0 +1,75 @@
+<BeforeTemplate:page_init name="ddd" title="后台管理" loadjs="admin_test_list"></BeforeTemplate:page_init>
+
+<div>
+	<div>{$test_data['before_values']}</div>
+
+	<ul class="" >
+		<volist name="test_data['data']" id="vo">
+			<li class="col-md-12 j_task_id_for_test_{$vo['local_no']} j_task_id_for_test" data-local-no="{$vo['local_no']}">
+			<div class="col-md-3">{$vo['title']}</div>
+			<div class="col-md-3">{$vo['assert']}</div>
+			<div class="j_test_assert_info_{$vo['local_no']} j_test_assert_info col-md-3" ></div>
+			<div class="j_test_assert_status_{$vo['local_no']} j_test_assert_status col-md-3"></div>
+			</li>
+		</volist>
+	</ul>
+	<div class="clearfix"></div>
+	<ul style="margin-top: 10px;">
+		<li class="col-md-12 j_task_id_for_test_0">
+			<div class="col-md-3">====>插入数据</div>
+			<div class="col-md-3">{$test_data['success_assert']}</div>
+			<div class="j_test_assert_info_0 j_test_assert_info col-md-3" ></div>
+			<div class="j_test_assert_status_0 j_test_assert_status col-md-3"></div>
+		</li>
+	</ul>
+</div>
+
+<div class="col-md-12">
+	<div class="col-md-6 col-md-offset-1">
+	    <label class="css-input css-checkbox css-checkbox-primary">
+	        <input type="checkbox" class="" name="insertdb" value="1">
+	        <span></span>是否插入数据                    
+	    </label>
+    </div>
+</div>
+
+<div class="col-md-12">
+	<a class="J_init_post_data" data-id="{$id}"  href="javascript:;" target="_self">初始化数据</a>
+</div>
+
+<div class="col-md-12">
+	<a class="J_logging_test_origin_data" data-id="{$id}"  href="javascript:;" target="_self">记录测试前数据</a>
+</div>
+
+
+<div class="col-md-12">
+	<a class="J_start_admin_test" data-id="{$id}" data-sence-id="{$test_data['sence_id']}"  href="javascript:;" target="_self">开始测试</a>
+</div>
+
+<div class="col-md-12">
+	<a class="J_logging_test_update_data" data-id="{$id}"  href="javascript:;" target="_self">记录测试后数据</a>
+</div>
+
+<div class="col-md-12">
+	<a class="J_show_test_assert_change" data-id="{$id}"  href="javascript:;" target="_self">显示测试数据比对</a>
+</div>
+
+<style type="text/css">
+	.res_assrest_list li{
+		clear: both;
+	}
+</style>
+
+<div class="col-md-12">
+	<ul class="j_assert_data_list res_assrest_list" >
+
+	</ul>
+</div>
+
+<div class="col-md-12">
+	<a class="J_assert_change_is_passed" data-id="{$id}"  href="javascript:;" target="_self">数据断言判断</a>
+</div>
+
+<div class="clearfix"></div>
+
+

@@ -1,0 +1,21 @@
+<php>if($form['type'] == 'div'){</php>
+    <div class="form-group j_form_item_{$form.name} {$form.extra.class} {$form_builder['all_item_class']}">
+        <label class="{$form['item_col']|common_builder_form_item_col_echo_l} control-label" for="j_form_item_val_{$form.name}">{$form.title}：<span class="text-danger">*</span></label>
+        <div class="{$form['item_col']|common_builder_form_item_col_echo_r} ">
+
+            <div  style="line-height: 32px;">
+                <notempty name="form.extra.hook">
+                    {:hook($form['extra']['hook'],$form['extra']['hook_param'])}
+                <else />
+                    {$form.value}
+                </notempty>
+            </div>
+            <notempty name="form.tip">
+                <div>
+                <span class="check-tips text-muted small">{$form.tip}</span>
+                </div>
+            </notempty>
+
+        </div>
+    </div>
+<php>}</php>

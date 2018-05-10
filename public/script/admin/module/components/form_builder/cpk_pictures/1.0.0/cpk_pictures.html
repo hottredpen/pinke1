@@ -1,0 +1,52 @@
+<php>if($form['type'] == 'cpk_pictures@1.0.0'){</php>
+
+<div class="jt_form_builder_component"
+    data-component-name     = "{$form['type']}"
+    data-builder-div        = ".j_form_item_{$form.name}"
+    data-form-item-name     = "{$form.name}"
+    data-builder-field-name = "{$form['name']}"
+    data-upload-type        = "{$form['extra']['uploadtype']}"
+    data-upload-init-input  = "{$form['name']}_upload"
+    data-upload-post-input  = "{$form['extra']['inputname']}[]"
+    data-main-div-id        = "#j_{$form['name']}_cover_ids"
+    data-main-div-ul        = "#j_upload_{$form['name']}"
+    data-is-init            = "false"
+></div>
+<php>
+echo common_builder_echo_style($form['type']);
+</php>
+
+    <div class="form-group j_form_item_{$form.name} {$form.extra.class} {$form_builder['all_item_class']}" style="position: relative;">
+
+        <php>if($form['title'] != ''){</php>
+        <label class="{$form['item_col']|common_builder_form_item_col_echo_l} control-label" for="j_form_item_val_{$form.name}">{$form.title}：<span class="text-danger">*</span></label>
+        <php>}</php>
+
+        <div class="{$form['item_col']|common_builder_form_item_col_echo_r}" style="{$form.extra.absolute_attr}" >
+
+            <div class="m-public-uploadpic" >
+                <input type="file" name="{$form['name']}_upload" id="{$form['name']}_upload" class="btn-blue" style="display:none;" />
+                <input type="hidden" name="fileid" id="file_ids" value="">
+                <span class="flashCheckBox"></span>
+            </div>
+
+
+            <div id="j_{$form['name']}_cover_ids" class="dd" >
+                <ol id="j_upload_{$form['name']}" class="dd-list">
+                    <php>foreach($form['value'] as $key => $vo){</php>
+                        <li class="dd-item">
+                            <div class="dd-handle"><img src="{$vo['url']|common_trans_sub_image}"></div>
+                            <div class="dd-del"><a class="J_del_{$form['name']}_imgbox" href="javascript:;">删除（id:{$vo['id']}）</a></div>
+                            <input type="hidden" name='{$form["extra"]["inputname"]}[]' value="{$vo['id']}" >
+                        </li>
+                    <php>}</php>
+                </ol>
+            </div>
+
+            <!-- 此字段为了记录当前选项值，不直接进行提交，如有需要请用js获取该值,勿添加name-->
+            <input class="form-control" type="hidden" id="j_form_item_val_{$form.name}"  value="{$form.value}" {$form.extra.attr} >
+
+
+        </div>
+    </div>
+<php>}</php>

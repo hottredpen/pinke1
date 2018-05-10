@@ -1,0 +1,65 @@
+<php>if($form['type'] == 'weixin_news_side_preview@1.0.0'){</php>
+
+<div class="jt_form_builder_component" 
+    data-component-name     = "{$form['type']}"
+    data-builder-div        = ".j_form_item_{$form.name}"
+    data-form-item-name     = "{$form.name}"
+    data-is-init            = "false"
+></div>
+
+<php>
+echo common_builder_echo_style($form['type']);
+</php>
+
+
+
+<div class="form-group item_{$form.name} {$form.extra.class} {$form_builder['all_item_class']}" style="position: relative;">
+
+	<div style="position: fixed;top: 60px;left: 30px;">
+
+        <div class="m-newsside-preview">
+
+            <php>$k = 0; </php>
+            <php>foreach($form['options']['list_data'] as $key => $vo){</php>
+                <php>$k++; </php>
+
+            <div class="j_sidenews_item_{$vo['edit_index_id']} j_sidenews_item u-preview-item  hidden <php>if($k==1){ echo 'editing';}</php> " data-index="{$vo['edit_index_id']}">
+                <div class="J_choose_this_side_item item-first-content   <php>if($k==1){ echo '';}else{ echo 'hidden';}</php>" data-index="{$vo['edit_index_id']}">
+                    <div class=" content-coverbox" >
+                        <div class="j_sidenews_title_{$vo['edit_index_id']} item_title">标题</div>
+                        <div class="thumb  <php>if($vo['thumb_media_id'] != ''){ echo 'j_thumb_fileid_reply_type_'.$vo['edit_index_id']; }</php>  " style="background-image: url({$vo['cover_id_format']});"></div>
+                    </div>
+                    <div class="content-mask">
+                        <a class="J_sidenews_down fl" href="javascript:;" data-index="{$vo['edit_index_id']}"><i class="fa fa-arrow-down"></i></a>
+                    </div>
+                </div>
+                <div class="J_choose_this_side_item item-content clearfix <php>if($k==1){ echo 'hidden';}else{ echo '';}</php>" data-index="{$vo['edit_index_id']}">
+                    <div class=" content-coverbox" >
+                        <div class="thumb   <php>if($vo['thumb_media_id'] != ''){ echo 'j_thumb_fileid_reply_type_'.$vo['edit_index_id']; }</php>  " style="background-image: url({$vo['cover_id_format']});"></div>
+                        <div class='j_sidenews_title_{$vo["edit_index_id"]} item_title'>标题</div>
+                    </div>
+                    <div class="content-mask">
+                        <a class="J_sidenews_up fl" href="javascript:;" data-index="{$vo['edit_index_id']}"><i class="fa fa-arrow-up"></i></a>
+                        <a class="J_sidenews_down fl " href="javascript:;" data-index="{$vo['edit_index_id']}"><i class="fa fa-arrow-down"></i></a>
+                        <a class="J_sidenews_del fr" href="javascript:;" data-index="{$vo['edit_index_id']}"><i class="fa fa-trash-o"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <php>}</php>
+
+            <div class="u-preview-additem">
+                <a class="J_add_news_item" href="javascript:;"><i class="fa fa-plus"></i></a>
+                <input type="hidden" name="post_items_indexids" value="">
+                <input type="hidden" name="show_items_indexids" value="{$form['value']}">
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+
+
+<php>}</php>

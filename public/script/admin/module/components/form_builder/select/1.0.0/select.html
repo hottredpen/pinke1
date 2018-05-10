@@ -1,0 +1,49 @@
+<php>if($form['type'] == 'select@1.0.0'){</php>
+
+<div class="jt_form_builder_component"
+    data-component-name     = "{$form['type']}"
+    data-builder-div        = ".j_form_item_{$form.name}"
+    data-form-item-name     = "{$form.name}"
+    data-is-init            = "false"
+></div>
+
+
+    <div class="form-group j_form_item_{$form.name} {$form.extra.class} {$form_builder['all_item_class']}">
+        <label class="{$form['item_col']|common_builder_form_item_col_echo_l} control-label" for="j_form_item_val_{$form.name}">{$form.title}：<span class="text-danger">*</span></label>
+        <div class="{$form['item_col']|common_builder_form_item_col_echo_r}">
+
+            <select class="form-control" id="j_form_item_val_{$form.name}" name="{$form.name}"
+
+                <php>if($form['extra']['disabled'] != ""){</php>
+                    disabled=""
+                <php>}</php>
+
+             size="1">
+                <notempty name="form['extra']['first_title']">
+                    <option value="{$form['extra']['first_value']}">{$form['extra']['first_title']}</option>
+                <else />
+                    <option value=''>请选择：</option>
+                </notempty>
+
+                
+                <foreach name="form.options" item="option" key="option_key">
+                    <php>if(is_array($option)):</php>
+                        <option value="{$option_key}" <eq name="form.value" value="$option_key"> selected</eq>
+                            <foreach name="option" item="option2" key="option_key2">
+                                {$option_key2}="{$option2}"
+                            </foreach>>
+                            {$option.title}
+                        </option>
+                    <php>else:</php>
+                        <option value="{$option_key}" <eq name="form.value" value="$option_key"> selected</eq>>{$option}</option>
+                    <php>endif;</php>
+                </foreach>
+            </select>
+            <notempty name="form.tip">
+                <div>
+                <span class="check-tips text-muted small">{$form.tip}</span>
+                </div>
+            </notempty>
+        </div>
+    </div>
+<php>}</php>

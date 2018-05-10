@@ -1,0 +1,35 @@
+<php>if($form['type'] == 'radio@1.0.0'){</php>
+
+<div class="jt_form_builder_component"
+    data-component-name     = "{$form['type']}"
+    data-builder-div        = ".j_form_item_{$form.name}"
+    data-form-item-name     = "{$form.name}"
+    data-tell-input-id      = "#j_form_item_val_{$form.name}"
+    data-is-init            = "false"
+></div>
+
+    <div class="form-group j_form_item_{$form.name} {$form.extra.class} {$form_builder['all_item_class']}">
+        <label class="{$form['item_col']|common_builder_form_item_col_echo_l} control-label" for="j_form_item_val_{$form.name}">
+            <php>if($form['title'] != ''){</php>
+            {$form.title}：<span class="text-danger">*</span>
+            <php>}</php>
+        </label>
+        <div class="{$form['item_col']|common_builder_form_item_col_echo_r}">
+
+            <foreach name="form.options" item="option" key="option_key">
+                <label class="css-input css-radio <php>if($form['extra']['disabled'] != ""){ echo 'css-radio-default'; }else{ echo 'css-radio-primary';}</php> push-10-r " >
+                    <input id="j_radio_{$form.name}_{$option_key}" class="J_form_item_radio" 
+                        <php>if($form['extra']['disabled'] != ""){</php>
+                        disabled=""
+                        <php>}</php>
+
+                    data-tell="#j_form_item_val_{$form.name}" data-form-item="{$form.name}"  type="radio" name="{$form.name}"  value="{$option_key}" <eq name="form.value" value="$option_key"> checked="" </eq>  {$form.extra.attr} >
+                    <span></span> {$option}
+                </label>
+            </foreach>
+
+            <!-- 此字段为了记录当前选项值，不直接进行提交，如有需要请用js获取该值,勿添加name-->
+            <input class="form-control" type="hidden" id="j_form_item_val_{$form.name}"  value="{$form.value}" {$form.extra.attr} >
+        </div>
+    </div>
+<php>}</php>

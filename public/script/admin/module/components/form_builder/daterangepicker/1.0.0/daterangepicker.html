@@ -1,0 +1,48 @@
+<php>if($form['type'] == 'daterangepicker@1.0.0'){</php>
+
+<div class="jt_form_builder_component"
+    data-component-name     = "{$form['type']}"
+    data-builder-div        = ".j_form_item_{$form.name}"
+    data-form-item-name     = "{$form.name}"
+    data-input-id           = "#j_date_{$form['name']}"
+    data-is-init            = "false"
+></div>
+<php>
+echo common_builder_echo_style($form['type']);
+</php>
+
+
+    <div class="form-group j_form_item_{$form.name} {$form.extra.class} {$form_builder['all_item_class']}">
+        <notempty name="form['title']">
+            <label class="{$form['item_col']|common_builder_form_item_col_echo_l} control-label" for="j_form_item_val_{$form.name}">
+                <php>if($form['title'] != "-"){</php>
+                {$form.title}：<span class="text-danger">*</span>
+                <php>}</php>
+            </label>
+        </notempty>
+        <div class="{$form['item_col']|common_builder_form_item_col_echo_r} ">
+
+            <div id="j_date_{$form['name']}" class="input-daterange input-group" >
+                <input type="text" class="input-sm form-control" name="{$form['options']['begin']['name']}" value="{$form['options']['begin']['value']|common_format_time='Y-m-d'}"
+
+                        <php>if($form['extra']['begin_disabled'] != ""){</php>
+                        disabled=""
+                        <php>}</php>
+
+
+                 />
+                <span class="input-group-addon">to</span>
+                <input type="text" class="input-sm form-control" name="{$form['options']['end']['name']}"
+                value="{$form['options']['end']['value']|common_format_time='Y-m-d'}"
+
+                        <php>if($form['extra']['end_disabled'] != ""){</php>
+                        disabled=""
+                        <php>}</php>
+
+
+                 />
+            </div>
+
+        </div>
+    </div>
+<php>}</php>

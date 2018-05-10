@@ -1,0 +1,76 @@
+<php>foreach($news_list as $news_list_key => $vo){</php>
+    <div class="u-newslist-newsitem J_choose_this_news news-box" data-builder-trigger-name="{$builder_trigger_name}">
+        <div class="newsitem-content">
+            <div class="content-header">
+                <em class="newsdate">{$vo['content']['create_time']|common_format_time}</em>
+            </div>
+
+
+            <php>if(count($vo['content']['news_item']) == 1){</php>
+                <div class="content-onenews">
+                    <h4 class="onenews-title">
+                        <a href="#">{$vo['content']['news_item'][0]['title']}</a>
+                    </h4>
+                    <div class="onenews-thumb" style="background-image:url('{$vo['content']['news_item'][0]['thumb_url']}')"></div>
+                    <p class="onenews-desc">{$vo['content']['news_item'][0]['digest']}</p>
+                    <a href="" class="newsitem-preview">
+                        <div class="preview-content">
+                            <p class="">预览文章</p>
+                        </div>
+                        <span class="preview-box"></span>
+                    </a>
+                </div>
+            <php>}else{</php>
+
+                <php>$k = 0; </php>
+                <php>foreach($vo['content']['news_item'] as $news_item_key => $voo){</php>
+                    <php>$k++; </php>
+                    <php>if($k == 1){</php>
+                        <div class="   content-multinewsfirst">
+                            <h4 class="multinews-title ">
+                                <a href="#">{$voo['title']}</a>
+                            </h4>
+                            <div class="multinewsfirst-thumb" style="background-image:url('{$voo['thumb_url']}')"></div>
+                            <a href="" class="newsitem-preview">
+                                <div class="preview-content">
+                                <p class="">预览文章</p>
+                                </div>
+                                <span class="preview-box"></span>
+                            </a>
+                        </div>
+
+                    <php>}else{</php>
+
+                        <div class="content-multinews">
+                            <div class="multinews-thumb" style="background-image:url('{$voo['thumb_url']}');"></div>
+                            <h4 class="multinews-title ">
+                                <a href="#">{$voo['title']}</a>
+                            </h4>
+                            <a href="" class="newsitem-preview">
+                                <div class="preview-content">
+                                    <p class="">预览文章</p>
+                                </div>
+                                <span class="preview-box"></span>
+                            </a>
+                        </div>
+                    <php>}</php>
+                <php>}</php>
+
+            <php>}</php>
+            <div class="hover_area"></div>
+        </div>
+        <div class="newsitem-opr ">
+            <ul>
+                <li class="appmsg_opr_item grid_item size1of2">
+                    <a class="" href="{:U('weixin/editNewsDetail',array('media_id'=>$vo['media_id']))}" title="编辑">&nbsp;<i class="fa fa-pencil"></i></a>
+                    <div class="content-check">
+                       <input type="hidden" name="news_media_id" value="{$vo['media_id']}">
+                    </div>
+                </li>
+                <li class="appmsg_opr_item grid_item size1of2 no_extra">
+                    <a class="J_confirmurl no_extra " href="javascript:void(0);" title="删除" data-itemname="微信素材" data-uri="{:U('admin/weixin/delete_material_news')}" data-id="{$vo['media_id']}" data-action="delete_material_news" data-msg="确定要删除media_id={$vo['media_id']}的微信素材吗？">&nbsp;<i class="fa  fa-trash-o"></i></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+<php>}</php>

@@ -1,0 +1,84 @@
+<BeforeTemplate:page_init name="ddd" title="后台管理" loadjs="clearpage"></BeforeTemplate:page_init>
+
+
+<main id="main-container">
+
+    <div class="content bg-white border-b">
+
+        <div class="block">
+            <div class="block-header">
+                <h3 class="block-title">清空缓存</h3>
+            </div>
+            <div class="block-content">
+
+
+
+                <form action="" method="post">
+                    <table class="table">
+                        <caption></caption>
+                        <thead>
+                            <tr>
+                                <th width="20"></th>
+                                <th width="50"></th>
+                                <th width="100"></th>
+                                <th width="100"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><input type="checkbox" checked value="tpl"  name="type" data-uri="{:U('Admin/admin/cacheclear', array('type'=>'tpl'))}"></td>
+                                <td>模板编译缓存</td>
+                                <td>修改过模板文件后更新</td>
+                                <td><span id="j_tpl_actioninfo"></span></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" checked value="data" name="type" data-uri="{:U('Admin/admin/cacheclear', array('type'=>'data'))}"></td>
+                                <td>静态数据缓存</td>
+                                <td>修改网站配置文件后更新</td>
+                                <td><span id="j_data_actioninfo"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" checked value="temp" name="type" data-uri="{:U('Admin/admin/cacheclear', array('type'=>'temp'))}"></td>
+                                <td>动态数据缓存</td>
+                                <td>希望有缓存的数据马上更新</td>
+                                <td><span id="j_temp_actioninfo"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" checked value="logs" name="type" data-uri="{:U('Admin/admin/cacheclear', array('type'=>'logs'))}"></td>
+                                <td>网站日志文件</td>
+                                <td>清理项目日志文件释放服务器空间</td>
+                                <td><span id="j_logs_actioninfo"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" checked value="html" name="type" data-uri="{:U('Admin/admin/cacheclear', array('type'=>'html'))}"></td>
+                                <td>静态页面</td>
+                                <td>静态页面</td>
+                                <td><span id="j_html_actioninfo"></td>
+                            </tr>
+                            <tr>
+                                <th></th>
+                                <td>
+                                    <button id="J_clear_cache" class="btn btn-minw btn-info"  type="button" >清理</button>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+
+
+
+
+
+
+
+
+
+
+

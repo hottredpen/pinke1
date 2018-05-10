@@ -1,0 +1,151 @@
+<BeforeTemplate:page_init name="ddd" title="后台管理" loadjs=""></BeforeTemplate:page_init>
+
+<notempty name="form_builder['meta_title']">
+<div class="content bg-gray-lighter">
+    <div class="row items-push">
+        <div class="col-sm-7">
+            <h1 class="page-heading">{$form_builder['meta_title']}</h1>
+        </div>
+        <div class="col-sm-5 text-right hidden-xs">
+            <ol class="breadcrumb push-10-t">
+                <!-- todo -->
+<!--                 <li><i class="fa fa-map-marker"></i></li>
+                <li><a class="link-effect" href="javascript:void(0);">系统</a></li>
+                <li><a class="link-effect" href="javascript:void(0);">系统功能</a></li>
+                <li><a class="link-effect" href="javascript:void(0);">节点管理</a></li> -->
+            </ol>
+        </div>
+    </div>
+</div>
+</notempty>
+
+
+<div id="{$form_builder['builder_id']}" class="builder" style="background-color: #fff;">
+    <!-- Tab导航 -->
+    <notempty name="form_builder['tab_nav']">
+        <div class="builder-tabs">
+            <div class="row" style="margin-right: 0px;margin-left: 0px;padding-top: 15px;">
+                <div class="col-xs-12">
+                    <ul class="nav nav-tabs ">
+                        <volist name="form_builder['tab_nav']['tab_list']" id="_tab" >
+                            <li class="<php>if($form_builder['tab_nav']['current_tab'] == $key) echo 'active';</php>"><a href="{$_tab.href}">{$_tab.title}</a></li>
+                        </volist>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="form-group"></div>
+    </notempty>
+
+
+    <div class="builder-container  content{$form_builder['not_padding']}" style="background-color: #fff;">
+        <div class="row{$form_builder['not_padding']}" >
+            <div class="col-sm-12{$form_builder['not_padding']} {$form_builder['from_col_class']} ">
+
+
+
+
+                <div class="block">
+
+
+                        <php>if(count($form_builder['form_items_tab']) > 1){</php>
+                        <ul class="nav nav-tabs" data-toggle="tabs" style="border-top: 2px solid #f9f9f9;border-left: 2px solid #f9f9f9;border-right: 2px solid #f9f9f9;">
+                            <volist name="form_builder['form_items_tab']" id="vo" >
+                            <li class="<php>if($key == 1){ echo 'active';}</php>">
+                                <a href="#tab{$key}" target="_self">{$vo[0]['tab_title']}</a>
+                            </li>
+                            </volist>
+                        </ul>
+                        <php>}</php>
+
+<!--                     <div class="block-content block-content-mini block-content-full border-b">
+                        <div class="wizard-progress progress active remove-margin-b">
+                            <div class="progress-bar progress-bar-primary progress-bar-striped" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 0"></div>
+                        </div>
+                    </div>
+
+                    <ul class="nav nav-tabs nav-tabs-alt nav-justified">
+                        <li class="active">
+                            <a href="#simple-progress-step1" data-toggle="tab">1. Personal</a>
+                        </li>
+                        <li>
+                            <a href="#simple-progress-step2" data-toggle="tab">2. Details</a>
+                        </li>
+                        <li>
+                            <a href="#simple-progress-step3" data-toggle="tab">3. Extra</a>
+                        </li>
+                    </ul> -->
+
+
+
+
+                    <div class="block{$form_builder['not_padding']}">
+                        <div class="block-content{$form_builder['not_padding']} ">
+                            <form id="j_builder_form{:time()}" class="js-validation-bootstrap form-horizontal" action="{$form_builder['post_url']}" method="post" style="overflow: hidden;">
+
+                    <div class="block-content tab-content">
+
+
+                        
+
+                        
+                        <php>foreach($form_builder['form_items_tab'] as $key =>$vo){</php>
+
+                            <div class="tab-pane   push-20  <php>if($key == 1){ echo 'fade in active';}</php>  " id="tab{$key}" style="<php>if($key == 0){ echo 'display: block;'; }</php>">
+                                <volist name="form_builder['form_items_tab'][$key]" id="form" key="k">
+                                    <php>// dump($form);</php>
+
+                                    <include file='./../Application/Common/View/one/builder/group.html' />
+
+                                    <BeforeTemplate:builder name="1122" enname="3344" builder_module="$form_builder['builder_module']">
+                                    </BeforeTemplate:builder>
+
+                                    <php>unset($form);</php>
+                                </volist>
+                            </div>
+                        <php>}</php>
+
+                    </div>
+
+                                <empty name="form_builder['form_items']">
+                                    <div class="builder-data-empty text-center">
+                                        <div class="empty-info">
+                                            <i class="fa fa-database"></i> 暂时没有数据<br>
+                                            <span class="small">本系统由 pinkephp 强力驱动</span>
+                                        </div>
+                                    </div>
+                                </empty>
+
+                                <div class="form-group">
+                                    <input type="hidden" name="backurl" value="{$form_builder['post_backurl']}" >
+                                    <input type="hidden" name="form_token" value="{$form_builder['form_token']}" >
+                                    <!-- 无宽度自动居中样式 -->
+                                    <div class="clearfix" style="position: relative;margin: auto;">
+                                        <div style="position: relative;left: 50%;clear: both;float: left;">
+                                            <a class="J_builder_form_submit{:time()} btn btn-minw btn-primary" href="javascript:;" style="float: left;left: -50%;position: relative;margin-left: 8px;">确定</a>
+                                            <a class="J_builder_form_cancel btn btn-minw btn-default" type="javascript:;" style="float: left;left: -50%;position: relative;margin-left: 8px;">返回</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="jt_builder_form_post_init" data-form-id="#j_builder_form{:time()}" data-post-buttom=".J_builder_form_submit{:time()}" data-trigger-click-a-id="#j_click_a_to_url{:time()}" data-backurl="{$form_builder['post_backurl']}"></div>
+
+<volist name="form_builder['class_trigger_data']" id="vo" >
+    <div class="jt_builder_form_class_trigger_init" data-on-field="{$vo['on_field']}" data-on-values="{$vo['on_values']}"
+            data-trigger-items="{$vo['trigger_items']}" data-is-init="false" >
+
+    </div>
+</volist>
+
+<a id="j_click_a_to_url{:time()}" href=""></a>

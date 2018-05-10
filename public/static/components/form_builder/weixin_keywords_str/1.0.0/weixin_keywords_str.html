@@ -1,0 +1,49 @@
+<php>if($form['type'] == 'weixin_keywords_str@1.0.0'){</php>
+
+<div class="jt_form_builder_component" 
+    data-component-name     = "{$form['type']}"
+    data-builder-div        = ".j_form_item_{$form.name}"
+    data-form-item-name     = "{$form.name}"
+    data-is-init            = "false"
+></div>
+
+<php>
+echo common_builder_echo_style($form['type']);
+</php>
+
+
+
+    <div class="form-group j_form_item_{$form.name} {$form.extra.class} {$form_builder['all_item_class']}">
+        <label class="{$form['item_col']|common_builder_form_item_col_echo_l} control-label" for="j_form_item_val_{$form.name}">{$form.title}：<span class="text-danger">*</span></label>
+        <div class="{$form['item_col']|common_builder_form_item_col_echo_r}">
+
+            <div>
+                <a class="J_layer_dialog" href="javascript:void(0);" data-url="{$form['options']['posturl']}" data-action="{$form['options']['posturl']}" data-width="600px" data-title="新增-关键字"><em>添加关键字</em></a>
+
+                <ul style="display: block;width: 980px;" class="keywords_list" id="j_keywords_list">
+
+
+                    <php>$k = 0; </php>
+                    <php>foreach($form['value'] as $key => $vo){</php>
+                        <php>$k++; </php>
+                        <li class="j_indexid_{$k}" data-index="{$k}">
+                            <div class="desc">
+                                <strong class="title j_keyword_val" data-content="{$vo}">{$vo}</strong>
+                                <input type="hidden" name="keywords[]" value="{$vo}">
+                            </div>
+                            <div class="opr">
+                                <a href="javascript:;" data-id="0" class="icon14_common del_gray J_keyword_del">删除</a>
+                            </div>
+                        </li>
+                    <php>}</php>
+
+                </ul>
+            </div>
+
+            <!-- 此字段为了记录当前选项值，不直接进行提交，如有需要请用js获取该值,勿添加name-->
+            <input class="form-control" type="hidden" id="j_form_item_val_{$form.name}"  value="{$form.value}" {$form.extra.attr} >
+
+
+        </div>
+    </div>
+<php>}</php>

@@ -1,0 +1,39 @@
+<ul class="clearfix">
+    <volist name="list" id="vo">
+        <li class="u-imagelist-imageitem J_choose_this_image" data-builder-trigger-name="{$builder_trigger_name}">
+            <div class="imageitem-content">
+                <span class="content-thumb" style="background-image:url({$vo['url']});"></span>
+                <span class="content-check">
+                    <label class="check-label">
+                        <input type="hidden" name="image_media_id" value="{$vo['media_id']}">
+                        <input class="label-checkbox" type="checkbox">
+                        <span class="label-name">{$vo['name']}</span>
+                    </label>
+                </span>
+            </div>
+            <div class="imageitem-opr">
+                <ul class="opr-ul">
+                    <li class="opr-item size1of3">
+                        <a class="opr-itembtn " href="javascript:;">
+                            <i class="fa fa-pencil" title="编辑"></i>
+                         </a>
+                    </li>
+
+                    <li class="opr-item size1of3">
+                        <a class="opr-itembtn " href="javascript:;">
+                            <i class="fa fa-exchange" title="移动分组"></i>
+                        </a>
+                    </li>
+
+                    <li class="opr-item size1of3 no_extra">
+                        <a class="J_confirmurl opr-itembtn " href="javascript:;" title="删除" data-itemname="微信素材" data-uri="{:U('admin/weixin/delete_material_image')}" data-id="{$vo['media_id']}" data-action="delete_material_image" data-msg="确定要删除media_id={$vo['media_id']}的微信素材吗？">
+                            <i class="fa  fa-trash-o" title="删除"></i>
+                        </a>
+
+
+                    </li>
+                </ul>
+            </div>
+        </li>
+    </volist>
+</ul>

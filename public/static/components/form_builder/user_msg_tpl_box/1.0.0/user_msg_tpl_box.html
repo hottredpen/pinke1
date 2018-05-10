@@ -1,0 +1,168 @@
+<php>if($form['type'] == 'user_msg_tpl_box@1.0.0'){</php>
+
+<div class="jt_form_builder_component"
+    data-component-name     = "{$form['type']}"
+    data-builder-div        = ".j_form_item_{$form.name}"
+    data-form-item-name     = "{$form.name}"
+    data-is-init            = "false"
+></div>
+
+<php>
+echo common_builder_echo_style($form['type']);
+</php>
+
+<div class="jt_form_builder_component"
+    data-component-name     = "ueditor@1.0.0"
+    data-builder-div        = ".j_form_item_{$form.name}"
+    data-form-item-name     = "{$form.name}"
+    data-content-id         = "UEditor_for_user_msg_tpl_localmsg_{$form['options']['trigger_from']}" 
+    data-name               = "for_user_msg_tpl_localmsg_{$form['options']['trigger_from']}" 
+    data-is-init            = "false"
+></div>
+
+<div class="jt_form_builder_component"
+    data-component-name     = "ueditor@1.0.0"
+    data-builder-div        = ".j_form_item_{$form.name}"
+    data-form-item-name     = "{$form.name}"
+    data-content-id         = "UEditor_for_user_msg_tpl_email_{$form['options']['trigger_from']}" 
+    data-name               = "for_user_msg_tpl_email_{$form['options']['trigger_from']}" 
+    data-is-init            = "false"
+></div>
+
+<php>
+echo common_builder_echo_style('weixin_send_box');
+</php>
+
+
+<div class="form-group j_form_item_{$form.name} {$form.extra.class} {$form_builder['all_item_class']}">
+
+	<php>if($form['title'] != ''){</php>
+    <label class="{$form['item_col']|common_builder_form_item_col_echo_l} control-label" for="j_form_item_val_{$form.name}">{$form.title}：<span class="text-danger">*</span></label>
+    <php>}</php>
+
+    <div class="{$form['item_col']|common_builder_form_item_col_echo_r} ">
+
+		<div id="j_weixin_send_box_main_div_{$form['options']['trigger_from']}"  class="j_weixin_send_box_main_div msg_sender">
+
+			<div class="msg_tab">
+
+
+			    <div class="tab_navs_panel">
+
+			        <div class="tab_navs_wrp">
+			            <ul class="tab_navs j_tab_navs  {$form['extra']['tab_navs_class']}" style="margin-left:0;padding-left: 0;">
+
+			            	
+			                <li class="tab_nav tab_text width6 <php>if($form['extra']['selected_nav'] == 'localmsg'){ echo 'selected';}</php>  J_sendbox_tabnav j_sendbox_tabnav" data-tab=".j_localMsgArea" data-tooltip="站内信">
+						        <label class=" css-input css-checkbox css-checkbox-primary" >
+			                      	<input type="checkbox" name="{$form['options']['trigger_from']}_send_msg_type_arr[]" value="1"
+			                      	<php>if($form['extra']['selected_nav'] == 'localmsg'){ echo 'checked';}</php> >
+			                        <span></span>&nbsp;
+			                    </label>
+			                    <i class="icon_msg_sender"></i>站内信
+			                </li>
+			                
+
+			                <php>if($form['options']['user_data']['is_bind_phone']){</php>
+			                <li class="tab_nav tab_appmsg width6 <php>if($form['extra']['selected_nav'] == 'sms'){ echo 'selected';}</php> J_sendbox_tabnav j_sendbox_tabnav " data-tab=".j_SMSArea" data-tooltip="短信">
+						        <label class=" css-input css-checkbox css-checkbox-primary" >
+			                        <input type="checkbox" name="{$form['options']['trigger_from']}_send_msg_type_arr[]" value="2" <php>if($form['extra']['selected_nav'] == 'sms'){ echo 'checked';}</php> >
+			                        <span></span>&nbsp;
+			                    </label>
+			                    <i class="icon_msg_sender"></i>短信
+			                </li>
+			                <php>}</php>
+
+			                <php>if($form['options']['user_data']['is_bind_email']){</php>
+				                <li class="tab_nav tab_img width6 <php>if($form['extra']['selected_nav'] == 'email'){ echo 'selected';}</php> J_sendbox_tabnav j_sendbox_tabnav" data-tab=".j_emailArea" data-tooltip="邮件">
+							        <label class=" css-input css-checkbox css-checkbox-primary" >
+				                        <input type="checkbox" name="{$form['options']['trigger_from']}_send_msg_type_arr[]" value="3" <php>if($form['extra']['selected_nav'] == 'email'){ echo 'checked';}</php> >
+				                        <span></span>&nbsp;
+				                    </label>
+				                    <i class="icon_msg_sender"></i>邮件
+				                </li>
+			                <php>}</php>
+			                
+			                <li class="tab_nav width6 " style="float: right;margin: 7px 0;">
+			                   	<a class="J_layer_dialog msg_tab_title" data-url="/Admin/User/chooseform_user_msg_tpl/builder_trigger_name/{$form['options']['trigger_from']}" data-width="830px" href="javascript:;" data-title="选择模板">
+	                                选择模板
+	                            </a>
+			                </li>
+		                
+			                <input class="j_user_msg_tpl_id_input" name="{$form['options']['trigger_from']}_user_msg_tpl_id" value="{$text_media_id}" type="hidden">
+
+			            </ul>
+			        </div>
+			    </div>
+
+
+
+				<div class="tab_panel">
+
+					<div class="clearfix">
+					    <div  style="margin:5px 20px;">
+					        <input class="form-control" type="text" name="{$form['options']['trigger_from']}_msg_title" value="" placeholder="标题" >
+					    </div>
+					</div>
+
+		        	<!-- 文字 -->
+				    <div id="j_user_msg_tpl_box_main_{$form['options']['trigger_from']}" class="j_sendbox_tab_content tab_content" style="<php>if($form['extra']['selected_nav'] == 'sms'){ echo 'display: block;'; }else{ echo 'display: none;'; }</php>" >
+				    	<div class="j_SMSArea inner">
+
+			                <div class="tab_cont_cover   u-box-info " data-index="1" data-type="1">
+			                    <div class="media_cover" style="width: 100%">
+						            <span class="create_access" style="padding: 0px;">
+										<textarea class="" style="width: 100%;height: 190px;  " name="{$form['options']['trigger_from']}_sms_send_content"></textarea>
+						            </span>
+			                    </div>
+			                </div>
+
+						</div>
+				    </div>
+
+				    <div id="j_user_msg_tpl_box_main_{$form['options']['trigger_from']}" class="j_sendbox_tab_content tab_content" style="<php>if($form['extra']['selected_nav'] == 'localmsg'){ echo 'display: block;'; }else{ echo 'display: none;'; }</php>" >
+				    	<div class="j_localMsgArea inner">
+				    		
+			                <div class="tab_cont_cover   u-box-info " data-index="1" data-type="1">
+			                    <div class="media_cover" style="width: 100%">
+						            <span class="create_access" style="padding: 0px;">
+							            <script id="UEditor_for_user_msg_tpl_localmsg_{$form['options']['trigger_from']}" class="" name="{$form['options']['trigger_from']}_localmsg_send_content" type="text/plain" style="width:100%;">
+							            </script>
+						            </span>
+			                    </div>
+			                </div>
+
+						</div>
+				    </div>
+
+				    <div id="j_user_msg_tpl_box_main_{$form['options']['trigger_from']}" class="j_sendbox_tab_content tab_content" style="<php>if($form['extra']['selected_nav'] == 'email'){ echo 'display: block;'; }else{ echo 'display: none;'; }</php>" >
+				    	<div class="j_emailArea inner">
+
+			                <div class="tab_cont_cover   u-box-info " data-index="1" data-type="1">
+			                    <div class="media_cover" style="width: 100%">
+						            <span class="create_access" style="padding: 0px;">
+							            <script id="UEditor_for_user_msg_tpl_email_{$form['options']['trigger_from']}" class="" name="{$form['options']['trigger_from']}_email_send_content" type="text/plain" style="width:100%;">
+							            </script>
+						            </span>
+			                    </div>
+			                </div>
+
+						</div>
+				    </div>
+
+				</div>
+			</div>
+
+
+		</div>
+
+        <notempty name="form.tip">
+            <div>
+            <span class="check-tips text-muted small">{$form.tip}</span>
+            </div>
+        </notempty>
+
+    </div>
+</div>
+
+<php>}</php>
